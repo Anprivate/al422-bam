@@ -51,4 +51,40 @@ set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
 set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
 set_global_assignment -name EDA_SIMULATION_TOOL "ModelSim-Altera (Verilog)"
 set_global_assignment -name EDA_OUTPUT_DATA_FORMAT "VERILOG HDL" -section_id eda_simulation
+set_global_assignment -name MAX7000_DEVICE_IO_STANDARD "3.3-V LVTTL"
+set_location_assignment PIN_33 -to in_data[0]
+set_location_assignment PIN_31 -to in_data[1]
+set_location_assignment PIN_34 -to in_data[2]
+set_location_assignment PIN_35 -to in_data[3]
+set_location_assignment PIN_42 -to in_data[4]
+set_location_assignment PIN_43 -to in_data[5]
+set_location_assignment PIN_44 -to in_data[6]
+set_location_assignment PIN_3 -to in_data[7]
+set_location_assignment PIN_18 -to led_row[0]
+set_location_assignment PIN_19 -to led_row[1]
+set_location_assignment PIN_20 -to led_row[2]
+set_location_assignment PIN_21 -to led_row[3]
+set_location_assignment PIN_15 -to led_row[4]
+set_location_assignment PIN_22 -to led_clk_out
+set_location_assignment PIN_23 -to led_lat_out
+set_location_assignment PIN_25 -to led_oe_out
+set_location_assignment PIN_2 -to al422_nrst
+set_location_assignment PIN_37 -to in_clk
+set_location_assignment PIN_39 -to in_nrst
+set_location_assignment PIN_10 -to rgb1[2]
+set_location_assignment PIN_8 -to rgb1[1]
+set_location_assignment PIN_6 -to rgb1[0]
+set_location_assignment PIN_14 -to rgb2[2]
+set_location_assignment PIN_13 -to rgb2[1]
+set_location_assignment PIN_12 -to rgb2[0]
+set_location_assignment PIN_28 -to al422_re
+set_global_assignment -name VERILOG_FILE al422_bam_tb.v
 set_global_assignment -name VERILOG_FILE al422_bam.v
+set_global_assignment -name EDA_TIME_SCALE "1 ps" -section_id eda_simulation
+set_global_assignment -name EDA_TEST_BENCH_ENABLE_STATUS TEST_BENCH_MODE -section_id eda_simulation
+set_global_assignment -name EDA_NATIVELINK_SIMULATION_TEST_BENCH al422_bam_vlg_tst -section_id eda_simulation
+set_global_assignment -name EDA_TEST_BENCH_NAME al422_bam_vlg_tst -section_id eda_simulation
+set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id al422_bam_vlg_tst
+set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME al422_bam_vlg_tst -section_id al422_bam_vlg_tst
+set_global_assignment -name EDA_TEST_BENCH_FILE al422_bam_tb.v -section_id al422_bam_vlg_tst
+set_global_assignment -name SDC_FILE al422_bam.sdc

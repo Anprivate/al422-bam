@@ -1,0 +1,423 @@
+Fitter report for al422_bam
+Mon Jan 01 21:34:49 2018
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Fitter Summary
+  3. Fitter Settings
+  4. Parallel Compilation
+  5. Pin-Out File
+  6. Fitter Resource Usage Summary
+  7. Input Pins
+  8. Output Pins
+  9. All Package Pins
+ 10. I/O Standard
+ 11. Dedicated Inputs I/O
+ 12. Output Pin Default Load For Reported TCO
+ 13. Fitter Resource Utilization by Entity
+ 14. Control Signals
+ 15. Global & Other Fast Signals
+ 16. Non-Global High Fan-Out Signals
+ 17. Other Routing Usage Summary
+ 18. LAB Macrocells
+ 19. Logic Cell Interconnection
+ 20. Fitter Device Options
+ 21. Fitter Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++-----------------------------------------------------------------------------+
+; Fitter Summary                                                              ;
++---------------------------+-------------------------------------------------+
+; Fitter Status             ; Successful - Mon Jan 01 21:34:49 2018           ;
+; Quartus II 64-Bit Version ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
+; Revision Name             ; al422_bam                                       ;
+; Top-level Entity Name     ; al422_bam                                       ;
+; Family                    ; MAX3000A                                        ;
+; Device                    ; EPM3064ATC44-10                                 ;
+; Timing Models             ; Final                                           ;
+; Total macrocells          ; 29 / 64 ( 45 % )                                ;
+; Total pins                ; 30 / 34 ( 88 % )                                ;
++---------------------------+-------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------+
+; Fitter Settings                                                                                              ;
++----------------------------------------------------------------------------+-----------------+---------------+
+; Option                                                                     ; Setting         ; Default Value ;
++----------------------------------------------------------------------------+-----------------+---------------+
+; Device                                                                     ; EPM3064ATC44-10 ;               ;
+; Use smart compilation                                                      ; Off             ; Off           ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On              ; On            ;
+; Enable compact report table                                                ; Off             ; Off           ;
+; Optimize Multi-Corner Timing                                               ; Off             ; Off           ;
+; Optimize Timing for ECOs                                                   ; Off             ; Off           ;
+; Regenerate full fit report during ECO compiles                             ; Off             ; Off           ;
+; Optimize IOC Register Placement for Timing                                 ; Normal          ; Normal        ;
+; Fitter Initial Placement Seed                                              ; 1               ; 1             ;
+; Slow Slew Rate                                                             ; Off             ; Off           ;
+; Fitter Effort                                                              ; Auto Fit        ; Auto Fit      ;
+; Force Fitter to Avoid Periphery Placement Warnings                         ; Off             ; Off           ;
++----------------------------------------------------------------------------+-----------------+---------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 8      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++--------------+
+; Pin-Out File ;
++--------------+
+The pin-out file can be found in P:/altera/al422-bam/output_files/al422_bam.pin.
+
+
++-------------------------------------------------+
+; Fitter Resource Usage Summary                   ;
++------------------------------+------------------+
+; Resource                     ; Usage            ;
++------------------------------+------------------+
+; Logic cells                  ; 29 / 64 ( 45 % ) ;
+; Registers                    ; 18 / 64 ( 28 % ) ;
+; Number of pterms used        ; 31               ;
+; I/O pins                     ; 30 / 34 ( 88 % ) ;
+;     -- Clock pins            ; 1 / 2 ( 50 % )   ;
+;     -- Dedicated input pins  ; 1 / 2 ( 50 % )   ;
+;                              ;                  ;
+; Global signals               ; 2                ;
+; Shareable expanders          ; 0 / 64 ( 0 % )   ;
+; Parallel expanders           ; 0 / 60 ( 0 % )   ;
+; Cells using turbo bit        ; 29 / 64 ( 45 % ) ;
+; Maximum fan-out              ; 18               ;
+; Highest non-global fan-out   ; 15               ;
+; Total fan-out                ; 125              ;
+; Average fan-out              ; 2.12             ;
++------------------------------+------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------+
+; Input Pins                                                                                                                      ;
++------------+-------+----------+-----+-----------------------+--------------------+--------+--------------+----------------------+
+; Name       ; Pin # ; I/O Bank ; LAB ; Combinational Fan-Out ; Registered Fan-Out ; Global ; I/O Standard ; Location assigned by ;
++------------+-------+----------+-----+-----------------------+--------------------+--------+--------------+----------------------+
+; in_clk     ; 37    ; --       ; --  ; 18                    ; 0                  ; yes    ; 3.3-V LVTTL  ; User                 ;
+; in_data[0] ; 33    ; --       ; 4   ; 1                     ; 0                  ; no     ; 3.3-V LVTTL  ; User                 ;
+; in_data[1] ; 31    ; --       ; 4   ; 0                     ; 0                  ; no     ; 3.3-V LVTTL  ; User                 ;
+; in_data[2] ; 34    ; --       ; 4   ; 0                     ; 0                  ; no     ; 3.3-V LVTTL  ; User                 ;
+; in_data[3] ; 35    ; --       ; 4   ; 0                     ; 0                  ; no     ; 3.3-V LVTTL  ; User                 ;
+; in_data[4] ; 42    ; --       ; 1   ; 0                     ; 0                  ; no     ; 3.3-V LVTTL  ; User                 ;
+; in_data[5] ; 43    ; --       ; 1   ; 0                     ; 0                  ; no     ; 3.3-V LVTTL  ; User                 ;
+; in_data[6] ; 44    ; --       ; 1   ; 0                     ; 0                  ; no     ; 3.3-V LVTTL  ; User                 ;
+; in_data[7] ; 3     ; --       ; 1   ; 0                     ; 0                  ; no     ; 3.3-V LVTTL  ; User                 ;
+; in_nrst    ; 39    ; --       ; --  ; 18                    ; 0                  ; yes    ; 3.3-V LVTTL  ; User                 ;
++------------+-------+----------+-----+-----------------------+--------------------+--------+--------------+----------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Output Pins                                                                                                                                                                                     ;
++-------------+-------+----------+-----+-----------------+----------------+------------+---------------+--------------+----------------------+-------+----------------------+---------------------+
+; Name        ; Pin # ; I/O Bank ; LAB ; Output Register ; Slow Slew Rate ; Open Drain ; TRI Primitive ; I/O Standard ; Location assigned by ; Load  ; Output Enable Source ; Output Enable Group ;
++-------------+-------+----------+-----+-----------------+----------------+------------+---------------+--------------+----------------------+-------+----------------------+---------------------+
+; al422_nrst  ; 2     ; --       ; 1   ; no              ; no             ; no         ; no            ; 3.3-V LVTTL  ; User                 ; 10 pF ; -                    ; -                   ;
+; al422_re    ; 28    ; --       ; 4   ; no              ; no             ; no         ; no            ; 3.3-V LVTTL  ; User                 ; 10 pF ; -                    ; -                   ;
+; led_clk_out ; 22    ; --       ; 3   ; no              ; no             ; no         ; no            ; 3.3-V LVTTL  ; User                 ; 10 pF ; -                    ; -                   ;
+; led_lat_out ; 23    ; --       ; 3   ; no              ; no             ; no         ; no            ; 3.3-V LVTTL  ; User                 ; 10 pF ; -                    ; -                   ;
+; led_oe_out  ; 25    ; --       ; 3   ; no              ; no             ; no         ; no            ; 3.3-V LVTTL  ; User                 ; 10 pF ; -                    ; -                   ;
+; led_row[0]  ; 18    ; --       ; 3   ; no              ; no             ; no         ; no            ; 3.3-V LVTTL  ; User                 ; 10 pF ; -                    ; -                   ;
+; led_row[1]  ; 19    ; --       ; 3   ; no              ; no             ; no         ; no            ; 3.3-V LVTTL  ; User                 ; 10 pF ; -                    ; -                   ;
+; led_row[2]  ; 20    ; --       ; 3   ; no              ; no             ; no         ; no            ; 3.3-V LVTTL  ; User                 ; 10 pF ; -                    ; -                   ;
+; led_row[3]  ; 21    ; --       ; 3   ; no              ; no             ; no         ; no            ; 3.3-V LVTTL  ; User                 ; 10 pF ; -                    ; -                   ;
+; led_row[4]  ; 15    ; --       ; 2   ; no              ; no             ; no         ; no            ; 3.3-V LVTTL  ; User                 ; 10 pF ; -                    ; -                   ;
+; rgb1[0]     ; 6     ; --       ; 1   ; no              ; no             ; no         ; no            ; 3.3-V LVTTL  ; User                 ; 10 pF ; -                    ; -                   ;
+; rgb1[1]     ; 8     ; --       ; 2   ; no              ; no             ; no         ; no            ; 3.3-V LVTTL  ; User                 ; 10 pF ; -                    ; -                   ;
+; rgb1[2]     ; 10    ; --       ; 2   ; no              ; no             ; no         ; no            ; 3.3-V LVTTL  ; User                 ; 10 pF ; -                    ; -                   ;
+; rgb2[0]     ; 12    ; --       ; 2   ; no              ; no             ; no         ; no            ; 3.3-V LVTTL  ; User                 ; 10 pF ; -                    ; -                   ;
+; rgb2[1]     ; 13    ; --       ; 2   ; no              ; no             ; no         ; no            ; 3.3-V LVTTL  ; User                 ; 10 pF ; -                    ; -                   ;
+; rgb2[2]     ; 14    ; --       ; 2   ; no              ; no             ; no         ; no            ; 3.3-V LVTTL  ; User                 ; 10 pF ; -                    ; -                   ;
++-------------+-------+----------+-----+-----------------+----------------+------------+---------------+--------------+----------------------+-------+----------------------+---------------------+
+
+
++-------------------------------------------------------------------------------------------------------+
+; All Package Pins                                                                                      ;
++----------+------------+----------+----------------+--------+--------------+---------+-----------------+
+; Location ; Pad Number ; I/O Bank ; Pin Name/Usage ; Dir.   ; I/O Standard ; Voltage ; User Assignment ;
++----------+------------+----------+----------------+--------+--------------+---------+-----------------+
+; 1        ; 6          ; --       ; TDI            ; input  ; 3.3-V LVTTL  ;         ; N               ;
+; 2        ; 7          ; --       ; al422_nrst     ; output ; 3.3-V LVTTL  ;         ; Y               ;
+; 3        ; 8          ; --       ; in_data[7]     ; input  ; 3.3-V LVTTL  ;         ; Y               ;
+; 4        ; 9          ; --       ; GND            ; gnd    ;              ;         ;                 ;
+; 5        ; 10         ; --       ; RESERVED       ;        ;              ;         ;                 ;
+; 6        ; 11         ; --       ; rgb1[0]        ; output ; 3.3-V LVTTL  ;         ; Y               ;
+; 7        ; 12         ; --       ; TMS            ; input  ; 3.3-V LVTTL  ;         ; N               ;
+; 8        ; 13         ; --       ; rgb1[1]        ; output ; 3.3-V LVTTL  ;         ; Y               ;
+; 9        ; 14         ; --       ; VCCIO          ; power  ;              ; 3.3V    ;                 ;
+; 10       ; 15         ; --       ; rgb1[2]        ; output ; 3.3-V LVTTL  ;         ; Y               ;
+; 11       ; 16         ; --       ; GND            ; gnd    ;              ;         ;                 ;
+; 12       ; 17         ; --       ; rgb2[0]        ; output ; 3.3-V LVTTL  ;         ; Y               ;
+; 13       ; 18         ; --       ; rgb2[1]        ; output ; 3.3-V LVTTL  ;         ; Y               ;
+; 14       ; 19         ; --       ; rgb2[2]        ; output ; 3.3-V LVTTL  ;         ; Y               ;
+; 15       ; 20         ; --       ; led_row[4]     ; output ; 3.3-V LVTTL  ;         ; Y               ;
+; 16       ; 21         ; --       ; GND            ; gnd    ;              ;         ;                 ;
+; 17       ; 22         ; --       ; VCCINT         ; power  ;              ; 3.3V    ;                 ;
+; 18       ; 23         ; --       ; led_row[0]     ; output ; 3.3-V LVTTL  ;         ; Y               ;
+; 19       ; 24         ; --       ; led_row[1]     ; output ; 3.3-V LVTTL  ;         ; Y               ;
+; 20       ; 25         ; --       ; led_row[2]     ; output ; 3.3-V LVTTL  ;         ; Y               ;
+; 21       ; 26         ; --       ; led_row[3]     ; output ; 3.3-V LVTTL  ;         ; Y               ;
+; 22       ; 27         ; --       ; led_clk_out    ; output ; 3.3-V LVTTL  ;         ; Y               ;
+; 23       ; 28         ; --       ; led_lat_out    ; output ; 3.3-V LVTTL  ;         ; Y               ;
+; 24       ; 29         ; --       ; GND            ; gnd    ;              ;         ;                 ;
+; 25       ; 30         ; --       ; led_oe_out     ; output ; 3.3-V LVTTL  ;         ; Y               ;
+; 26       ; 31         ; --       ; TCK            ; input  ; 3.3-V LVTTL  ;         ; N               ;
+; 27       ; 32         ; --       ; RESERVED       ;        ;              ;         ;                 ;
+; 28       ; 33         ; --       ; al422_re       ; output ; 3.3-V LVTTL  ;         ; Y               ;
+; 29       ; 34         ; --       ; VCCIO          ; power  ;              ; 3.3V    ;                 ;
+; 30       ; 35         ; --       ; GND            ; gnd    ;              ;         ;                 ;
+; 31       ; 36         ; --       ; in_data[1]     ; input  ; 3.3-V LVTTL  ;         ; Y               ;
+; 32       ; 37         ; --       ; TDO            ; output ; 3.3-V LVTTL  ;         ; N               ;
+; 33       ; 38         ; --       ; in_data[0]     ; input  ; 3.3-V LVTTL  ;         ; Y               ;
+; 34       ; 39         ; --       ; in_data[2]     ; input  ; 3.3-V LVTTL  ;         ; Y               ;
+; 35       ; 40         ; --       ; in_data[3]     ; input  ; 3.3-V LVTTL  ;         ; Y               ;
+; 36       ; 41         ; --       ; GND            ; gnd    ;              ;         ;                 ;
+; 37       ; 42         ; --       ; in_clk         ; input  ; 3.3-V LVTTL  ;         ; Y               ;
+; 38       ; 43         ; --       ; GND+           ;        ;              ;         ;                 ;
+; 39       ; 0          ; --       ; in_nrst        ; input  ; 3.3-V LVTTL  ;         ; Y               ;
+; 40       ; 1          ; --       ; GND+           ;        ;              ;         ;                 ;
+; 41       ; 2          ; --       ; VCCINT         ; power  ;              ; 3.3V    ;                 ;
+; 42       ; 3          ; --       ; in_data[4]     ; input  ; 3.3-V LVTTL  ;         ; Y               ;
+; 43       ; 4          ; --       ; in_data[5]     ; input  ; 3.3-V LVTTL  ;         ; Y               ;
+; 44       ; 5          ; --       ; in_data[6]     ; input  ; 3.3-V LVTTL  ;         ; Y               ;
++----------+------------+----------+----------------+--------+--------------+---------+-----------------+
+Note: Pin directions (input, output or bidir) are based on device operating in user mode.
+
+
++--------------------------------------------------------------------------------------------------+
+; I/O Standard                                                                                     ;
++--------------+------------+----------------------+-------------------+-------------------+-------+
+; I/O Standard ; Input Vref ; Dedicated Input Pins ; Pins in I/O Bank1 ; Pins in I/O Bank2 ; Total ;
++--------------+------------+----------------------+-------------------+-------------------+-------+
+; 3.3-V LVTTL  ; -          ; 2                    ; 0                 ; 0                 ; 2     ;
++--------------+------------+----------------------+-------------------+-------------------+-------+
+
+
++-----------------------------------------------------------------------+
+; Dedicated Inputs I/O                                                  ;
++---------+-------+-------+-------+--------------+------------+---------+
+; Name    ; Pin # ; Type  ; VCCIO ; I/O Standard ; Input Vref ; Current ;
++---------+-------+-------+-------+--------------+------------+---------+
+; in_clk  ; 37    ; Input ; --    ; 3.3-V LVTTL  ; -          ; 0 mA    ;
+; in_nrst ; 39    ; Input ; --    ; 3.3-V LVTTL  ; -          ; 0 mA    ;
++---------+-------+-------+-------+--------------+------------+---------+
+
+
++-----------------------------------------------+
+; Output Pin Default Load For Reported TCO      ;
++--------------+-------+------------------------+
+; I/O Standard ; Load  ; Termination Resistance ;
++--------------+-------+------------------------+
+; 3.3-V LVTTL  ; 10 pF ; Not Available          ;
+; 3.3-V LVCMOS ; 10 pF ; Not Available          ;
+; 3.3-V PCI    ; 10 pF ; 25 Ohm (Parallel)      ;
+; 2.5 V        ; 10 pF ; Not Available          ;
++--------------+-------+------------------------+
+Note: User assignments will override these defaults. The user specified values are listed in the Output Pins and Bidir Pins tables.
+
+
++-------------------------------------------------------------------------------------+
+; Fitter Resource Utilization by Entity                                               ;
++----------------------------+------------+------+---------------------+--------------+
+; Compilation Hierarchy Node ; Macrocells ; Pins ; Full Hierarchy Name ; Library Name ;
++----------------------------+------------+------+---------------------+--------------+
+; |al422_bam                 ; 29         ; 30   ; |al422_bam          ; work         ;
++----------------------------+------------+------+---------------------+--------------+
+
+
++------------------------------------------------------------------------------------------------------------------+
+; Control Signals                                                                                                  ;
++---------------------------+----------+---------+--------------+--------+----------------------+------------------+
+; Name                      ; Location ; Fan-Out ; Usage        ; Global ; Global Resource Used ; Global Line Name ;
++---------------------------+----------+---------+--------------+--------+----------------------+------------------+
+; data_in_data_buffer_valid ; LC50     ; 13      ; Clock enable ; no     ; --                   ; --               ;
+; first_cycle_finished      ; LC58     ; 4       ; Clock enable ; no     ; --                   ; --               ;
+; in_clk                    ; PIN_37   ; 18      ; Clock        ; yes    ; On                   ; --               ;
+; in_nrst                   ; PIN_39   ; 18      ; Async. clear ; yes    ; On                   ; --               ;
+; phase_cntr[0]             ; LC49     ; 15      ; Clock enable ; no     ; --                   ; --               ;
+; phase_cntr[1]             ; LC57     ; 15      ; Clock enable ; no     ; --                   ; --               ;
+; pixel_counter[0]          ; LC61     ; 5       ; Clock enable ; no     ; --                   ; --               ;
+; pixel_counter[1]          ; LC55     ; 5       ; Clock enable ; no     ; --                   ; --               ;
+; pixel_counter[2]          ; LC56     ; 4       ; Clock enable ; no     ; --                   ; --               ;
+; pixel_counter[3]          ; LC59     ; 4       ; Clock enable ; no     ; --                   ; --               ;
++---------------------------+----------+---------+--------------+--------+----------------------+------------------+
+
+
++------------------------------------------------------------------------+
+; Global & Other Fast Signals                                            ;
++---------+----------+---------+----------------------+------------------+
+; Name    ; Location ; Fan-Out ; Global Resource Used ; Global Line Name ;
++---------+----------+---------+----------------------+------------------+
+; in_clk  ; PIN_37   ; 18      ; On                   ; --               ;
+; in_nrst ; PIN_39   ; 18      ; On                   ; --               ;
++---------+----------+---------+----------------------+------------------+
+
+
++-------------------------------------+
+; Non-Global High Fan-Out Signals     ;
++---------------------------+---------+
+; Name                      ; Fan-Out ;
++---------------------------+---------+
+; phase_cntr[1]             ; 15      ;
+; phase_cntr[0]             ; 15      ;
+; data_in_data_buffer_valid ; 13      ;
+; pixel_counter[1]          ; 5       ;
+; pixel_counter[0]          ; 5       ;
+; pixel_counter[3]          ; 4       ;
+; pixel_counter[2]          ; 4       ;
+; first_cycle_finished      ; 4       ;
+; in_data_buffer[0]         ; 3       ;
+; in_data[0]                ; 1       ;
+; ~GND~8                    ; 1       ;
+; ~GND~7                    ; 1       ;
+; ~GND~6                    ; 1       ;
+; ~GND~5                    ; 1       ;
+; ~GND~4                    ; 1       ;
+; ~GND~3                    ; 1       ;
+; ~GND~2                    ; 1       ;
+; ~GND~1                    ; 1       ;
+; ~GND~0                    ; 1       ;
+; ~VCC~1                    ; 1       ;
+; ~VCC~0                    ; 1       ;
+; al422_re~reg0             ; 1       ;
+; led_clk                   ; 1       ;
+; rgb1[0]~reg0              ; 1       ;
+; out_data_valid            ; 1       ;
+; rgb1[1]~reg0              ; 1       ;
+; rgb1[2]~reg0              ; 1       ;
+; rgb_tmp[1]                ; 1       ;
+; rgb_tmp[0]                ; 1       ;
+; rgb_tmp[2]                ; 1       ;
++---------------------------+---------+
+
+
++-------------------------------------------------+
+; Other Routing Usage Summary                     ;
++-----------------------------+-------------------+
+; Other Routing Resource Type ; Usage             ;
++-----------------------------+-------------------+
+; Output enables              ; 0 / 6 ( 0 % )     ;
+; PIA buffers                 ; 21 / 144 ( 15 % ) ;
++-----------------------------+-------------------+
+
+
++----------------------------------------------------------------------+
+; LAB Macrocells                                                       ;
++----------------------------------------+-----------------------------+
+; Number of Macrocells  (Average = 7.25) ; Number of LABs  (Total = 4) ;
++----------------------------------------+-----------------------------+
+; 0                                      ; 0                           ;
+; 1                                      ; 0                           ;
+; 2                                      ; 0                           ;
+; 3                                      ; 1                           ;
+; 4                                      ; 0                           ;
+; 5                                      ; 0                           ;
+; 6                                      ; 1                           ;
+; 7                                      ; 1                           ;
+; 8                                      ; 0                           ;
+; 9                                      ; 0                           ;
+; 10                                     ; 0                           ;
+; 11                                     ; 0                           ;
+; 12                                     ; 0                           ;
+; 13                                     ; 1                           ;
++----------------------------------------+-----------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Logic Cell Interconnection                                                                                                                                                                                                                                                                                                                                                                                    ;
++-----+------------+--------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; LAB ; Logic Cell ; Input                                                                                                                                            ; Output                                                                                                                                                                                                                                  ;
++-----+------------+--------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+;  A  ; LC4        ; in_clk, in_nrst, first_cycle_finished, phase_cntr[1], data_in_data_buffer_valid, phase_cntr[0]                                                   ; led_clk                                                                                                                                                                                                                                 ;
+;  A  ; LC1        ; in_clk, in_nrst, rgb_tmp[0], first_cycle_finished, phase_cntr[1], data_in_data_buffer_valid, phase_cntr[0]                                       ; rgb1[0]                                                                                                                                                                                                                                 ;
+;  A  ; LC5        ;                                                                                                                                                  ; al422_nrst                                                                                                                                                                                                                              ;
+;  B  ; LC25       ; in_clk, in_nrst, rgb_tmp[2], first_cycle_finished, phase_cntr[1], data_in_data_buffer_valid, phase_cntr[0]                                       ; rgb1[2]                                                                                                                                                                                                                                 ;
+;  B  ; LC30       ; in_clk, in_nrst, rgb_tmp[1], first_cycle_finished, phase_cntr[1], data_in_data_buffer_valid, phase_cntr[0]                                       ; rgb1[1]                                                                                                                                                                                                                                 ;
+;  B  ; LC17       ;                                                                                                                                                  ; led_row[4]                                                                                                                                                                                                                              ;
+;  B  ; LC21       ;                                                                                                                                                  ; rgb2[0]                                                                                                                                                                                                                                 ;
+;  B  ; LC20       ;                                                                                                                                                  ; rgb2[1]                                                                                                                                                                                                                                 ;
+;  B  ; LC19       ;                                                                                                                                                  ; rgb2[2]                                                                                                                                                                                                                                 ;
+;  C  ; LC40       ; in_clk, in_nrst, out_data_valid                                                                                                                  ; led_clk_out                                                                                                                                                                                                                             ;
+;  C  ; LC46       ;                                                                                                                                                  ; led_oe_out                                                                                                                                                                                                                              ;
+;  C  ; LC41       ;                                                                                                                                                  ; led_lat_out                                                                                                                                                                                                                             ;
+;  C  ; LC33       ;                                                                                                                                                  ; led_row[0]                                                                                                                                                                                                                              ;
+;  C  ; LC35       ;                                                                                                                                                  ; led_row[1]                                                                                                                                                                                                                              ;
+;  C  ; LC36       ;                                                                                                                                                  ; led_row[2]                                                                                                                                                                                                                              ;
+;  C  ; LC37       ;                                                                                                                                                  ; led_row[3]                                                                                                                                                                                                                              ;
+;  D  ; LC50       ; in_clk, in_nrst                                                                                                                                  ; phase_cntr[0], phase_cntr[1], rgb_tmp[2], rgb_tmp[0], pixel_counter[0], rgb_tmp[1], rgb1[2]~reg0, rgb1[1]~reg0, out_data_valid, rgb1[0]~reg0, pixel_counter[1], pixel_counter[2], pixel_counter[3]                                      ;
+;  D  ; LC60       ; in_clk, in_nrst, in_data[0]                                                                                                                      ; rgb_tmp[2], rgb_tmp[0], rgb_tmp[1]                                                                                                                                                                                                      ;
+;  D  ; LC49       ; in_clk, in_nrst, phase_cntr[1], phase_cntr[0], data_in_data_buffer_valid                                                                         ; phase_cntr[0], phase_cntr[1], first_cycle_finished, rgb_tmp[2], rgb_tmp[0], pixel_counter[0], rgb_tmp[1], rgb1[2]~reg0, rgb1[1]~reg0, out_data_valid, rgb1[0]~reg0, pixel_counter[1], pixel_counter[2], pixel_counter[3], al422_re~reg0 ;
+;  D  ; LC57       ; in_clk, in_nrst, phase_cntr[1], phase_cntr[0], data_in_data_buffer_valid                                                                         ; phase_cntr[0], phase_cntr[1], first_cycle_finished, rgb_tmp[2], rgb_tmp[0], pixel_counter[0], rgb_tmp[1], rgb1[2]~reg0, rgb1[1]~reg0, out_data_valid, rgb1[0]~reg0, pixel_counter[1], pixel_counter[2], pixel_counter[3], al422_re~reg0 ;
+;  D  ; LC58       ; in_clk, in_nrst, phase_cntr[1], phase_cntr[0]                                                                                                    ; rgb1[2]~reg0, rgb1[1]~reg0, out_data_valid, rgb1[0]~reg0                                                                                                                                                                                ;
+;  D  ; LC62       ; in_clk, in_nrst, in_data_buffer[0], phase_cntr[1], data_in_data_buffer_valid, phase_cntr[0]                                                      ; rgb1[2]~reg0                                                                                                                                                                                                                            ;
+;  D  ; LC64       ; in_clk, in_nrst, in_data_buffer[0], phase_cntr[1], data_in_data_buffer_valid, phase_cntr[0]                                                      ; rgb1[0]~reg0                                                                                                                                                                                                                            ;
+;  D  ; LC61       ; in_clk, in_nrst, pixel_counter[3], pixel_counter[2], pixel_counter[1], pixel_counter[0], data_in_data_buffer_valid, phase_cntr[1], phase_cntr[0] ; pixel_counter[0], pixel_counter[1], pixel_counter[2], pixel_counter[3], al422_re~reg0                                                                                                                                                   ;
+;  D  ; LC52       ; in_clk, in_nrst, in_data_buffer[0], data_in_data_buffer_valid, phase_cntr[1], phase_cntr[0]                                                      ; rgb1[1]~reg0                                                                                                                                                                                                                            ;
+;  D  ; LC55       ; in_clk, in_nrst, pixel_counter[3], pixel_counter[2], pixel_counter[1], pixel_counter[0], data_in_data_buffer_valid, phase_cntr[1], phase_cntr[0] ; pixel_counter[0], pixel_counter[1], pixel_counter[2], pixel_counter[3], al422_re~reg0                                                                                                                                                   ;
+;  D  ; LC56       ; in_clk, in_nrst, pixel_counter[1], pixel_counter[0], data_in_data_buffer_valid, phase_cntr[1], phase_cntr[0]                                     ; pixel_counter[0], pixel_counter[1], pixel_counter[3], al422_re~reg0                                                                                                                                                                     ;
+;  D  ; LC59       ; in_clk, in_nrst, pixel_counter[0], pixel_counter[2], pixel_counter[1], pixel_counter[3], data_in_data_buffer_valid, phase_cntr[1], phase_cntr[0] ; pixel_counter[0], pixel_counter[1], pixel_counter[3], al422_re~reg0                                                                                                                                                                     ;
+;  D  ; LC51       ; in_clk, in_nrst, pixel_counter[3], phase_cntr[1], phase_cntr[0], pixel_counter[2], pixel_counter[1], pixel_counter[0]                            ; al422_re                                                                                                                                                                                                                                ;
++-----+------------+--------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------+
+; Fitter Device Options                                         ;
++----------------------------------------------+----------------+
+; Option                                       ; Setting        ;
++----------------------------------------------+----------------+
+; Enable user-supplied start-up clock (CLKUSR) ; Off            ;
+; Enable device-wide reset (DEV_CLRn)          ; Off            ;
+; Enable device-wide output enable (DEV_OE)    ; Off            ;
+; Enable INIT_DONE output                      ; Off            ;
+; Configuration scheme                         ; Passive Serial ;
+; Security bit                                 ; Off            ;
+; Base pin-out file on sameframe device        ; Off            ;
++----------------------------------------------+----------------+
+
+
++-----------------+
+; Fitter Messages ;
++-----------------+
+Info (119006): Selected device EPM3064ATC44-10 for design "al422_bam"
+Info: Quartus II 64-Bit Fitter was successful. 0 errors, 0 warnings
+    Info: Peak virtual memory: 460 megabytes
+    Info: Processing ended: Mon Jan 01 21:34:49 2018
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:00
+
+

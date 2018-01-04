@@ -1,0 +1,538 @@
+TimeQuest Timing Analyzer report for al422_bam
+Mon Jan 01 21:34:51 2018
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. TimeQuest Timing Analyzer Summary
+  3. Parallel Compilation
+  4. SDC File List
+  5. Clocks
+  6. Fmax Summary
+  7. Setup Summary
+  8. Hold Summary
+  9. Recovery Summary
+ 10. Removal Summary
+ 11. Minimum Pulse Width Summary
+ 12. Setup: 'in_clk'
+ 13. Hold: 'in_clk'
+ 14. Minimum Pulse Width: 'in_clk'
+ 15. Setup Times
+ 16. Hold Times
+ 17. Clock to Output Times
+ 18. Minimum Clock to Output Times
+ 19. Setup Transfers
+ 20. Hold Transfers
+ 21. Report TCCS
+ 22. Report RSKM
+ 23. Unconstrained Paths
+ 24. TimeQuest Timing Analyzer Messages
+ 25. TimeQuest Timing Analyzer Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++----------------------------------------------------------------------------------------+
+; TimeQuest Timing Analyzer Summary                                                      ;
++--------------------+-------------------------------------------------------------------+
+; Quartus II Version ; Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition ;
+; Revision Name      ; al422_bam                                                         ;
+; Device Family      ; MAX3000A                                                          ;
+; Device Name        ; EPM3064ATC44-10                                                   ;
+; Timing Models      ; Final                                                             ;
+; Delay Model        ; Slow Model                                                        ;
+; Rise/Fall Delays   ; Unavailable                                                       ;
++--------------------+-------------------------------------------------------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 8      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++---------------------------------------------------+
+; SDC File List                                     ;
++---------------+--------+--------------------------+
+; SDC File Path ; Status ; Read at                  ;
++---------------+--------+--------------------------+
+; al422_bam.sdc ; OK     ; Mon Jan 01 21:34:51 2018 ;
++---------------+--------+--------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                             ;
++------------+------+--------+-----------+-------+--------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+------------+
+; Clock Name ; Type ; Period ; Frequency ; Rise  ; Fall   ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets    ;
++------------+------+--------+-----------+-------+--------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+------------+
+; in_clk     ; Base ; 20.000 ; 50.0 MHz  ; 0.000 ; 10.000 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { in_clk } ;
++------------+------+--------+-----------+-------+--------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+------------+
+
+
++-------------------------------------------------+
+; Fmax Summary                                    ;
++-----------+-----------------+------------+------+
+; Fmax      ; Restricted Fmax ; Clock Name ; Note ;
++-----------+-----------------+------------+------+
+; 98.04 MHz ; 98.04 MHz       ; in_clk     ;      ;
++-----------+-----------------+------------+------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++--------------------------------+
+; Setup Summary                  ;
++--------+-------+---------------+
+; Clock  ; Slack ; End Point TNS ;
++--------+-------+---------------+
+; in_clk ; 9.800 ; 0.000         ;
++--------+-------+---------------+
+
+
++--------------------------------+
+; Hold Summary                   ;
++--------+-------+---------------+
+; Clock  ; Slack ; End Point TNS ;
++--------+-------+---------------+
+; in_clk ; 3.800 ; 0.000         ;
++--------+-------+---------------+
+
+
+--------------------
+; Recovery Summary ;
+--------------------
+No paths to report.
+
+
+-------------------
+; Removal Summary ;
+-------------------
+No paths to report.
+
+
++--------------------------------+
+; Minimum Pulse Width Summary    ;
++--------+-------+---------------+
+; Clock  ; Slack ; End Point TNS ;
++--------+-------+---------------+
+; in_clk ; 6.000 ; 0.000         ;
++--------+-------+---------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------+
+; Setup: 'in_clk'                                                                                                                 ;
++--------+---------------------------+----------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                 ; To Node              ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+---------------------------+----------------------+--------------+-------------+--------------+------------+------------+
+; 9.800  ; phase_cntr[1]             ; phase_cntr[1]        ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.300      ;
+; 9.800  ; phase_cntr[0]             ; phase_cntr[1]        ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.300      ;
+; 9.800  ; phase_cntr[1]             ; phase_cntr[0]        ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.300      ;
+; 9.800  ; phase_cntr[0]             ; phase_cntr[0]        ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.300      ;
+; 9.800  ; phase_cntr[1]             ; out_data_valid       ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.300      ;
+; 9.800  ; data_in_data_buffer_valid ; out_data_valid       ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.300      ;
+; 9.800  ; phase_cntr[0]             ; out_data_valid       ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.300      ;
+; 9.900  ; first_cycle_finished      ; out_data_valid       ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.200      ;
+; 10.000 ; in_data_buffer[0]         ; rgb_tmp[2]           ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.100      ;
+; 10.000 ; in_data_buffer[0]         ; rgb_tmp[0]           ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.100      ;
+; 10.000 ; pixel_counter[1]          ; pixel_counter[1]     ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.100      ;
+; 10.000 ; pixel_counter[3]          ; pixel_counter[1]     ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.100      ;
+; 10.000 ; pixel_counter[2]          ; pixel_counter[1]     ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.100      ;
+; 10.000 ; pixel_counter[0]          ; pixel_counter[1]     ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.100      ;
+; 10.000 ; pixel_counter[2]          ; pixel_counter[2]     ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.100      ;
+; 10.000 ; pixel_counter[1]          ; pixel_counter[2]     ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.100      ;
+; 10.000 ; pixel_counter[0]          ; pixel_counter[2]     ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.100      ;
+; 10.000 ; pixel_counter[3]          ; pixel_counter[3]     ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.100      ;
+; 10.000 ; pixel_counter[0]          ; pixel_counter[3]     ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.100      ;
+; 10.000 ; pixel_counter[2]          ; pixel_counter[3]     ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.100      ;
+; 10.000 ; pixel_counter[1]          ; pixel_counter[3]     ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.100      ;
+; 10.000 ; pixel_counter[0]          ; pixel_counter[0]     ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.100      ;
+; 10.000 ; pixel_counter[3]          ; pixel_counter[0]     ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.100      ;
+; 10.000 ; pixel_counter[2]          ; pixel_counter[0]     ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.100      ;
+; 10.000 ; pixel_counter[1]          ; pixel_counter[0]     ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.100      ;
+; 10.000 ; in_data_buffer[0]         ; rgb_tmp[1]           ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.100      ;
+; 10.000 ; rgb_tmp[2]                ; rgb1[2]~reg0         ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.100      ;
+; 10.000 ; rgb_tmp[1]                ; rgb1[1]~reg0         ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.100      ;
+; 10.000 ; rgb_tmp[0]                ; rgb1[0]~reg0         ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.100      ;
+; 10.000 ; out_data_valid            ; led_clk              ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.100      ;
+; 11.800 ; data_in_data_buffer_valid ; phase_cntr[1]        ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 5.300      ;
+; 11.800 ; data_in_data_buffer_valid ; phase_cntr[0]        ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 5.300      ;
+; 11.800 ; phase_cntr[1]             ; first_cycle_finished ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 5.300      ;
+; 11.800 ; phase_cntr[0]             ; first_cycle_finished ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 5.300      ;
+; 11.800 ; phase_cntr[1]             ; rgb_tmp[2]           ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 5.300      ;
+; 11.800 ; data_in_data_buffer_valid ; rgb_tmp[2]           ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 5.300      ;
+; 11.800 ; phase_cntr[0]             ; rgb_tmp[2]           ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 5.300      ;
+; 11.800 ; phase_cntr[1]             ; rgb_tmp[0]           ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 5.300      ;
+; 11.800 ; data_in_data_buffer_valid ; rgb_tmp[0]           ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 5.300      ;
+; 11.800 ; phase_cntr[0]             ; rgb_tmp[0]           ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 5.300      ;
+; 11.800 ; data_in_data_buffer_valid ; pixel_counter[1]     ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 5.300      ;
+; 11.800 ; phase_cntr[1]             ; pixel_counter[1]     ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 5.300      ;
+; 11.800 ; phase_cntr[0]             ; pixel_counter[1]     ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 5.300      ;
+; 11.800 ; data_in_data_buffer_valid ; pixel_counter[2]     ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 5.300      ;
+; 11.800 ; phase_cntr[1]             ; pixel_counter[2]     ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 5.300      ;
+; 11.800 ; phase_cntr[0]             ; pixel_counter[2]     ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 5.300      ;
+; 11.800 ; data_in_data_buffer_valid ; pixel_counter[3]     ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 5.300      ;
+; 11.800 ; phase_cntr[1]             ; pixel_counter[3]     ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 5.300      ;
+; 11.800 ; phase_cntr[0]             ; pixel_counter[3]     ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 5.300      ;
+; 11.800 ; data_in_data_buffer_valid ; pixel_counter[0]     ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 5.300      ;
+; 11.800 ; phase_cntr[1]             ; pixel_counter[0]     ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 5.300      ;
+; 11.800 ; phase_cntr[0]             ; pixel_counter[0]     ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 5.300      ;
+; 11.800 ; data_in_data_buffer_valid ; rgb_tmp[1]           ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 5.300      ;
+; 11.800 ; phase_cntr[1]             ; rgb_tmp[1]           ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 5.300      ;
+; 11.800 ; phase_cntr[0]             ; rgb_tmp[1]           ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 5.300      ;
+; 11.800 ; phase_cntr[1]             ; rgb1[2]~reg0         ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 5.300      ;
+; 11.800 ; data_in_data_buffer_valid ; rgb1[2]~reg0         ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 5.300      ;
+; 11.800 ; phase_cntr[0]             ; rgb1[2]~reg0         ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 5.300      ;
+; 11.800 ; phase_cntr[1]             ; rgb1[1]~reg0         ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 5.300      ;
+; 11.800 ; data_in_data_buffer_valid ; rgb1[1]~reg0         ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 5.300      ;
+; 11.800 ; phase_cntr[0]             ; rgb1[1]~reg0         ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 5.300      ;
+; 11.800 ; phase_cntr[1]             ; rgb1[0]~reg0         ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 5.300      ;
+; 11.800 ; data_in_data_buffer_valid ; rgb1[0]~reg0         ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 5.300      ;
+; 11.800 ; phase_cntr[0]             ; rgb1[0]~reg0         ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 5.300      ;
+; 11.800 ; phase_cntr[1]             ; al422_re~reg0        ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 5.300      ;
+; 11.800 ; phase_cntr[0]             ; al422_re~reg0        ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 5.300      ;
+; 11.900 ; first_cycle_finished      ; rgb1[2]~reg0         ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 5.200      ;
+; 11.900 ; first_cycle_finished      ; rgb1[1]~reg0         ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 5.200      ;
+; 11.900 ; first_cycle_finished      ; rgb1[0]~reg0         ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 5.200      ;
+; 12.000 ; pixel_counter[3]          ; al422_re~reg0        ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 5.100      ;
+; 12.000 ; pixel_counter[2]          ; al422_re~reg0        ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 5.100      ;
+; 12.000 ; pixel_counter[1]          ; al422_re~reg0        ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 5.100      ;
+; 12.000 ; pixel_counter[0]          ; al422_re~reg0        ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 5.100      ;
++--------+---------------------------+----------------------+--------------+-------------+--------------+------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------+
+; Hold: 'in_clk'                                                                                                                 ;
++-------+---------------------------+----------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                 ; To Node              ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+---------------------------+----------------------+--------------+-------------+--------------+------------+------------+
+; 3.800 ; pixel_counter[3]          ; al422_re~reg0        ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.100      ;
+; 3.800 ; pixel_counter[2]          ; al422_re~reg0        ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.100      ;
+; 3.800 ; pixel_counter[1]          ; al422_re~reg0        ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.100      ;
+; 3.800 ; pixel_counter[0]          ; al422_re~reg0        ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.100      ;
+; 3.900 ; first_cycle_finished      ; rgb1[2]~reg0         ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.200      ;
+; 3.900 ; first_cycle_finished      ; rgb1[1]~reg0         ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.200      ;
+; 3.900 ; first_cycle_finished      ; rgb1[0]~reg0         ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.200      ;
+; 4.000 ; data_in_data_buffer_valid ; phase_cntr[1]        ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
+; 4.000 ; data_in_data_buffer_valid ; phase_cntr[0]        ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
+; 4.000 ; phase_cntr[1]             ; first_cycle_finished ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
+; 4.000 ; phase_cntr[0]             ; first_cycle_finished ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
+; 4.000 ; phase_cntr[1]             ; rgb_tmp[2]           ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
+; 4.000 ; data_in_data_buffer_valid ; rgb_tmp[2]           ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
+; 4.000 ; phase_cntr[0]             ; rgb_tmp[2]           ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
+; 4.000 ; phase_cntr[1]             ; rgb_tmp[0]           ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
+; 4.000 ; data_in_data_buffer_valid ; rgb_tmp[0]           ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
+; 4.000 ; phase_cntr[0]             ; rgb_tmp[0]           ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
+; 4.000 ; data_in_data_buffer_valid ; pixel_counter[1]     ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
+; 4.000 ; phase_cntr[1]             ; pixel_counter[1]     ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
+; 4.000 ; phase_cntr[0]             ; pixel_counter[1]     ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
+; 4.000 ; data_in_data_buffer_valid ; pixel_counter[2]     ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
+; 4.000 ; phase_cntr[1]             ; pixel_counter[2]     ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
+; 4.000 ; phase_cntr[0]             ; pixel_counter[2]     ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
+; 4.000 ; data_in_data_buffer_valid ; pixel_counter[3]     ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
+; 4.000 ; phase_cntr[1]             ; pixel_counter[3]     ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
+; 4.000 ; phase_cntr[0]             ; pixel_counter[3]     ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
+; 4.000 ; data_in_data_buffer_valid ; pixel_counter[0]     ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
+; 4.000 ; phase_cntr[1]             ; pixel_counter[0]     ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
+; 4.000 ; phase_cntr[0]             ; pixel_counter[0]     ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
+; 4.000 ; data_in_data_buffer_valid ; rgb_tmp[1]           ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
+; 4.000 ; phase_cntr[1]             ; rgb_tmp[1]           ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
+; 4.000 ; phase_cntr[0]             ; rgb_tmp[1]           ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
+; 4.000 ; phase_cntr[1]             ; rgb1[2]~reg0         ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
+; 4.000 ; data_in_data_buffer_valid ; rgb1[2]~reg0         ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
+; 4.000 ; phase_cntr[0]             ; rgb1[2]~reg0         ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
+; 4.000 ; phase_cntr[1]             ; rgb1[1]~reg0         ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
+; 4.000 ; data_in_data_buffer_valid ; rgb1[1]~reg0         ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
+; 4.000 ; phase_cntr[0]             ; rgb1[1]~reg0         ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
+; 4.000 ; phase_cntr[1]             ; rgb1[0]~reg0         ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
+; 4.000 ; data_in_data_buffer_valid ; rgb1[0]~reg0         ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
+; 4.000 ; phase_cntr[0]             ; rgb1[0]~reg0         ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
+; 4.000 ; phase_cntr[1]             ; al422_re~reg0        ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
+; 4.000 ; phase_cntr[0]             ; al422_re~reg0        ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
+; 5.800 ; in_data_buffer[0]         ; rgb_tmp[2]           ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; in_data_buffer[0]         ; rgb_tmp[0]           ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; pixel_counter[1]          ; pixel_counter[1]     ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; pixel_counter[3]          ; pixel_counter[1]     ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; pixel_counter[2]          ; pixel_counter[1]     ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; pixel_counter[0]          ; pixel_counter[1]     ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; pixel_counter[2]          ; pixel_counter[2]     ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; pixel_counter[1]          ; pixel_counter[2]     ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; pixel_counter[0]          ; pixel_counter[2]     ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; pixel_counter[3]          ; pixel_counter[3]     ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; pixel_counter[0]          ; pixel_counter[3]     ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; pixel_counter[2]          ; pixel_counter[3]     ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; pixel_counter[1]          ; pixel_counter[3]     ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; pixel_counter[0]          ; pixel_counter[0]     ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; pixel_counter[3]          ; pixel_counter[0]     ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; pixel_counter[2]          ; pixel_counter[0]     ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; pixel_counter[1]          ; pixel_counter[0]     ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; in_data_buffer[0]         ; rgb_tmp[1]           ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; rgb_tmp[2]                ; rgb1[2]~reg0         ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; rgb_tmp[1]                ; rgb1[1]~reg0         ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; rgb_tmp[0]                ; rgb1[0]~reg0         ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; out_data_valid            ; led_clk              ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 7.100      ;
+; 5.900 ; first_cycle_finished      ; out_data_valid       ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 7.200      ;
+; 6.000 ; phase_cntr[1]             ; phase_cntr[1]        ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 7.300      ;
+; 6.000 ; phase_cntr[0]             ; phase_cntr[1]        ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 7.300      ;
+; 6.000 ; phase_cntr[1]             ; phase_cntr[0]        ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 7.300      ;
+; 6.000 ; phase_cntr[0]             ; phase_cntr[0]        ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 7.300      ;
+; 6.000 ; phase_cntr[1]             ; out_data_valid       ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 7.300      ;
+; 6.000 ; data_in_data_buffer_valid ; out_data_valid       ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 7.300      ;
+; 6.000 ; phase_cntr[0]             ; out_data_valid       ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 7.300      ;
++-------+---------------------------+----------------------+--------------+-------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------+
+; Minimum Pulse Width: 'in_clk'                                                                                   ;
++--------+--------------+----------------+------------------+--------+------------+-------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock  ; Clock Edge ; Target                        ;
++--------+--------------+----------------+------------------+--------+------------+-------------------------------+
+; 6.000  ; 10.000       ; 4.000          ; High Pulse Width ; in_clk ; Rise       ; al422_re~reg0                 ;
+; 6.000  ; 10.000       ; 4.000          ; Low Pulse Width  ; in_clk ; Rise       ; al422_re~reg0                 ;
+; 6.000  ; 10.000       ; 4.000          ; High Pulse Width ; in_clk ; Rise       ; data_in_data_buffer_valid     ;
+; 6.000  ; 10.000       ; 4.000          ; Low Pulse Width  ; in_clk ; Rise       ; data_in_data_buffer_valid     ;
+; 6.000  ; 10.000       ; 4.000          ; High Pulse Width ; in_clk ; Rise       ; first_cycle_finished          ;
+; 6.000  ; 10.000       ; 4.000          ; Low Pulse Width  ; in_clk ; Rise       ; first_cycle_finished          ;
+; 6.000  ; 10.000       ; 4.000          ; High Pulse Width ; in_clk ; Rise       ; in_data_buffer[0]             ;
+; 6.000  ; 10.000       ; 4.000          ; Low Pulse Width  ; in_clk ; Rise       ; in_data_buffer[0]             ;
+; 6.000  ; 10.000       ; 4.000          ; High Pulse Width ; in_clk ; Rise       ; led_clk                       ;
+; 6.000  ; 10.000       ; 4.000          ; Low Pulse Width  ; in_clk ; Rise       ; led_clk                       ;
+; 6.000  ; 10.000       ; 4.000          ; High Pulse Width ; in_clk ; Rise       ; out_data_valid                ;
+; 6.000  ; 10.000       ; 4.000          ; Low Pulse Width  ; in_clk ; Rise       ; out_data_valid                ;
+; 6.000  ; 10.000       ; 4.000          ; High Pulse Width ; in_clk ; Rise       ; phase_cntr[0]                 ;
+; 6.000  ; 10.000       ; 4.000          ; Low Pulse Width  ; in_clk ; Rise       ; phase_cntr[0]                 ;
+; 6.000  ; 10.000       ; 4.000          ; High Pulse Width ; in_clk ; Rise       ; phase_cntr[1]                 ;
+; 6.000  ; 10.000       ; 4.000          ; Low Pulse Width  ; in_clk ; Rise       ; phase_cntr[1]                 ;
+; 6.000  ; 10.000       ; 4.000          ; High Pulse Width ; in_clk ; Rise       ; pixel_counter[0]              ;
+; 6.000  ; 10.000       ; 4.000          ; Low Pulse Width  ; in_clk ; Rise       ; pixel_counter[0]              ;
+; 6.000  ; 10.000       ; 4.000          ; High Pulse Width ; in_clk ; Rise       ; pixel_counter[1]              ;
+; 6.000  ; 10.000       ; 4.000          ; Low Pulse Width  ; in_clk ; Rise       ; pixel_counter[1]              ;
+; 6.000  ; 10.000       ; 4.000          ; High Pulse Width ; in_clk ; Rise       ; pixel_counter[2]              ;
+; 6.000  ; 10.000       ; 4.000          ; Low Pulse Width  ; in_clk ; Rise       ; pixel_counter[2]              ;
+; 6.000  ; 10.000       ; 4.000          ; High Pulse Width ; in_clk ; Rise       ; pixel_counter[3]              ;
+; 6.000  ; 10.000       ; 4.000          ; Low Pulse Width  ; in_clk ; Rise       ; pixel_counter[3]              ;
+; 6.000  ; 10.000       ; 4.000          ; High Pulse Width ; in_clk ; Rise       ; rgb1[0]~reg0                  ;
+; 6.000  ; 10.000       ; 4.000          ; Low Pulse Width  ; in_clk ; Rise       ; rgb1[0]~reg0                  ;
+; 6.000  ; 10.000       ; 4.000          ; High Pulse Width ; in_clk ; Rise       ; rgb1[1]~reg0                  ;
+; 6.000  ; 10.000       ; 4.000          ; Low Pulse Width  ; in_clk ; Rise       ; rgb1[1]~reg0                  ;
+; 6.000  ; 10.000       ; 4.000          ; High Pulse Width ; in_clk ; Rise       ; rgb1[2]~reg0                  ;
+; 6.000  ; 10.000       ; 4.000          ; Low Pulse Width  ; in_clk ; Rise       ; rgb1[2]~reg0                  ;
+; 6.000  ; 10.000       ; 4.000          ; High Pulse Width ; in_clk ; Rise       ; rgb_tmp[0]                    ;
+; 6.000  ; 10.000       ; 4.000          ; Low Pulse Width  ; in_clk ; Rise       ; rgb_tmp[0]                    ;
+; 6.000  ; 10.000       ; 4.000          ; High Pulse Width ; in_clk ; Rise       ; rgb_tmp[1]                    ;
+; 6.000  ; 10.000       ; 4.000          ; Low Pulse Width  ; in_clk ; Rise       ; rgb_tmp[1]                    ;
+; 6.000  ; 10.000       ; 4.000          ; High Pulse Width ; in_clk ; Rise       ; rgb_tmp[2]                    ;
+; 6.000  ; 10.000       ; 4.000          ; Low Pulse Width  ; in_clk ; Rise       ; rgb_tmp[2]                    ;
+; 10.000 ; 10.000       ; 0.000          ; High Pulse Width ; in_clk ; Rise       ; al422_re~reg0|clk             ;
+; 10.000 ; 10.000       ; 0.000          ; Low Pulse Width  ; in_clk ; Rise       ; al422_re~reg0|clk             ;
+; 10.000 ; 10.000       ; 0.000          ; High Pulse Width ; in_clk ; Rise       ; data_in_data_buffer_valid|clk ;
+; 10.000 ; 10.000       ; 0.000          ; Low Pulse Width  ; in_clk ; Rise       ; data_in_data_buffer_valid|clk ;
+; 10.000 ; 10.000       ; 0.000          ; High Pulse Width ; in_clk ; Rise       ; first_cycle_finished|clk      ;
+; 10.000 ; 10.000       ; 0.000          ; Low Pulse Width  ; in_clk ; Rise       ; first_cycle_finished|clk      ;
+; 10.000 ; 10.000       ; 0.000          ; High Pulse Width ; in_clk ; Rise       ; in_clk|dataout                ;
+; 10.000 ; 10.000       ; 0.000          ; Low Pulse Width  ; in_clk ; Rise       ; in_clk|dataout                ;
+; 10.000 ; 10.000       ; 0.000          ; High Pulse Width ; in_clk ; Rise       ; in_data_buffer[0]|clk         ;
+; 10.000 ; 10.000       ; 0.000          ; Low Pulse Width  ; in_clk ; Rise       ; in_data_buffer[0]|clk         ;
+; 10.000 ; 10.000       ; 0.000          ; High Pulse Width ; in_clk ; Rise       ; led_clk|clk                   ;
+; 10.000 ; 10.000       ; 0.000          ; Low Pulse Width  ; in_clk ; Rise       ; led_clk|clk                   ;
+; 10.000 ; 10.000       ; 0.000          ; High Pulse Width ; in_clk ; Rise       ; out_data_valid|clk            ;
+; 10.000 ; 10.000       ; 0.000          ; Low Pulse Width  ; in_clk ; Rise       ; out_data_valid|clk            ;
+; 10.000 ; 10.000       ; 0.000          ; High Pulse Width ; in_clk ; Rise       ; phase_cntr[0]|clk             ;
+; 10.000 ; 10.000       ; 0.000          ; Low Pulse Width  ; in_clk ; Rise       ; phase_cntr[0]|clk             ;
+; 10.000 ; 10.000       ; 0.000          ; High Pulse Width ; in_clk ; Rise       ; phase_cntr[1]|clk             ;
+; 10.000 ; 10.000       ; 0.000          ; Low Pulse Width  ; in_clk ; Rise       ; phase_cntr[1]|clk             ;
+; 10.000 ; 10.000       ; 0.000          ; High Pulse Width ; in_clk ; Rise       ; pixel_counter[0]|clk          ;
+; 10.000 ; 10.000       ; 0.000          ; Low Pulse Width  ; in_clk ; Rise       ; pixel_counter[0]|clk          ;
+; 10.000 ; 10.000       ; 0.000          ; High Pulse Width ; in_clk ; Rise       ; pixel_counter[1]|clk          ;
+; 10.000 ; 10.000       ; 0.000          ; Low Pulse Width  ; in_clk ; Rise       ; pixel_counter[1]|clk          ;
+; 10.000 ; 10.000       ; 0.000          ; High Pulse Width ; in_clk ; Rise       ; pixel_counter[2]|clk          ;
+; 10.000 ; 10.000       ; 0.000          ; Low Pulse Width  ; in_clk ; Rise       ; pixel_counter[2]|clk          ;
+; 10.000 ; 10.000       ; 0.000          ; High Pulse Width ; in_clk ; Rise       ; pixel_counter[3]|clk          ;
+; 10.000 ; 10.000       ; 0.000          ; Low Pulse Width  ; in_clk ; Rise       ; pixel_counter[3]|clk          ;
+; 10.000 ; 10.000       ; 0.000          ; High Pulse Width ; in_clk ; Rise       ; rgb1[0]~reg0|clk              ;
+; 10.000 ; 10.000       ; 0.000          ; Low Pulse Width  ; in_clk ; Rise       ; rgb1[0]~reg0|clk              ;
+; 10.000 ; 10.000       ; 0.000          ; High Pulse Width ; in_clk ; Rise       ; rgb1[1]~reg0|clk              ;
+; 10.000 ; 10.000       ; 0.000          ; Low Pulse Width  ; in_clk ; Rise       ; rgb1[1]~reg0|clk              ;
+; 10.000 ; 10.000       ; 0.000          ; High Pulse Width ; in_clk ; Rise       ; rgb1[2]~reg0|clk              ;
+; 10.000 ; 10.000       ; 0.000          ; Low Pulse Width  ; in_clk ; Rise       ; rgb1[2]~reg0|clk              ;
+; 10.000 ; 10.000       ; 0.000          ; High Pulse Width ; in_clk ; Rise       ; rgb_tmp[0]|clk                ;
+; 10.000 ; 10.000       ; 0.000          ; Low Pulse Width  ; in_clk ; Rise       ; rgb_tmp[0]|clk                ;
+; 10.000 ; 10.000       ; 0.000          ; High Pulse Width ; in_clk ; Rise       ; rgb_tmp[1]|clk                ;
+; 10.000 ; 10.000       ; 0.000          ; Low Pulse Width  ; in_clk ; Rise       ; rgb_tmp[1]|clk                ;
+; 10.000 ; 10.000       ; 0.000          ; High Pulse Width ; in_clk ; Rise       ; rgb_tmp[2]|clk                ;
+; 10.000 ; 10.000       ; 0.000          ; Low Pulse Width  ; in_clk ; Rise       ; rgb_tmp[2]|clk                ;
++--------+--------------+----------------+------------------+--------+------------+-------------------------------+
+
+
++-------------------------------------------------------------------------+
+; Setup Times                                                             ;
++-------------+------------+-------+-------+------------+-----------------+
+; Data Port   ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-------------+------------+-------+-------+------------+-----------------+
+; in_data[*]  ; in_clk     ; 6.200 ; 6.200 ; Rise       ; in_clk          ;
+;  in_data[0] ; in_clk     ; 6.200 ; 6.200 ; Rise       ; in_clk          ;
++-------------+------------+-------+-------+------------+-----------------+
+
+
++---------------------------------------------------------------------------+
+; Hold Times                                                                ;
++-------------+------------+--------+--------+------------+-----------------+
+; Data Port   ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-------------+------------+--------+--------+------------+-----------------+
+; in_data[*]  ; in_clk     ; -2.000 ; -2.000 ; Rise       ; in_clk          ;
+;  in_data[0] ; in_clk     ; -2.000 ; -2.000 ; Rise       ; in_clk          ;
++-------------+------------+--------+--------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Clock to Output Times                                                   ;
++-------------+------------+-------+-------+------------+-----------------+
+; Data Port   ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-------------+------------+-------+-------+------------+-----------------+
+; al422_re    ; in_clk     ; 7.000 ; 7.000 ; Rise       ; in_clk          ;
+; led_clk_out ; in_clk     ; 7.000 ; 7.000 ; Rise       ; in_clk          ;
+; rgb1[*]     ; in_clk     ; 7.000 ; 7.000 ; Rise       ; in_clk          ;
+;  rgb1[0]    ; in_clk     ; 7.000 ; 7.000 ; Rise       ; in_clk          ;
+;  rgb1[1]    ; in_clk     ; 7.000 ; 7.000 ; Rise       ; in_clk          ;
+;  rgb1[2]    ; in_clk     ; 7.000 ; 7.000 ; Rise       ; in_clk          ;
++-------------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                           ;
++-------------+------------+-------+-------+------------+-----------------+
+; Data Port   ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-------------+------------+-------+-------+------------+-----------------+
+; al422_re    ; in_clk     ; 7.000 ; 7.000 ; Rise       ; in_clk          ;
+; led_clk_out ; in_clk     ; 7.000 ; 7.000 ; Rise       ; in_clk          ;
+; rgb1[*]     ; in_clk     ; 7.000 ; 7.000 ; Rise       ; in_clk          ;
+;  rgb1[0]    ; in_clk     ; 7.000 ; 7.000 ; Rise       ; in_clk          ;
+;  rgb1[1]    ; in_clk     ; 7.000 ; 7.000 ; Rise       ; in_clk          ;
+;  rgb1[2]    ; in_clk     ; 7.000 ; 7.000 ; Rise       ; in_clk          ;
++-------------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------+
+; Setup Transfers                                                   ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; in_clk     ; in_clk   ; 79       ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-------------------------------------------------------------------+
+; Hold Transfers                                                    ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; in_clk     ; in_clk   ; 79       ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths                            ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 2     ; 2    ;
+; Unconstrained Input Port Paths  ; 19    ; 19   ;
+; Unconstrained Output Ports      ; 5     ; 5    ;
+; Unconstrained Output Port Paths ; 5     ; 5    ;
++---------------------------------+-------+------+
+
+
++------------------------------------+
+; TimeQuest Timing Analyzer Messages ;
++------------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+    Info: Processing started: Mon Jan 01 21:34:50 2018
+Info: Command: quartus_sta al422_bam -c al422_bam
+Info: qsta_default_script.tcl version: #1
+Info (306004): Started post-fitting delay annotation
+Info (306005): Delay annotation completed successfully
+Warning (335095): TimeQuest Timing Analyzer does not support the analysis of latches as synchronous elements for the currently selected device family.
+Info (332104): Reading SDC File: 'al422_bam.sdc'
+Warning (332174): Ignored filter at al422_bam.sdc(38): in_data could not be matched with a port
+Warning (332049): Ignored set_input_delay at al422_bam.sdc(38): Argument <targets> is an empty collection
+    Info (332050): set_input_delay -clock "in_clk" -max 5ns [get_ports {in_data}] 
+Warning (332049): Ignored set_input_delay at al422_bam.sdc(39): Argument <targets> is an empty collection
+    Info (332050): set_input_delay -clock "in_clk" -min 4.000ns [get_ports {in_data}] 
+Warning (332049): Ignored set_input_delay at al422_bam.sdc(40): Positional argument: object_list targets with value [get_ports {al422_nrst}] contains no input ports
+    Info (332050): set_input_delay -clock "in_clk" -max 5ns [get_ports {al422_nrst}] 
+Warning (332049): Ignored set_input_delay at al422_bam.sdc(41): Positional argument: object_list targets with value [get_ports {al422_nrst}] contains no input ports
+    Info (332050): set_input_delay -clock "in_clk" -min 5.000ns [get_ports {al422_nrst}] 
+Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Info (332146): Worst-case setup slack is 9.800
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     9.800         0.000 in_clk 
+Info (332146): Worst-case hold slack is 3.800
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     3.800         0.000 in_clk 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is 6.000
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     6.000         0.000 in_clk 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info (144001): Generated suppressed messages file P:/altera/al422-bam/output_files/al422_bam.sta.smsg
+Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 6 warnings
+    Info: Peak virtual memory: 369 megabytes
+    Info: Processing ended: Mon Jan 01 21:34:51 2018
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:00
+
+
++-----------------------------------------------+
+; TimeQuest Timing Analyzer Suppressed Messages ;
++-----------------------------------------------+
+The suppressed messages can be found in P:/altera/al422-bam/output_files/al422_bam.sta.smsg.
+
+

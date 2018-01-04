@@ -1,0 +1,45 @@
+m255
+K3
+13
+cModel Technology
+Z0 dP:\altera\al422-bam\simulation\modelsim
+val422_bam
+INg>hc[U8KG[lGR<HidM4h2
+V@zXo6mP^AcS=nj=<:m?Z^2
+Z1 dP:\altera\al422-bam\simulation\modelsim
+w1514831684
+8P:/altera/al422-bam/al422_bam.v
+FP:/altera/al422-bam/al422_bam.v
+L0 34
+Z2 OV;L;10.1d;51
+r1
+31
+Z3 o-vlog01compat -work work -O0
+!i10b 1
+!s100 T1neCZa32e`NMIhZC9[kk1
+!s85 0
+!s108 1514831708.256000
+!s107 P:/altera/al422-bam/al422_bam.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+P:/altera/al422-bam|P:/altera/al422-bam/al422_bam.v|
+!s101 -O0
+Z4 !s92 -vlog01compat -work work +incdir+P:/altera/al422-bam -O0
+val422_bam_vlg_tst
+!i10b 1
+!s100 NDMZCO=?LHTXB3W[B]4lA3
+I0mn?SHJ<EMNA8^cND`bXI0
+V`B70:nBLb@:bK1@eTKh2Y2
+R1
+w1514831244
+8P:/altera/al422-bam/al422_bam_tb.v
+FP:/altera/al422-bam/al422_bam_tb.v
+L0 2
+R2
+r1
+!s85 0
+31
+!s108 1514831708.300000
+!s107 P:/altera/al422-bam/al422_bam_tb.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+P:/altera/al422-bam|P:/altera/al422-bam/al422_bam_tb.v|
+!s101 -O0
+R3
+R4
