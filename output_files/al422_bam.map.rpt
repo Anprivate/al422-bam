@@ -1,5 +1,5 @@
 Analysis & Synthesis report for al422_bam
-Mon Jan 01 21:34:48 2018
+Wed Jan 10 18:41:07 2018
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -16,8 +16,13 @@ Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edit
   8. Registers Removed During Synthesis
   9. Removed Registers Triggering Further Register Optimizations
  10. Parameter Settings for User Entity Instance: Top-level Entity: |al422_bam
- 11. Analysis & Synthesis Messages
- 12. Analysis & Synthesis Suppressed Messages
+ 11. Parameter Settings for User Entity Instance: al422_bam_first_stage:first_stage
+ 12. Parameter Settings for User Entity Instance: al422_bam_oe_processor:oe_processor
+ 13. Parameter Settings for Inferred Entity Instance: al422_bam_oe_processor:oe_processor|lpm_add_sub:Add3
+ 14. Port Connectivity Checks: "al422_bam_oe_processor:oe_processor"
+ 15. Port Connectivity Checks: "al422_bam_first_stage:first_stage"
+ 16. Analysis & Synthesis Messages
+ 17. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -43,13 +48,13 @@ applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +-----------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status ; Successful - Mon Jan 01 21:34:48 2018           ;
+; Analysis & Synthesis Status ; Successful - Wed Jan 10 18:41:07 2018           ;
 ; Quartus II 64-Bit Version   ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name               ; al422_bam                                       ;
 ; Top-level Entity Name       ; al422_bam                                       ;
 ; Family                      ; MAX3000A                                        ;
-; Total macrocells            ; 29                                              ;
-; Total pins                  ; 26                                              ;
+; Total macrocells            ; 47                                              ;
+; Total pins                  ; 29                                              ;
 +-----------------------------+-------------------------------------------------+
 
 
@@ -128,13 +133,27 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+--------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                  ;
-+----------------------------------+-----------------+------------------------+---------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path    ; Library ;
-+----------------------------------+-----------------+------------------------+---------------------------------+---------+
-; al422_bam.v                      ; yes             ; User Verilog HDL File  ; P:/altera/al422-bam/al422_bam.v ;         ;
-+----------------------------------+-----------------+------------------------+---------------------------------+---------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                            ;
++----------------------------------+-----------------+------------------------+---------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                                              ; Library ;
++----------------------------------+-----------------+------------------------+---------------------------------------------------------------------------+---------+
+; al422_bam.v                      ; yes             ; User Verilog HDL File  ; D:/altera/al422-bam/al422_bam.v                                           ;         ;
+; al422_bam_first_stage.v          ; yes             ; User Verilog HDL File  ; D:/altera/al422-bam/al422_bam_first_stage.v                               ;         ;
+; al422_bam_oe_processor.v         ; yes             ; User Verilog HDL File  ; D:/altera/al422-bam/al422_bam_oe_processor.v                              ;         ;
+; lpm_add_sub.tdf                  ; yes             ; Megafunction           ; d:/altera/13.0sp1/quartus/libraries/megafunctions/lpm_add_sub.tdf         ;         ;
+; addcore.inc                      ; yes             ; Megafunction           ; d:/altera/13.0sp1/quartus/libraries/megafunctions/addcore.inc             ;         ;
+; look_add.inc                     ; yes             ; Megafunction           ; d:/altera/13.0sp1/quartus/libraries/megafunctions/look_add.inc            ;         ;
+; bypassff.inc                     ; yes             ; Megafunction           ; d:/altera/13.0sp1/quartus/libraries/megafunctions/bypassff.inc            ;         ;
+; altshift.inc                     ; yes             ; Megafunction           ; d:/altera/13.0sp1/quartus/libraries/megafunctions/altshift.inc            ;         ;
+; alt_stratix_add_sub.inc          ; yes             ; Megafunction           ; d:/altera/13.0sp1/quartus/libraries/megafunctions/alt_stratix_add_sub.inc ;         ;
+; aglobal130.inc                   ; yes             ; Megafunction           ; d:/altera/13.0sp1/quartus/libraries/megafunctions/aglobal130.inc          ;         ;
+; addcore.tdf                      ; yes             ; Megafunction           ; d:/altera/13.0sp1/quartus/libraries/megafunctions/addcore.tdf             ;         ;
+; a_csnbuffer.inc                  ; yes             ; Megafunction           ; d:/altera/13.0sp1/quartus/libraries/megafunctions/a_csnbuffer.inc         ;         ;
+; a_csnbuffer.tdf                  ; yes             ; Megafunction           ; d:/altera/13.0sp1/quartus/libraries/megafunctions/a_csnbuffer.tdf         ;         ;
+; look_add.tdf                     ; yes             ; Megafunction           ; d:/altera/13.0sp1/quartus/libraries/megafunctions/look_add.tdf            ;         ;
+; altshift.tdf                     ; yes             ; Megafunction           ; d:/altera/13.0sp1/quartus/libraries/megafunctions/altshift.tdf            ;         ;
++----------------------------------+-----------------+------------------------+---------------------------------------------------------------------------+---------+
 
 
 +---------------------------------------------+
@@ -142,57 +161,136 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------+----------------------+
 ; Resource             ; Usage                ;
 +----------------------+----------------------+
-; Logic cells          ; 29                   ;
-; Total registers      ; 18                   ;
-; I/O pins             ; 26                   ;
+; Logic cells          ; 47                   ;
+; Total registers      ; 36                   ;
+; I/O pins             ; 29                   ;
+; Parallel expanders   ; 1                    ;
 ; Maximum fan-out node ; in_clk               ;
-; Maximum fan-out      ; 18                   ;
-; Total fan-out        ; 125                  ;
-; Average fan-out      ; 2.27                 ;
+; Maximum fan-out      ; 36                   ;
+; Total fan-out        ; 356                  ;
+; Average fan-out      ; 4.68                 ;
 +----------------------+----------------------+
 
 
-+-------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                 ;
-+----------------------------+------------+------+---------------------+--------------+
-; Compilation Hierarchy Node ; Macrocells ; Pins ; Full Hierarchy Name ; Library Name ;
-+----------------------------+------------+------+---------------------+--------------+
-; |al422_bam                 ; 29         ; 26   ; |al422_bam          ; work         ;
-+----------------------------+------------+------+---------------------+--------------+
++------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                          ;
++------------------------------------------+------------+------+------------------------------------------------+--------------+
+; Compilation Hierarchy Node               ; Macrocells ; Pins ; Full Hierarchy Name                            ; Library Name ;
++------------------------------------------+------------+------+------------------------------------------------+--------------+
+; |al422_bam                               ; 47         ; 29   ; |al422_bam                                     ; work         ;
+;    |al422_bam_first_stage:first_stage|   ; 19         ; 0    ; |al422_bam|al422_bam_first_stage:first_stage   ; work         ;
+;    |al422_bam_oe_processor:oe_processor| ; 19         ; 0    ; |al422_bam|al422_bam_oe_processor:oe_processor ; work         ;
++------------------------------------------+------------+------+------------------------------------------------+--------------+
 
 
-+---------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                              ;
-+----------------------------------------+----------------------------------------+
-; Register name                          ; Reason for Removal                     ;
-+----------------------------------------+----------------------------------------+
-; bit_counter[1,2]                       ; Stuck at GND due to stuck port data_in ;
-; al422_nrst~reg0                        ; Stuck at VCC due to stuck port data_in ;
-; bit_counter[0]                         ; Stuck at GND due to stuck port data_in ;
-; in_data_buffer[1..7]                   ; Lost fanout                            ;
-; Total Number of Removed Registers = 11 ;                                        ;
-+----------------------------------------+----------------------------------------+
++---------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                ;
++----------------------------------------------------------+----------------------------------------+
+; Register name                                            ; Reason for Removal                     ;
++----------------------------------------------------------+----------------------------------------+
+; bit_counter[1,2]                                         ; Stuck at GND due to stuck port data_in ;
+; bit_counter[0]                                           ; Stuck at VCC due to stuck port data_in ;
+; al422_bam_first_stage:first_stage|in_data_buffer[0,2..7] ; Lost fanout                            ;
+; al422_bam_first_stage:first_stage|rgb_out2[0..2]         ; Stuck at GND due to stuck port data_in ;
+; Total Number of Removed Registers = 13                   ;                                        ;
++----------------------------------------------------------+----------------------------------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------+
-; Removed Registers Triggering Further Register Optimizations                                                              ;
-+----------------+---------------------------+-----------------------------------------------------------------------------+
-; Register name  ; Reason for Removal        ; Registers Removed due to This Register                                      ;
-+----------------+---------------------------+-----------------------------------------------------------------------------+
-; bit_counter[2] ; Stuck at GND              ; in_data_buffer[7], in_data_buffer[6], in_data_buffer[5], in_data_buffer[4], ;
-;                ; due to stuck port data_in ; in_data_buffer[3], in_data_buffer[2], in_data_buffer[1]                     ;
-+----------------+---------------------------+-----------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                       ;
++----------------+---------------------------+------------------------------------------------------+
+; Register name  ; Reason for Removal        ; Registers Removed due to This Register               ;
++----------------+---------------------------+------------------------------------------------------+
+; bit_counter[2] ; Stuck at GND              ; al422_bam_first_stage:first_stage|in_data_buffer[7], ;
+;                ; due to stuck port data_in ; al422_bam_first_stage:first_stage|in_data_buffer[6], ;
+;                ;                           ; al422_bam_first_stage:first_stage|in_data_buffer[5], ;
+;                ;                           ; al422_bam_first_stage:first_stage|in_data_buffer[4], ;
+;                ;                           ; al422_bam_first_stage:first_stage|in_data_buffer[3], ;
+;                ;                           ; al422_bam_first_stage:first_stage|in_data_buffer[2]  ;
++----------------+---------------------------+------------------------------------------------------+
 
 
 +---------------------------------------------------------------------------+
 ; Parameter Settings for User Entity Instance: Top-level Entity: |al422_bam ;
-+---------------------+-------+---------------------------------------------+
-; Parameter Name      ; Value ; Type                                        ;
-+---------------------+-------+---------------------------------------------+
-; PIXEL_COUNTER_WIDTH ; 3     ; Signed Integer                              ;
-; BIT_COUNTER_WIDTH   ; 3     ; Signed Integer                              ;
-+---------------------+-------+---------------------------------------------+
++-------------------+-------+-----------------------------------------------+
+; Parameter Name    ; Value ; Type                                          ;
++-------------------+-------+-----------------------------------------------+
+; BIT_COUNTER_WIDTH ; 3     ; Signed Integer                                ;
++-------------------+-------+-----------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: al422_bam_first_stage:first_stage ;
++---------------------+-------+--------------------------------------------------+
+; Parameter Name      ; Value ; Type                                             ;
++---------------------+-------+--------------------------------------------------+
+; PIXEL_COUNT         ; 8     ; Signed Integer                                   ;
+; PIXEL_COUNTER_WIDTH ; 3     ; Signed Integer                                   ;
++---------------------+-------+--------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: al422_bam_oe_processor:oe_processor ;
++-------------------------+-------+------------------------------------------------+
+; Parameter Name          ; Value ; Type                                           ;
++-------------------------+-------+------------------------------------------------+
+; OE_PRESCALER            ; 4     ; Signed Integer                                 ;
+; OE_PREDELAY             ; 4     ; Signed Integer                                 ;
+; OE_POSTDELAY            ; 4     ; Signed Integer                                 ;
+; PRESCALER_COUNTER_WIDTH ; 2     ; Signed Integer                                 ;
+; PREDELAY_COUNTER_WIDTH  ; 2     ; Signed Integer                                 ;
+; POSTDELAY_COUNTER_WIDTH ; 2     ; Signed Integer                                 ;
++-------------------------+-------+------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: al422_bam_oe_processor:oe_processor|lpm_add_sub:Add3 ;
++------------------------+-------------+----------------------------------------------------------------+
+; Parameter Name         ; Value       ; Type                                                           ;
++------------------------+-------------+----------------------------------------------------------------+
+; LPM_WIDTH              ; 8           ; Untyped                                                        ;
+; LPM_REPRESENTATION     ; UNSIGNED    ; Untyped                                                        ;
+; LPM_DIRECTION          ; ADD         ; Untyped                                                        ;
+; ONE_INPUT_IS_CONSTANT  ; YES         ; Untyped                                                        ;
+; LPM_PIPELINE           ; 0           ; Untyped                                                        ;
+; MAXIMIZE_SPEED         ; 5           ; Untyped                                                        ;
+; REGISTERED_AT_END      ; 0           ; Untyped                                                        ;
+; OPTIMIZE_FOR_SPEED     ; 5           ; Untyped                                                        ;
+; USE_CS_BUFFERS         ; 1           ; Untyped                                                        ;
+; CARRY_CHAIN            ; MANUAL      ; Untyped                                                        ;
+; CARRY_CHAIN_LENGTH     ; 48          ; CARRY_CHAIN_LENGTH                                             ;
+; DEVICE_FAMILY          ; MAX3000A    ; Untyped                                                        ;
+; USE_WYS                ; OFF         ; Untyped                                                        ;
+; STYLE                  ; FAST        ; Untyped                                                        ;
+; CBXI_PARAMETER         ; add_sub_bch ; Untyped                                                        ;
+; AUTO_CARRY_CHAINS      ; ON          ; AUTO_CARRY                                                     ;
+; IGNORE_CARRY_BUFFERS   ; OFF         ; IGNORE_CARRY                                                   ;
+; AUTO_CASCADE_CHAINS    ; ON          ; AUTO_CASCADE                                                   ;
+; IGNORE_CASCADE_BUFFERS ; OFF         ; IGNORE_CASCADE                                                 ;
++------------------------+-------------+----------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "al422_bam_oe_processor:oe_processor"                                                          ;
++----------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port           ; Type   ; Severity ; Details                                                                             ;
++----------------+--------+----------+-------------------------------------------------------------------------------------+
+; module_is_busy ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++----------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "al422_bam_first_stage:first_stage"                                                            ;
++----------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port           ; Type   ; Severity ; Details                                                                             ;
++----------------+--------+----------+-------------------------------------------------------------------------------------+
+; module_is_busy ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; row_data_ready ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++----------------+--------+----------+-------------------------------------------------------------------------------------+
 
 
 +-------------------------------+
@@ -201,31 +299,55 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Mon Jan 01 21:34:47 2018
+    Info: Processing started: Wed Jan 10 18:41:05 2018
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off al422_bam -c al422_bam
 Info (12021): Found 1 design units, including 1 entities, in source file al422_bam_tb.v
     Info (12023): Found entity 1: al422_bam_vlg_tst
 Info (12021): Found 1 design units, including 1 entities, in source file al422_bam.v
     Info (12023): Found entity 1: al422_bam
+Info (12021): Found 1 design units, including 1 entities, in source file al422_bam_first_stage.v
+    Info (12023): Found entity 1: al422_bam_first_stage
+Info (12021): Found 1 design units, including 1 entities, in source file al422_bam_oe_processor.v
+    Info (12023): Found entity 1: al422_bam_oe_processor
 Info (12127): Elaborating entity "al422_bam" for the top level hierarchy
-Warning (10858): Verilog HDL warning at al422_bam.v(47): object led_oe used but never assigned
-Warning (10858): Verilog HDL warning at al422_bam.v(48): object led_lat used but never assigned
-Warning (10036): Verilog HDL or VHDL warning at al422_bam.v(130): object "data_in_panel_row_ready" assigned a value but never read
-Warning (10230): Verilog HDL assignment warning at al422_bam.v(103): truncated value with size 32 to match size of target (2)
-Warning (10230): Verilog HDL assignment warning at al422_bam.v(128): truncated value with size 32 to match size of target (4)
-Warning (10240): Verilog HDL Always Construct warning at al422_bam.v(152): inferring latch(es) for variable "rgb2", which holds its previous value in one or more paths through the always construct
-Warning (10030): Net "led_oe" at al422_bam.v(47) has no driver or initial value, using a default initial value '0'
-Warning (10030): Net "led_lat" at al422_bam.v(48) has no driver or initial value, using a default initial value '0'
-Warning (10034): Output port "led_row" at al422_bam.v(42) has no driver
-Info (10041): Inferred latch for "rgb2[0]" at al422_bam.v(152)
-Info (10041): Inferred latch for "rgb2[1]" at al422_bam.v(152)
-Info (10041): Inferred latch for "rgb2[2]" at al422_bam.v(152)
-Warning (14025): LATCH primitive "rgb2[1]$latch" is permanently disabled
-Warning (14025): LATCH primitive "rgb2[2]$latch" is permanently disabled
-Warning (14025): LATCH primitive "rgb2[0]$latch" is permanently disabled
+Warning (10858): Verilog HDL warning at al422_bam.v(55): object led_lat used but never assigned
+Warning (10230): Verilog HDL assignment warning at al422_bam.v(99): truncated value with size 32 to match size of target (8)
+Warning (10030): Net "led_lat" at al422_bam.v(55) has no driver or initial value, using a default initial value '0'
+Warning (10034): Output port "led_row" at al422_bam.v(49) has no driver
+Info (12128): Elaborating entity "al422_bam_first_stage" for hierarchy "al422_bam_first_stage:first_stage"
+Warning (10230): Verilog HDL assignment warning at al422_bam_first_stage.v(74): truncated value with size 32 to match size of target (2)
+Warning (10230): Verilog HDL assignment warning at al422_bam_first_stage.v(110): truncated value with size 32 to match size of target (3)
+Info (12128): Elaborating entity "al422_bam_oe_processor" for hierarchy "al422_bam_oe_processor:oe_processor"
+Warning (10230): Verilog HDL assignment warning at al422_bam_oe_processor.v(46): truncated value with size 32 to match size of target (2)
+Warning (10230): Verilog HDL assignment warning at al422_bam_oe_processor.v(50): truncated value with size 32 to match size of target (2)
+Warning (10230): Verilog HDL assignment warning at al422_bam_oe_processor.v(53): truncated value with size 32 to match size of target (2)
+Warning (10230): Verilog HDL assignment warning at al422_bam_oe_processor.v(56): truncated value with size 32 to match size of target (2)
+Warning (10230): Verilog HDL assignment warning at al422_bam_oe_processor.v(60): truncated value with size 32 to match size of target (2)
+Warning (10230): Verilog HDL assignment warning at al422_bam_oe_processor.v(63): truncated value with size 32 to match size of target (2)
+Warning (10230): Verilog HDL assignment warning at al422_bam_oe_processor.v(67): truncated value with size 32 to match size of target (2)
+Warning (10230): Verilog HDL assignment warning at al422_bam_oe_processor.v(69): truncated value with size 32 to match size of target (2)
+Warning (10230): Verilog HDL assignment warning at al422_bam_oe_processor.v(79): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at al422_bam_oe_processor.v(83): truncated value with size 32 to match size of target (2)
+Warning (10230): Verilog HDL assignment warning at al422_bam_oe_processor.v(86): truncated value with size 32 to match size of target (2)
+Warning (10230): Verilog HDL assignment warning at al422_bam_oe_processor.v(89): truncated value with size 32 to match size of target (2)
+Info (278001): Inferred 1 megafunctions from design logic
+    Info (278002): Inferred adder/subtractor megafunction ("lpm_add_sub") from the following logic: "al422_bam_oe_processor:oe_processor|Add3"
+Info (12130): Elaborated megafunction instantiation "al422_bam_oe_processor:oe_processor|lpm_add_sub:Add3"
+Info (12133): Instantiated megafunction "al422_bam_oe_processor:oe_processor|lpm_add_sub:Add3" with the following parameter:
+    Info (12134): Parameter "LPM_WIDTH" = "8"
+    Info (12134): Parameter "LPM_DIRECTION" = "ADD"
+    Info (12134): Parameter "LPM_REPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "ONE_INPUT_IS_CONSTANT" = "YES"
+Info (12131): Elaborated megafunction instantiation "al422_bam_oe_processor:oe_processor|lpm_add_sub:Add3|addcore:adder[0]", which is child of megafunction instantiation "al422_bam_oe_processor:oe_processor|lpm_add_sub:Add3"
+Info (12131): Elaborated megafunction instantiation "al422_bam_oe_processor:oe_processor|lpm_add_sub:Add3|addcore:adder[0]|a_csnbuffer:oflow_node", which is child of megafunction instantiation "al422_bam_oe_processor:oe_processor|lpm_add_sub:Add3"
+Info (12131): Elaborated megafunction instantiation "al422_bam_oe_processor:oe_processor|lpm_add_sub:Add3|addcore:adder[0]|a_csnbuffer:result_node", which is child of megafunction instantiation "al422_bam_oe_processor:oe_processor|lpm_add_sub:Add3"
+Info (12131): Elaborated megafunction instantiation "al422_bam_oe_processor:oe_processor|lpm_add_sub:Add3|look_add:look_ahead_unit", which is child of megafunction instantiation "al422_bam_oe_processor:oe_processor|lpm_add_sub:Add3"
+Info (12131): Elaborated megafunction instantiation "al422_bam_oe_processor:oe_processor|lpm_add_sub:Add3|altshift:result_ext_latency_ffs", which is child of megafunction instantiation "al422_bam_oe_processor:oe_processor|lpm_add_sub:Add3"
+Info (12131): Elaborated megafunction instantiation "al422_bam_oe_processor:oe_processor|lpm_add_sub:Add3|altshift:carry_ext_latency_ffs", which is child of megafunction instantiation "al422_bam_oe_processor:oe_processor|lpm_add_sub:Add3"
+Info (13014): Ignored 8 buffer(s)
+    Info (13019): Ignored 8 SOFT buffer(s)
+Info (13000): Registers with preset signals will power-up high
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "al422_nrst" is stuck at VCC
-    Warning (13410): Pin "led_oe_out" is stuck at VCC
     Warning (13410): Pin "led_lat_out" is stuck at GND
     Warning (13410): Pin "led_row[0]" is stuck at GND
     Warning (13410): Pin "led_row[1]" is stuck at GND
@@ -240,28 +362,28 @@ Info (280013): Promoted pin-driven signal(s) to global signal
     Info (280015): Promoted clear signal driven by pin "in_nrst" to global clear signal
 Info (17049): 7 registers lost all their fanouts during netlist optimizations.
 Warning (21074): Design contains 7 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "in_data[1]"
+    Warning (15610): No output dependent on input pin "in_data[0]"
     Warning (15610): No output dependent on input pin "in_data[2]"
     Warning (15610): No output dependent on input pin "in_data[3]"
     Warning (15610): No output dependent on input pin "in_data[4]"
     Warning (15610): No output dependent on input pin "in_data[5]"
     Warning (15610): No output dependent on input pin "in_data[6]"
     Warning (15610): No output dependent on input pin "in_data[7]"
-Info (21057): Implemented 55 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 10 input pins
+Info (21057): Implemented 76 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 13 input pins
     Info (21059): Implemented 16 output pins
-    Info (21063): Implemented 29 macrocells
-Info (144001): Generated suppressed messages file P:/altera/al422-bam/output_files/al422_bam.map.smsg
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 32 warnings
-    Info: Peak virtual memory: 409 megabytes
-    Info: Processing ended: Mon Jan 01 21:34:48 2018
-    Info: Elapsed time: 00:00:01
-    Info: Total CPU time (on all processors): 00:00:00
+    Info (21063): Implemented 47 macrocells
+Info (144001): Generated suppressed messages file D:/altera/al422-bam/output_files/al422_bam.map.smsg
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 36 warnings
+    Info: Peak virtual memory: 413 megabytes
+    Info: Processing ended: Wed Jan 10 18:41:07 2018
+    Info: Elapsed time: 00:00:02
+    Info: Total CPU time (on all processors): 00:00:01
 
 
 +------------------------------------------+
 ; Analysis & Synthesis Suppressed Messages ;
 +------------------------------------------+
-The suppressed messages can be found in P:/altera/al422-bam/output_files/al422_bam.map.smsg.
+The suppressed messages can be found in D:/altera/al422-bam/output_files/al422_bam.map.smsg.
 
 

@@ -28,26 +28,36 @@
 // bits in PWM counter. Maximum is 8 bits for TRUECOLOR and 5 bits for HIGHCOLOR
 `define PWM_COUNTER_WIDTH	2
 
+`define OE_PRESCALER	4
+`define OE_PREDELAY	4
+`define OE_POSTDELAY	4 
+
 /***************************************************************************************************/
 // main modules body - DON'T MODIFY ANYTHING BELOW THIS LINE!!!
 /***************************************************************************************************/
 module al422_bam (
 	input wire in_clk, in_nrst,
+	input wire first_stage_module_start,
+	input wire first_stage_address_reset, 
+	input wire oe_processor_start,
 	// al422 pins
 	input wire [7:0] in_data,
-	output reg al422_nrst, al422_re,
+	output wire al422_nrst_out, al422_re_out,
 	// led outpur pins HUB75E
 	output wire led_clk_out, led_oe_out, led_lat_out,
 	// up to 1/32 scan
 	output reg [4:0] led_row,
 	// up to 2 RGB outputs
-	output reg [2:0] rgb1, rgb2
+	output wire [2:0] rgb1, rgb2
 );
 
-	reg led_oe;
-	reg led_lat;
-	reg led_clk;
+	wire led_oe;
+	wire led_lat;
+	wire led_clk;
 	
+	parameter BIT_COUNTER_WIDTH = 3;
+	reg [BIT_COUNTER_WIDTH - 1:0] bit_counter;
+
 `ifdef LED_LAT_ACTIVE_LOW
 	assign led_lat_out = ~led_lat;
 `else
@@ -67,126 +77,38 @@ module al422_bam (
 	assign led_clk_out = led_clk;
 `endif
 	
-	// in_data_buffer
-	reg [7:0] in_data_buffer;
-	reg data_in_data_buffer_valid;
-	always @(posedge in_clk or negedge in_nrst)
-		if (~in_nrst)
-		begin
-			data_in_data_buffer_valid <= 1'b0;
-			in_data_buffer <= 8'h00;
-		end
-		else
-		begin
-			data_in_data_buffer_valid <= 1'b1;
-			in_data_buffer <= in_data;
-		end
-
-	reg [1:0] phase_cntr;
-	wire [2:0] phase_reg;
+	wire first_stage_is_busy;
+	wire first_stage_data_ready;
 	
-	assign phase_reg[0] = (phase_cntr == 2'h0);
-	assign phase_reg[1] = (phase_cntr == 2'h1);
-	assign phase_reg[2] = (phase_cntr == 2'h2);
+	al422_bam_first_stage #(`PIXEL_COUNT) first_stage(
+		.in_nrst(in_nrst), .in_clk(in_clk),
+		.in_data(in_data),
+		.bit_counter(bit_counter), 
+		.module_start(first_stage_module_start),
+		.from_zero_address(first_stage_address_reset),
+		.rgb_out1(rgb1), .rgb_out2(rgb2),
+		.led_clk(led_clk),
+		.al422_re(al422_re_out), .al422_nrst(al422_nrst_out),
+		.module_is_busy(first_stage_is_busy),
+		.row_data_ready(first_stage_data_ready)
+	);
 	
-	wire last_phase;
-	assign last_phase = phase_reg[2];
+	wire oe_processor_is_busy;
+	wire [7:0] bit_position;
 	
-	always @(posedge in_clk or negedge in_nrst)
-		if (~in_nrst)
-			phase_cntr <= 0;
-		else
-			if (data_in_data_buffer_valid)
-				if (last_phase)
-					phase_cntr <= 0;
-				else
-					phase_cntr <= phase_cntr + 1;
-
-	reg first_cycle_finished;
-	always @(posedge in_clk or negedge in_nrst)
-		if (~in_nrst)
-			first_cycle_finished <= 1'b0;
-		else
-			if (last_phase)
-				first_cycle_finished <= 1'b1;
+	assign bit_position = (1 << bit_counter);
 	
-	// pixel counter
-	parameter PIXEL_COUNTER_WIDTH = $clog2(`PIXEL_COUNT);
-	reg [PIXEL_COUNTER_WIDTH:0] pixel_counter;
-
-	wire last_pixel;
-	assign last_pixel = (pixel_counter == (`PIXEL_COUNT + 2));
+	al422_bam_oe_processor #(`OE_PRESCALER, `OE_PREDELAY, `OE_POSTDELAY) oe_processor ( 
+		.in_nrst(in_nrst), .in_clk(in_clk),
+		.module_start(oe_processor_start),
+		.oe_duration(bit_position),
+		.module_is_busy(oe_processor_is_busy),
+		.led_oe(led_oe)
+	);
 	
 	always @(posedge in_clk or negedge in_nrst)
 		if (~in_nrst)
-			pixel_counter <= 0;
+			bit_counter <= 1;
 		else
-			if (data_in_data_buffer_valid & last_phase)
-				if (last_pixel)
-					pixel_counter <= 0;
-				else
-					pixel_counter <= pixel_counter + 1;
-
-	reg data_in_panel_row_ready;
-	always @(posedge in_clk or negedge in_nrst)
-		if (~in_nrst)
-			data_in_panel_row_ready <= 1'b0;
-		else
-			if (data_in_data_buffer_valid & last_phase & last_pixel)
-				data_in_panel_row_ready <= 1'b1;
-	
-	parameter BIT_COUNTER_WIDTH = 3;
-	reg [BIT_COUNTER_WIDTH - 1:0] bit_counter;
-
-	reg [2:0] rgb_tmp;
-	always @(posedge in_clk or negedge in_nrst)
-		if (~in_nrst)
-			rgb_tmp <= 0;
-		else
-			if (data_in_data_buffer_valid)
-				rgb_tmp[phase_cntr] <= in_data_buffer[bit_counter];
-	
-	wire tmp_rgb_strobe;
-	assign tmp_rgb_strobe = phase_reg[0];
-	reg out_data_valid;
-	always @(posedge in_clk or negedge in_nrst)
-		if (~in_nrst)
-		begin
-			rgb1 <= 0;
-			rgb2 <= 0;
-			out_data_valid <= 1'b0;
-		end
-		else
-			if (data_in_data_buffer_valid & tmp_rgb_strobe & first_cycle_finished)
-			begin
-				rgb1 <= rgb_tmp;
-				out_data_valid <= 1'b1;
-			end
-			else
-				out_data_valid <= 1'b0;
-
-	always @(posedge in_clk or negedge in_nrst)
-		if (~in_nrst)
-			led_clk <= 1'b0;
-		else
-			led_clk <= out_data_valid;
-				
-	always @(posedge in_clk or negedge in_nrst)
-		if (~in_nrst)
-			bit_counter <= 0;
-		else
-			bit_counter <= 0;
-	
-	always @(posedge in_clk or negedge in_nrst)
-		if (~in_nrst)
-			al422_re <= 1'b0;
-		else
-			if ((pixel_counter == (`PIXEL_COUNT - 1)) & phase_reg[1])
-				al422_re <= 1'b1;
-
-	always @(posedge in_clk or negedge in_nrst)
-		if (~in_nrst)
-			al422_nrst <= 1'b1;
-		else
-			al422_nrst <= 1'b1;
+			bit_counter <= 1;
 endmodule

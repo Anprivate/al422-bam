@@ -1,5 +1,6 @@
 <?xml version="1.0" ?>
 <LOG_ROOT>
 	<PROJECT NAME="al422_bam">
+		<CBX_INST_ENTRY INSTANCE_NAME="|al422_bam|al422_bam_oe_processor:oe_processor|lpm_add_sub:Add3" CBX_FILE_NAME="add_sub_bch.tdf"/>
 	</PROJECT>
 </LOG_ROOT>

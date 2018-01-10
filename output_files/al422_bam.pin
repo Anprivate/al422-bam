@@ -62,10 +62,10 @@ CHIP  "al422_bam"  ASSIGNED TO AN: EPM3064ATC44-10
 Pin Name/Usage               : Location  : Dir.   : I/O Standard      : Voltage : I/O Bank  : User Assignment
 -------------------------------------------------------------------------------------------------------------
 TDI                          : 1         : input  : 3.3-V LVTTL       :         :           : N              
-al422_nrst                   : 2         : output : 3.3-V LVTTL       :         :           : Y              
+al422_nrst_out               : 2         : output : 3.3-V LVTTL       :         :           : Y              
 in_data[7]                   : 3         : input  : 3.3-V LVTTL       :         :           : Y              
 GND                          : 4         : gnd    :                   :         :           :                
-RESERVED                     : 5         :        :                   :         :           :                
+oe_processor_start           : 5         : input  : 3.3-V LVTTL       :         :           : N              
 rgb1[0]                      : 6         : output : 3.3-V LVTTL       :         :           : Y              
 TMS                          : 7         : input  : 3.3-V LVTTL       :         :           : N              
 rgb1[1]                      : 8         : output : 3.3-V LVTTL       :         :           : Y              
@@ -88,7 +88,7 @@ GND                          : 24        : gnd    :                   :         
 led_oe_out                   : 25        : output : 3.3-V LVTTL       :         :           : Y              
 TCK                          : 26        : input  : 3.3-V LVTTL       :         :           : N              
 RESERVED                     : 27        :        :                   :         :           :                
-al422_re                     : 28        : output : 3.3-V LVTTL       :         :           : Y              
+al422_re_out                 : 28        : output : 3.3-V LVTTL       :         :           : Y              
 VCCIO                        : 29        : power  :                   : 3.3V    :           :                
 GND                          : 30        : gnd    :                   :         :           :                
 in_data[1]                   : 31        : input  : 3.3-V LVTTL       :         :           : Y              
@@ -98,9 +98,9 @@ in_data[2]                   : 34        : input  : 3.3-V LVTTL       :         
 in_data[3]                   : 35        : input  : 3.3-V LVTTL       :         :           : Y              
 GND                          : 36        : gnd    :                   :         :           :                
 in_clk                       : 37        : input  : 3.3-V LVTTL       :         :           : Y              
-GND+                         : 38        :        :                   :         :           :                
+first_stage_address_reset    : 38        : input  : 3.3-V LVTTL       :         :           : N              
 in_nrst                      : 39        : input  : 3.3-V LVTTL       :         :           : Y              
-GND+                         : 40        :        :                   :         :           :                
+first_stage_module_start     : 40        : input  : 3.3-V LVTTL       :         :           : N              
 VCCINT                       : 41        : power  :                   : 3.3V    :           :                
 in_data[4]                   : 42        : input  : 3.3-V LVTTL       :         :           : Y              
 in_data[5]                   : 43        : input  : 3.3-V LVTTL       :         :           : Y              

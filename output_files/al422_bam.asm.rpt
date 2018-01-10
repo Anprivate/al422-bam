@@ -1,5 +1,5 @@
 Assembler report for al422_bam
-Mon Jan 01 21:34:50 2018
+Wed Jan 10 18:41:10 2018
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -10,7 +10,7 @@ Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edit
   2. Assembler Summary
   3. Assembler Settings
   4. Assembler Generated Files
-  5. Assembler Device Options: P:/altera/al422-bam/output_files/al422_bam.pof
+  5. Assembler Device Options: D:/altera/al422-bam/output_files/al422_bam.pof
   6. Assembler Messages
 
 
@@ -37,7 +37,7 @@ applicable agreement for further details.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Mon Jan 01 21:34:50 2018 ;
+; Assembler Status      ; Successful - Wed Jan 10 18:41:10 2018 ;
 ; Revision Name         ; al422_bam                             ;
 ; Top-level Entity Name ; al422_bam                             ;
 ; Family                ; MAX3000A                              ;
@@ -79,18 +79,18 @@ applicable agreement for further details.
 +------------------------------------------------+
 ; File Name                                      ;
 +------------------------------------------------+
-; P:/altera/al422-bam/output_files/al422_bam.pof ;
+; D:/altera/al422-bam/output_files/al422_bam.pof ;
 +------------------------------------------------+
 
 
 +--------------------------------------------------------------------------+
-; Assembler Device Options: P:/altera/al422-bam/output_files/al422_bam.pof ;
+; Assembler Device Options: D:/altera/al422-bam/output_files/al422_bam.pof ;
 +----------------+---------------------------------------------------------+
 ; Option         ; Setting                                                 ;
 +----------------+---------------------------------------------------------+
 ; Device         ; EPM3064ATC44-10                                         ;
 ; JTAG usercode  ; 0x00000000                                              ;
-; Checksum       ; 0x000BC719                                              ;
+; Checksum       ; 0x000BBF03                                              ;
 +----------------+---------------------------------------------------------+
 
 
@@ -100,13 +100,13 @@ applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Assembler
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Mon Jan 01 21:34:49 2018
+    Info: Processing started: Wed Jan 10 18:41:09 2018
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off al422_bam -c al422_bam
 Info (115030): Assembler is generating device programming files
 Info: Quartus II 64-Bit Assembler was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 376 megabytes
-    Info: Processing ended: Mon Jan 01 21:34:50 2018
+    Info: Peak virtual memory: 371 megabytes
+    Info: Processing ended: Wed Jan 10 18:41:10 2018
     Info: Elapsed time: 00:00:01
-    Info: Total CPU time (on all processors): 00:00:00
+    Info: Total CPU time (on all processors): 00:00:01
 
 

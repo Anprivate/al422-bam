@@ -1,5 +1,5 @@
 TimeQuest Timing Analyzer report for al422_bam
-Mon Jan 01 21:34:51 2018
+Wed Jan 10 18:41:12 2018
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -82,7 +82,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------+--------+--------------------------+
 ; SDC File Path ; Status ; Read at                  ;
 +---------------+--------+--------------------------+
-; al422_bam.sdc ; OK     ; Mon Jan 01 21:34:51 2018 ;
+; al422_bam.sdc ; OK     ; Wed Jan 10 18:41:12 2018 ;
 +---------------+--------+--------------------------+
 
 
@@ -100,7 +100,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +-----------+-----------------+------------+------+
 ; Fmax      ; Restricted Fmax ; Clock Name ; Note ;
 +-----------+-----------------+------------+------+
-; 98.04 MHz ; 98.04 MHz       ; in_clk     ;      ;
+; 90.91 MHz ; 90.91 MHz       ; in_clk     ;      ;
 +-----------+-----------------+------------+------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
@@ -110,7 +110,7 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +--------+-------+---------------+
 ; Clock  ; Slack ; End Point TNS ;
 +--------+-------+---------------+
-; in_clk ; 9.800 ; 0.000         ;
+; in_clk ; 9.000 ; 0.000         ;
 +--------+-------+---------------+
 
 
@@ -119,7 +119,7 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +--------+-------+---------------+
 ; Clock  ; Slack ; End Point TNS ;
 +--------+-------+---------------+
-; in_clk ; 3.800 ; 0.000         ;
+; in_clk ; 5.800 ; 0.000         ;
 +--------+-------+---------------+
 
 
@@ -144,296 +144,386 @@ No paths to report.
 +--------+-------+---------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------+
-; Setup: 'in_clk'                                                                                                                 ;
-+--------+---------------------------+----------------------+--------------+-------------+--------------+------------+------------+
-; Slack  ; From Node                 ; To Node              ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
-+--------+---------------------------+----------------------+--------------+-------------+--------------+------------+------------+
-; 9.800  ; phase_cntr[1]             ; phase_cntr[1]        ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.300      ;
-; 9.800  ; phase_cntr[0]             ; phase_cntr[1]        ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.300      ;
-; 9.800  ; phase_cntr[1]             ; phase_cntr[0]        ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.300      ;
-; 9.800  ; phase_cntr[0]             ; phase_cntr[0]        ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.300      ;
-; 9.800  ; phase_cntr[1]             ; out_data_valid       ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.300      ;
-; 9.800  ; data_in_data_buffer_valid ; out_data_valid       ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.300      ;
-; 9.800  ; phase_cntr[0]             ; out_data_valid       ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.300      ;
-; 9.900  ; first_cycle_finished      ; out_data_valid       ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.200      ;
-; 10.000 ; in_data_buffer[0]         ; rgb_tmp[2]           ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.100      ;
-; 10.000 ; in_data_buffer[0]         ; rgb_tmp[0]           ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.100      ;
-; 10.000 ; pixel_counter[1]          ; pixel_counter[1]     ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.100      ;
-; 10.000 ; pixel_counter[3]          ; pixel_counter[1]     ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.100      ;
-; 10.000 ; pixel_counter[2]          ; pixel_counter[1]     ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.100      ;
-; 10.000 ; pixel_counter[0]          ; pixel_counter[1]     ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.100      ;
-; 10.000 ; pixel_counter[2]          ; pixel_counter[2]     ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.100      ;
-; 10.000 ; pixel_counter[1]          ; pixel_counter[2]     ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.100      ;
-; 10.000 ; pixel_counter[0]          ; pixel_counter[2]     ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.100      ;
-; 10.000 ; pixel_counter[3]          ; pixel_counter[3]     ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.100      ;
-; 10.000 ; pixel_counter[0]          ; pixel_counter[3]     ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.100      ;
-; 10.000 ; pixel_counter[2]          ; pixel_counter[3]     ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.100      ;
-; 10.000 ; pixel_counter[1]          ; pixel_counter[3]     ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.100      ;
-; 10.000 ; pixel_counter[0]          ; pixel_counter[0]     ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.100      ;
-; 10.000 ; pixel_counter[3]          ; pixel_counter[0]     ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.100      ;
-; 10.000 ; pixel_counter[2]          ; pixel_counter[0]     ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.100      ;
-; 10.000 ; pixel_counter[1]          ; pixel_counter[0]     ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.100      ;
-; 10.000 ; in_data_buffer[0]         ; rgb_tmp[1]           ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.100      ;
-; 10.000 ; rgb_tmp[2]                ; rgb1[2]~reg0         ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.100      ;
-; 10.000 ; rgb_tmp[1]                ; rgb1[1]~reg0         ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.100      ;
-; 10.000 ; rgb_tmp[0]                ; rgb1[0]~reg0         ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.100      ;
-; 10.000 ; out_data_valid            ; led_clk              ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.100      ;
-; 11.800 ; data_in_data_buffer_valid ; phase_cntr[1]        ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 5.300      ;
-; 11.800 ; data_in_data_buffer_valid ; phase_cntr[0]        ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 5.300      ;
-; 11.800 ; phase_cntr[1]             ; first_cycle_finished ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 5.300      ;
-; 11.800 ; phase_cntr[0]             ; first_cycle_finished ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 5.300      ;
-; 11.800 ; phase_cntr[1]             ; rgb_tmp[2]           ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 5.300      ;
-; 11.800 ; data_in_data_buffer_valid ; rgb_tmp[2]           ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 5.300      ;
-; 11.800 ; phase_cntr[0]             ; rgb_tmp[2]           ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 5.300      ;
-; 11.800 ; phase_cntr[1]             ; rgb_tmp[0]           ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 5.300      ;
-; 11.800 ; data_in_data_buffer_valid ; rgb_tmp[0]           ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 5.300      ;
-; 11.800 ; phase_cntr[0]             ; rgb_tmp[0]           ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 5.300      ;
-; 11.800 ; data_in_data_buffer_valid ; pixel_counter[1]     ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 5.300      ;
-; 11.800 ; phase_cntr[1]             ; pixel_counter[1]     ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 5.300      ;
-; 11.800 ; phase_cntr[0]             ; pixel_counter[1]     ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 5.300      ;
-; 11.800 ; data_in_data_buffer_valid ; pixel_counter[2]     ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 5.300      ;
-; 11.800 ; phase_cntr[1]             ; pixel_counter[2]     ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 5.300      ;
-; 11.800 ; phase_cntr[0]             ; pixel_counter[2]     ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 5.300      ;
-; 11.800 ; data_in_data_buffer_valid ; pixel_counter[3]     ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 5.300      ;
-; 11.800 ; phase_cntr[1]             ; pixel_counter[3]     ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 5.300      ;
-; 11.800 ; phase_cntr[0]             ; pixel_counter[3]     ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 5.300      ;
-; 11.800 ; data_in_data_buffer_valid ; pixel_counter[0]     ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 5.300      ;
-; 11.800 ; phase_cntr[1]             ; pixel_counter[0]     ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 5.300      ;
-; 11.800 ; phase_cntr[0]             ; pixel_counter[0]     ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 5.300      ;
-; 11.800 ; data_in_data_buffer_valid ; rgb_tmp[1]           ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 5.300      ;
-; 11.800 ; phase_cntr[1]             ; rgb_tmp[1]           ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 5.300      ;
-; 11.800 ; phase_cntr[0]             ; rgb_tmp[1]           ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 5.300      ;
-; 11.800 ; phase_cntr[1]             ; rgb1[2]~reg0         ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 5.300      ;
-; 11.800 ; data_in_data_buffer_valid ; rgb1[2]~reg0         ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 5.300      ;
-; 11.800 ; phase_cntr[0]             ; rgb1[2]~reg0         ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 5.300      ;
-; 11.800 ; phase_cntr[1]             ; rgb1[1]~reg0         ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 5.300      ;
-; 11.800 ; data_in_data_buffer_valid ; rgb1[1]~reg0         ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 5.300      ;
-; 11.800 ; phase_cntr[0]             ; rgb1[1]~reg0         ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 5.300      ;
-; 11.800 ; phase_cntr[1]             ; rgb1[0]~reg0         ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 5.300      ;
-; 11.800 ; data_in_data_buffer_valid ; rgb1[0]~reg0         ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 5.300      ;
-; 11.800 ; phase_cntr[0]             ; rgb1[0]~reg0         ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 5.300      ;
-; 11.800 ; phase_cntr[1]             ; al422_re~reg0        ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 5.300      ;
-; 11.800 ; phase_cntr[0]             ; al422_re~reg0        ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 5.300      ;
-; 11.900 ; first_cycle_finished      ; rgb1[2]~reg0         ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 5.200      ;
-; 11.900 ; first_cycle_finished      ; rgb1[1]~reg0         ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 5.200      ;
-; 11.900 ; first_cycle_finished      ; rgb1[0]~reg0         ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 5.200      ;
-; 12.000 ; pixel_counter[3]          ; al422_re~reg0        ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 5.100      ;
-; 12.000 ; pixel_counter[2]          ; al422_re~reg0        ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 5.100      ;
-; 12.000 ; pixel_counter[1]          ; al422_re~reg0        ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 5.100      ;
-; 12.000 ; pixel_counter[0]          ; al422_re~reg0        ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 5.100      ;
-+--------+---------------------------+----------------------+--------------+-------------+--------------+------------+------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Setup: 'in_clk'                                                                                                                                                                                         ;
++-------+-------------------------------------------------------------+-------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                                                   ; To Node                                                     ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+-------------------------------------------------------------+-------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 9.000 ; al422_bam_oe_processor:oe_processor|prescaler_counter[0]    ; al422_bam_oe_processor:oe_processor|phase_cntr[0]           ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 8.100      ;
+; 9.000 ; al422_bam_oe_processor:oe_processor|phase_cntr[1]           ; al422_bam_oe_processor:oe_processor|phase_cntr[0]           ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 8.100      ;
+; 9.000 ; al422_bam_oe_processor:oe_processor|phase_cntr[0]           ; al422_bam_oe_processor:oe_processor|phase_cntr[0]           ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 8.100      ;
+; 9.100 ; al422_bam_oe_processor:oe_processor|main_counter[7]         ; al422_bam_oe_processor:oe_processor|phase_cntr[0]           ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 8.000      ;
+; 9.100 ; al422_bam_oe_processor:oe_processor|main_counter[3]         ; al422_bam_oe_processor:oe_processor|phase_cntr[0]           ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 8.000      ;
+; 9.100 ; al422_bam_oe_processor:oe_processor|main_counter[2]         ; al422_bam_oe_processor:oe_processor|phase_cntr[0]           ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 8.000      ;
+; 9.100 ; al422_bam_oe_processor:oe_processor|main_counter[1]         ; al422_bam_oe_processor:oe_processor|phase_cntr[0]           ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 8.000      ;
+; 9.100 ; al422_bam_oe_processor:oe_processor|main_counter[0]         ; al422_bam_oe_processor:oe_processor|phase_cntr[0]           ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 8.000      ;
+; 9.100 ; al422_bam_oe_processor:oe_processor|prescaler_counter[1]    ; al422_bam_oe_processor:oe_processor|phase_cntr[0]           ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 8.000      ;
+; 9.100 ; al422_bam_oe_processor:oe_processor|main_counter[6]         ; al422_bam_oe_processor:oe_processor|phase_cntr[0]           ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 8.000      ;
+; 9.100 ; al422_bam_oe_processor:oe_processor|main_counter[5]         ; al422_bam_oe_processor:oe_processor|phase_cntr[0]           ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 8.000      ;
+; 9.100 ; al422_bam_oe_processor:oe_processor|main_counter[4]         ; al422_bam_oe_processor:oe_processor|phase_cntr[0]           ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 8.000      ;
+; 9.700 ; al422_bam_first_stage:first_stage|module_is_busy            ; al422_bam_first_stage:first_stage|phase_cntr[0]             ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.400      ;
+; 9.700 ; al422_bam_first_stage:first_stage|module_is_busy            ; al422_bam_first_stage:first_stage|phase_cntr[1]             ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.400      ;
+; 9.700 ; al422_bam_first_stage:first_stage|module_is_busy            ; al422_bam_first_stage:first_stage|first_cycle_finished      ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.400      ;
+; 9.700 ; al422_bam_first_stage:first_stage|module_is_busy            ; al422_bam_first_stage:first_stage|out_data_valid            ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.400      ;
+; 9.700 ; al422_bam_first_stage:first_stage|module_is_busy            ; al422_bam_first_stage:first_stage|led_clk                   ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.400      ;
+; 9.700 ; al422_bam_first_stage:first_stage|module_is_busy            ; al422_bam_first_stage:first_stage|pixel_counter[0]          ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.400      ;
+; 9.700 ; al422_bam_first_stage:first_stage|module_is_busy            ; al422_bam_first_stage:first_stage|pixel_counter[1]          ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.400      ;
+; 9.700 ; al422_bam_first_stage:first_stage|module_is_busy            ; al422_bam_first_stage:first_stage|pixel_counter[2]          ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.400      ;
+; 9.700 ; al422_bam_first_stage:first_stage|module_is_busy            ; al422_bam_first_stage:first_stage|module_is_busy            ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.400      ;
+; 9.700 ; al422_bam_first_stage:first_stage|module_is_busy            ; al422_bam_first_stage:first_stage|al422_nrst                ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.400      ;
+; 9.700 ; al422_bam_first_stage:first_stage|module_is_busy            ; al422_bam_first_stage:first_stage|data_in_data_buffer_valid ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.400      ;
+; 9.700 ; al422_bam_first_stage:first_stage|module_is_busy            ; al422_bam_first_stage:first_stage|rgb_tmp[2]                ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.400      ;
+; 9.700 ; al422_bam_first_stage:first_stage|module_is_busy            ; al422_bam_first_stage:first_stage|rgb_tmp[1]                ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.400      ;
+; 9.700 ; al422_bam_first_stage:first_stage|module_is_busy            ; al422_bam_first_stage:first_stage|rgb_tmp[0]                ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.400      ;
+; 9.700 ; al422_bam_first_stage:first_stage|module_is_busy            ; al422_bam_first_stage:first_stage|al422_re                  ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.400      ;
+; 9.700 ; al422_bam_first_stage:first_stage|module_is_busy            ; al422_bam_first_stage:first_stage|rgb_out1[2]               ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.400      ;
+; 9.700 ; al422_bam_first_stage:first_stage|module_is_busy            ; al422_bam_first_stage:first_stage|rgb_out1[1]               ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.400      ;
+; 9.700 ; al422_bam_first_stage:first_stage|module_is_busy            ; al422_bam_first_stage:first_stage|rgb_out1[0]               ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.400      ;
+; 9.800 ; al422_bam_first_stage:first_stage|phase_cntr[1]             ; al422_bam_first_stage:first_stage|phase_cntr[0]             ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.300      ;
+; 9.800 ; al422_bam_first_stage:first_stage|phase_cntr[0]             ; al422_bam_first_stage:first_stage|phase_cntr[0]             ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.300      ;
+; 9.800 ; al422_bam_first_stage:first_stage|phase_cntr[0]             ; al422_bam_first_stage:first_stage|phase_cntr[1]             ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.300      ;
+; 9.800 ; al422_bam_first_stage:first_stage|phase_cntr[1]             ; al422_bam_first_stage:first_stage|phase_cntr[1]             ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.300      ;
+; 9.800 ; al422_bam_first_stage:first_stage|phase_cntr[1]             ; al422_bam_first_stage:first_stage|first_cycle_finished      ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.300      ;
+; 9.800 ; al422_bam_first_stage:first_stage|phase_cntr[0]             ; al422_bam_first_stage:first_stage|first_cycle_finished      ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.300      ;
+; 9.800 ; al422_bam_first_stage:first_stage|phase_cntr[0]             ; al422_bam_first_stage:first_stage|out_data_valid            ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.300      ;
+; 9.800 ; al422_bam_first_stage:first_stage|phase_cntr[1]             ; al422_bam_first_stage:first_stage|out_data_valid            ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.300      ;
+; 9.800 ; al422_bam_first_stage:first_stage|phase_cntr[1]             ; al422_bam_first_stage:first_stage|module_is_busy            ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.300      ;
+; 9.800 ; al422_bam_first_stage:first_stage|phase_cntr[0]             ; al422_bam_first_stage:first_stage|module_is_busy            ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.300      ;
+; 9.800 ; al422_bam_first_stage:first_stage|phase_cntr[1]             ; al422_bam_first_stage:first_stage|rgb_tmp[2]                ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.300      ;
+; 9.800 ; al422_bam_first_stage:first_stage|phase_cntr[0]             ; al422_bam_first_stage:first_stage|rgb_tmp[2]                ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.300      ;
+; 9.800 ; al422_bam_first_stage:first_stage|phase_cntr[0]             ; al422_bam_first_stage:first_stage|rgb_tmp[1]                ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.300      ;
+; 9.800 ; al422_bam_first_stage:first_stage|phase_cntr[1]             ; al422_bam_first_stage:first_stage|rgb_tmp[1]                ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.300      ;
+; 9.800 ; al422_bam_first_stage:first_stage|phase_cntr[0]             ; al422_bam_first_stage:first_stage|rgb_tmp[0]                ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.300      ;
+; 9.800 ; al422_bam_first_stage:first_stage|phase_cntr[1]             ; al422_bam_first_stage:first_stage|rgb_tmp[0]                ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.300      ;
+; 9.800 ; al422_bam_first_stage:first_stage|phase_cntr[1]             ; al422_bam_first_stage:first_stage|al422_re                  ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.300      ;
+; 9.800 ; al422_bam_first_stage:first_stage|phase_cntr[0]             ; al422_bam_first_stage:first_stage|al422_re                  ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.300      ;
+; 9.800 ; al422_bam_first_stage:first_stage|phase_cntr[0]             ; al422_bam_first_stage:first_stage|rgb_out1[2]               ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.300      ;
+; 9.800 ; al422_bam_first_stage:first_stage|phase_cntr[1]             ; al422_bam_first_stage:first_stage|rgb_out1[2]               ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.300      ;
+; 9.800 ; al422_bam_first_stage:first_stage|phase_cntr[0]             ; al422_bam_first_stage:first_stage|rgb_out1[1]               ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.300      ;
+; 9.800 ; al422_bam_first_stage:first_stage|phase_cntr[1]             ; al422_bam_first_stage:first_stage|rgb_out1[1]               ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.300      ;
+; 9.800 ; al422_bam_first_stage:first_stage|phase_cntr[0]             ; al422_bam_first_stage:first_stage|rgb_out1[0]               ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.300      ;
+; 9.800 ; al422_bam_first_stage:first_stage|phase_cntr[1]             ; al422_bam_first_stage:first_stage|rgb_out1[0]               ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.300      ;
+; 9.900 ; al422_bam_first_stage:first_stage|data_in_data_buffer_valid ; al422_bam_first_stage:first_stage|phase_cntr[0]             ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.200      ;
+; 9.900 ; al422_bam_first_stage:first_stage|data_in_data_buffer_valid ; al422_bam_first_stage:first_stage|phase_cntr[1]             ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.200      ;
+; 9.900 ; al422_bam_first_stage:first_stage|first_cycle_finished      ; al422_bam_first_stage:first_stage|first_cycle_finished      ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.200      ;
+; 9.900 ; al422_bam_first_stage:first_stage|first_cycle_finished      ; al422_bam_first_stage:first_stage|out_data_valid            ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.200      ;
+; 9.900 ; al422_bam_first_stage:first_stage|data_in_data_buffer_valid ; al422_bam_first_stage:first_stage|out_data_valid            ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.200      ;
+; 9.900 ; al422_bam_first_stage:first_stage|data_in_data_buffer_valid ; al422_bam_first_stage:first_stage|pixel_counter[0]          ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.200      ;
+; 9.900 ; al422_bam_first_stage:first_stage|pixel_counter[0]          ; al422_bam_first_stage:first_stage|pixel_counter[0]          ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.200      ;
+; 9.900 ; al422_bam_first_stage:first_stage|pixel_counter[0]          ; al422_bam_first_stage:first_stage|pixel_counter[1]          ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.200      ;
+; 9.900 ; al422_bam_first_stage:first_stage|data_in_data_buffer_valid ; al422_bam_first_stage:first_stage|pixel_counter[1]          ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.200      ;
+; 9.900 ; al422_bam_first_stage:first_stage|pixel_counter[1]          ; al422_bam_first_stage:first_stage|pixel_counter[1]          ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.200      ;
+; 9.900 ; al422_bam_first_stage:first_stage|pixel_counter[1]          ; al422_bam_first_stage:first_stage|pixel_counter[2]          ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.200      ;
+; 9.900 ; al422_bam_first_stage:first_stage|pixel_counter[0]          ; al422_bam_first_stage:first_stage|pixel_counter[2]          ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.200      ;
+; 9.900 ; al422_bam_first_stage:first_stage|data_in_data_buffer_valid ; al422_bam_first_stage:first_stage|pixel_counter[2]          ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.200      ;
+; 9.900 ; al422_bam_first_stage:first_stage|pixel_counter[2]          ; al422_bam_first_stage:first_stage|pixel_counter[2]          ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.200      ;
+; 9.900 ; al422_bam_first_stage:first_stage|pixel_counter[2]          ; al422_bam_first_stage:first_stage|module_is_busy            ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.200      ;
+; 9.900 ; al422_bam_first_stage:first_stage|pixel_counter[1]          ; al422_bam_first_stage:first_stage|module_is_busy            ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.200      ;
+; 9.900 ; al422_bam_first_stage:first_stage|pixel_counter[0]          ; al422_bam_first_stage:first_stage|module_is_busy            ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.200      ;
+; 9.900 ; al422_bam_first_stage:first_stage|data_in_data_buffer_valid ; al422_bam_first_stage:first_stage|module_is_busy            ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.200      ;
+; 9.900 ; al422_bam_first_stage:first_stage|data_in_data_buffer_valid ; al422_bam_first_stage:first_stage|data_in_data_buffer_valid ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.200      ;
+; 9.900 ; al422_bam_oe_processor:oe_processor|module_is_busy          ; al422_bam_oe_processor:oe_processor|predelay_counter[1]     ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.200      ;
+; 9.900 ; al422_bam_oe_processor:oe_processor|predelay_counter[0]     ; al422_bam_oe_processor:oe_processor|predelay_counter[1]     ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.200      ;
+; 9.900 ; al422_bam_oe_processor:oe_processor|phase_cntr[1]           ; al422_bam_oe_processor:oe_processor|predelay_counter[1]     ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.200      ;
+; 9.900 ; al422_bam_oe_processor:oe_processor|phase_cntr[0]           ; al422_bam_oe_processor:oe_processor|predelay_counter[1]     ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.200      ;
+; 9.900 ; al422_bam_oe_processor:oe_processor|phase_cntr[1]           ; al422_bam_oe_processor:oe_processor|postdelay_counter[0]    ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.200      ;
+; 9.900 ; al422_bam_oe_processor:oe_processor|phase_cntr[0]           ; al422_bam_oe_processor:oe_processor|postdelay_counter[0]    ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.200      ;
+; 9.900 ; al422_bam_oe_processor:oe_processor|module_is_busy          ; al422_bam_oe_processor:oe_processor|postdelay_counter[0]    ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.200      ;
+; 9.900 ; al422_bam_oe_processor:oe_processor|module_is_busy          ; al422_bam_oe_processor:oe_processor|postdelay_counter[1]    ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.200      ;
+; 9.900 ; al422_bam_oe_processor:oe_processor|phase_cntr[1]           ; al422_bam_oe_processor:oe_processor|postdelay_counter[1]    ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.200      ;
+; 9.900 ; al422_bam_oe_processor:oe_processor|phase_cntr[0]           ; al422_bam_oe_processor:oe_processor|postdelay_counter[1]    ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.200      ;
+; 9.900 ; al422_bam_oe_processor:oe_processor|phase_cntr[1]           ; al422_bam_oe_processor:oe_processor|prescaler_counter[0]    ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.200      ;
+; 9.900 ; al422_bam_oe_processor:oe_processor|phase_cntr[0]           ; al422_bam_oe_processor:oe_processor|prescaler_counter[0]    ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.200      ;
+; 9.900 ; al422_bam_oe_processor:oe_processor|module_is_busy          ; al422_bam_oe_processor:oe_processor|prescaler_counter[0]    ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.200      ;
+; 9.900 ; al422_bam_oe_processor:oe_processor|prescaler_counter[0]    ; al422_bam_oe_processor:oe_processor|prescaler_counter[0]    ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.200      ;
+; 9.900 ; al422_bam_oe_processor:oe_processor|module_is_busy          ; al422_bam_oe_processor:oe_processor|prescaler_counter[1]    ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.200      ;
+; 9.900 ; al422_bam_oe_processor:oe_processor|prescaler_counter[0]    ; al422_bam_oe_processor:oe_processor|prescaler_counter[1]    ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.200      ;
+; 9.900 ; al422_bam_oe_processor:oe_processor|phase_cntr[1]           ; al422_bam_oe_processor:oe_processor|prescaler_counter[1]    ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.200      ;
+; 9.900 ; al422_bam_oe_processor:oe_processor|phase_cntr[0]           ; al422_bam_oe_processor:oe_processor|prescaler_counter[1]    ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.200      ;
+; 9.900 ; al422_bam_oe_processor:oe_processor|module_is_busy          ; al422_bam_oe_processor:oe_processor|main_counter[0]         ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.200      ;
+; 9.900 ; al422_bam_oe_processor:oe_processor|prescaler_counter[0]    ; al422_bam_oe_processor:oe_processor|main_counter[0]         ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.200      ;
+; 9.900 ; al422_bam_oe_processor:oe_processor|phase_cntr[1]           ; al422_bam_oe_processor:oe_processor|main_counter[0]         ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.200      ;
+; 9.900 ; al422_bam_oe_processor:oe_processor|phase_cntr[0]           ; al422_bam_oe_processor:oe_processor|main_counter[0]         ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.200      ;
+; 9.900 ; al422_bam_oe_processor:oe_processor|module_is_busy          ; al422_bam_oe_processor:oe_processor|main_counter[1]         ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.200      ;
+; 9.900 ; al422_bam_oe_processor:oe_processor|prescaler_counter[0]    ; al422_bam_oe_processor:oe_processor|main_counter[1]         ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.200      ;
+; 9.900 ; al422_bam_oe_processor:oe_processor|phase_cntr[1]           ; al422_bam_oe_processor:oe_processor|main_counter[1]         ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.200      ;
+; 9.900 ; al422_bam_oe_processor:oe_processor|phase_cntr[0]           ; al422_bam_oe_processor:oe_processor|main_counter[1]         ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.200      ;
+; 9.900 ; al422_bam_oe_processor:oe_processor|module_is_busy          ; al422_bam_oe_processor:oe_processor|main_counter[2]         ; in_clk       ; in_clk      ; 20.000       ; 0.000      ; 7.200      ;
++-------+-------------------------------------------------------------+-------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------+
-; Hold: 'in_clk'                                                                                                                 ;
-+-------+---------------------------+----------------------+--------------+-------------+--------------+------------+------------+
-; Slack ; From Node                 ; To Node              ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
-+-------+---------------------------+----------------------+--------------+-------------+--------------+------------+------------+
-; 3.800 ; pixel_counter[3]          ; al422_re~reg0        ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.100      ;
-; 3.800 ; pixel_counter[2]          ; al422_re~reg0        ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.100      ;
-; 3.800 ; pixel_counter[1]          ; al422_re~reg0        ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.100      ;
-; 3.800 ; pixel_counter[0]          ; al422_re~reg0        ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.100      ;
-; 3.900 ; first_cycle_finished      ; rgb1[2]~reg0         ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.200      ;
-; 3.900 ; first_cycle_finished      ; rgb1[1]~reg0         ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.200      ;
-; 3.900 ; first_cycle_finished      ; rgb1[0]~reg0         ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.200      ;
-; 4.000 ; data_in_data_buffer_valid ; phase_cntr[1]        ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
-; 4.000 ; data_in_data_buffer_valid ; phase_cntr[0]        ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
-; 4.000 ; phase_cntr[1]             ; first_cycle_finished ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
-; 4.000 ; phase_cntr[0]             ; first_cycle_finished ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
-; 4.000 ; phase_cntr[1]             ; rgb_tmp[2]           ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
-; 4.000 ; data_in_data_buffer_valid ; rgb_tmp[2]           ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
-; 4.000 ; phase_cntr[0]             ; rgb_tmp[2]           ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
-; 4.000 ; phase_cntr[1]             ; rgb_tmp[0]           ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
-; 4.000 ; data_in_data_buffer_valid ; rgb_tmp[0]           ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
-; 4.000 ; phase_cntr[0]             ; rgb_tmp[0]           ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
-; 4.000 ; data_in_data_buffer_valid ; pixel_counter[1]     ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
-; 4.000 ; phase_cntr[1]             ; pixel_counter[1]     ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
-; 4.000 ; phase_cntr[0]             ; pixel_counter[1]     ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
-; 4.000 ; data_in_data_buffer_valid ; pixel_counter[2]     ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
-; 4.000 ; phase_cntr[1]             ; pixel_counter[2]     ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
-; 4.000 ; phase_cntr[0]             ; pixel_counter[2]     ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
-; 4.000 ; data_in_data_buffer_valid ; pixel_counter[3]     ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
-; 4.000 ; phase_cntr[1]             ; pixel_counter[3]     ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
-; 4.000 ; phase_cntr[0]             ; pixel_counter[3]     ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
-; 4.000 ; data_in_data_buffer_valid ; pixel_counter[0]     ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
-; 4.000 ; phase_cntr[1]             ; pixel_counter[0]     ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
-; 4.000 ; phase_cntr[0]             ; pixel_counter[0]     ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
-; 4.000 ; data_in_data_buffer_valid ; rgb_tmp[1]           ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
-; 4.000 ; phase_cntr[1]             ; rgb_tmp[1]           ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
-; 4.000 ; phase_cntr[0]             ; rgb_tmp[1]           ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
-; 4.000 ; phase_cntr[1]             ; rgb1[2]~reg0         ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
-; 4.000 ; data_in_data_buffer_valid ; rgb1[2]~reg0         ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
-; 4.000 ; phase_cntr[0]             ; rgb1[2]~reg0         ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
-; 4.000 ; phase_cntr[1]             ; rgb1[1]~reg0         ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
-; 4.000 ; data_in_data_buffer_valid ; rgb1[1]~reg0         ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
-; 4.000 ; phase_cntr[0]             ; rgb1[1]~reg0         ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
-; 4.000 ; phase_cntr[1]             ; rgb1[0]~reg0         ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
-; 4.000 ; data_in_data_buffer_valid ; rgb1[0]~reg0         ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
-; 4.000 ; phase_cntr[0]             ; rgb1[0]~reg0         ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
-; 4.000 ; phase_cntr[1]             ; al422_re~reg0        ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
-; 4.000 ; phase_cntr[0]             ; al422_re~reg0        ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 5.300      ;
-; 5.800 ; in_data_buffer[0]         ; rgb_tmp[2]           ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 7.100      ;
-; 5.800 ; in_data_buffer[0]         ; rgb_tmp[0]           ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 7.100      ;
-; 5.800 ; pixel_counter[1]          ; pixel_counter[1]     ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 7.100      ;
-; 5.800 ; pixel_counter[3]          ; pixel_counter[1]     ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 7.100      ;
-; 5.800 ; pixel_counter[2]          ; pixel_counter[1]     ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 7.100      ;
-; 5.800 ; pixel_counter[0]          ; pixel_counter[1]     ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 7.100      ;
-; 5.800 ; pixel_counter[2]          ; pixel_counter[2]     ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 7.100      ;
-; 5.800 ; pixel_counter[1]          ; pixel_counter[2]     ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 7.100      ;
-; 5.800 ; pixel_counter[0]          ; pixel_counter[2]     ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 7.100      ;
-; 5.800 ; pixel_counter[3]          ; pixel_counter[3]     ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 7.100      ;
-; 5.800 ; pixel_counter[0]          ; pixel_counter[3]     ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 7.100      ;
-; 5.800 ; pixel_counter[2]          ; pixel_counter[3]     ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 7.100      ;
-; 5.800 ; pixel_counter[1]          ; pixel_counter[3]     ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 7.100      ;
-; 5.800 ; pixel_counter[0]          ; pixel_counter[0]     ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 7.100      ;
-; 5.800 ; pixel_counter[3]          ; pixel_counter[0]     ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 7.100      ;
-; 5.800 ; pixel_counter[2]          ; pixel_counter[0]     ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 7.100      ;
-; 5.800 ; pixel_counter[1]          ; pixel_counter[0]     ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 7.100      ;
-; 5.800 ; in_data_buffer[0]         ; rgb_tmp[1]           ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 7.100      ;
-; 5.800 ; rgb_tmp[2]                ; rgb1[2]~reg0         ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 7.100      ;
-; 5.800 ; rgb_tmp[1]                ; rgb1[1]~reg0         ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 7.100      ;
-; 5.800 ; rgb_tmp[0]                ; rgb1[0]~reg0         ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 7.100      ;
-; 5.800 ; out_data_valid            ; led_clk              ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 7.100      ;
-; 5.900 ; first_cycle_finished      ; out_data_valid       ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 7.200      ;
-; 6.000 ; phase_cntr[1]             ; phase_cntr[1]        ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 7.300      ;
-; 6.000 ; phase_cntr[0]             ; phase_cntr[1]        ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 7.300      ;
-; 6.000 ; phase_cntr[1]             ; phase_cntr[0]        ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 7.300      ;
-; 6.000 ; phase_cntr[0]             ; phase_cntr[0]        ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 7.300      ;
-; 6.000 ; phase_cntr[1]             ; out_data_valid       ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 7.300      ;
-; 6.000 ; data_in_data_buffer_valid ; out_data_valid       ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 7.300      ;
-; 6.000 ; phase_cntr[0]             ; out_data_valid       ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 7.300      ;
-+-------+---------------------------+----------------------+--------------+-------------+--------------+------------+------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Hold: 'in_clk'                                                                                                                                                                                          ;
++-------+-------------------------------------------------------------+-------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                                                   ; To Node                                                     ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+-------------------------------------------------------------+-------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 5.800 ; al422_bam_first_stage:first_stage|first_cycle_finished      ; al422_bam_first_stage:first_stage|first_cycle_finished      ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; al422_bam_first_stage:first_stage|out_data_valid            ; al422_bam_first_stage:first_stage|led_clk                   ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; al422_bam_first_stage:first_stage|pixel_counter[0]          ; al422_bam_first_stage:first_stage|pixel_counter[0]          ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; al422_bam_first_stage:first_stage|led_clk                   ; al422_bam_first_stage:first_stage|pixel_counter[0]          ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; al422_bam_first_stage:first_stage|pixel_counter[1]          ; al422_bam_first_stage:first_stage|pixel_counter[1]          ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; al422_bam_first_stage:first_stage|led_clk                   ; al422_bam_first_stage:first_stage|pixel_counter[1]          ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; al422_bam_first_stage:first_stage|pixel_counter[2]          ; al422_bam_first_stage:first_stage|pixel_counter[2]          ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; al422_bam_first_stage:first_stage|led_clk                   ; al422_bam_first_stage:first_stage|pixel_counter[2]          ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; al422_bam_first_stage:first_stage|data_in_data_buffer_valid ; al422_bam_first_stage:first_stage|data_in_data_buffer_valid ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; al422_bam_first_stage:first_stage|al422_nrst                ; al422_bam_first_stage:first_stage|data_in_data_buffer_valid ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; al422_bam_oe_processor:oe_processor|predelay_counter[1]     ; al422_bam_oe_processor:oe_processor|predelay_counter[1]     ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; al422_bam_oe_processor:oe_processor|postdelay_counter[0]    ; al422_bam_oe_processor:oe_processor|postdelay_counter[0]    ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; al422_bam_oe_processor:oe_processor|postdelay_counter[1]    ; al422_bam_oe_processor:oe_processor|postdelay_counter[1]    ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; al422_bam_oe_processor:oe_processor|postdelay_counter[0]    ; al422_bam_oe_processor:oe_processor|postdelay_counter[1]    ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; al422_bam_oe_processor:oe_processor|prescaler_counter[0]    ; al422_bam_oe_processor:oe_processor|prescaler_counter[0]    ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; al422_bam_oe_processor:oe_processor|prescaler_counter[1]    ; al422_bam_oe_processor:oe_processor|prescaler_counter[1]    ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; al422_bam_oe_processor:oe_processor|main_counter[0]         ; al422_bam_oe_processor:oe_processor|main_counter[0]         ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; al422_bam_oe_processor:oe_processor|prescaler_counter[1]    ; al422_bam_oe_processor:oe_processor|main_counter[0]         ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; al422_bam_oe_processor:oe_processor|main_counter[1]         ; al422_bam_oe_processor:oe_processor|main_counter[1]         ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; al422_bam_oe_processor:oe_processor|main_counter[0]         ; al422_bam_oe_processor:oe_processor|main_counter[1]         ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; al422_bam_oe_processor:oe_processor|prescaler_counter[1]    ; al422_bam_oe_processor:oe_processor|main_counter[1]         ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; al422_bam_oe_processor:oe_processor|main_counter[2]         ; al422_bam_oe_processor:oe_processor|main_counter[2]         ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; al422_bam_oe_processor:oe_processor|main_counter[1]         ; al422_bam_oe_processor:oe_processor|main_counter[2]         ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; al422_bam_oe_processor:oe_processor|main_counter[0]         ; al422_bam_oe_processor:oe_processor|main_counter[2]         ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; al422_bam_oe_processor:oe_processor|prescaler_counter[1]    ; al422_bam_oe_processor:oe_processor|main_counter[2]         ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; al422_bam_oe_processor:oe_processor|main_counter[3]         ; al422_bam_oe_processor:oe_processor|main_counter[3]         ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; al422_bam_oe_processor:oe_processor|main_counter[2]         ; al422_bam_oe_processor:oe_processor|main_counter[3]         ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; al422_bam_oe_processor:oe_processor|main_counter[1]         ; al422_bam_oe_processor:oe_processor|main_counter[3]         ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; al422_bam_oe_processor:oe_processor|main_counter[0]         ; al422_bam_oe_processor:oe_processor|main_counter[3]         ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; al422_bam_oe_processor:oe_processor|prescaler_counter[1]    ; al422_bam_oe_processor:oe_processor|main_counter[3]         ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; al422_bam_oe_processor:oe_processor|main_counter[4]         ; al422_bam_oe_processor:oe_processor|main_counter[4]         ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; al422_bam_oe_processor:oe_processor|main_counter[3]         ; al422_bam_oe_processor:oe_processor|main_counter[4]         ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; al422_bam_oe_processor:oe_processor|main_counter[2]         ; al422_bam_oe_processor:oe_processor|main_counter[4]         ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; al422_bam_oe_processor:oe_processor|main_counter[1]         ; al422_bam_oe_processor:oe_processor|main_counter[4]         ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; al422_bam_oe_processor:oe_processor|main_counter[0]         ; al422_bam_oe_processor:oe_processor|main_counter[4]         ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; al422_bam_oe_processor:oe_processor|prescaler_counter[1]    ; al422_bam_oe_processor:oe_processor|main_counter[4]         ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; al422_bam_oe_processor:oe_processor|main_counter[5]         ; al422_bam_oe_processor:oe_processor|main_counter[5]         ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; al422_bam_oe_processor:oe_processor|main_counter[4]         ; al422_bam_oe_processor:oe_processor|main_counter[5]         ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; al422_bam_oe_processor:oe_processor|main_counter[3]         ; al422_bam_oe_processor:oe_processor|main_counter[5]         ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; al422_bam_oe_processor:oe_processor|main_counter[2]         ; al422_bam_oe_processor:oe_processor|main_counter[5]         ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; al422_bam_oe_processor:oe_processor|main_counter[1]         ; al422_bam_oe_processor:oe_processor|main_counter[5]         ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; al422_bam_oe_processor:oe_processor|main_counter[0]         ; al422_bam_oe_processor:oe_processor|main_counter[5]         ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; al422_bam_oe_processor:oe_processor|prescaler_counter[1]    ; al422_bam_oe_processor:oe_processor|main_counter[5]         ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; al422_bam_oe_processor:oe_processor|main_counter[6]         ; al422_bam_oe_processor:oe_processor|main_counter[6]         ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; al422_bam_oe_processor:oe_processor|main_counter[3]         ; al422_bam_oe_processor:oe_processor|main_counter[6]         ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; al422_bam_oe_processor:oe_processor|main_counter[2]         ; al422_bam_oe_processor:oe_processor|main_counter[6]         ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; al422_bam_oe_processor:oe_processor|main_counter[1]         ; al422_bam_oe_processor:oe_processor|main_counter[6]         ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; al422_bam_oe_processor:oe_processor|main_counter[0]         ; al422_bam_oe_processor:oe_processor|main_counter[6]         ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; al422_bam_oe_processor:oe_processor|main_counter[5]         ; al422_bam_oe_processor:oe_processor|main_counter[6]         ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; al422_bam_oe_processor:oe_processor|main_counter[4]         ; al422_bam_oe_processor:oe_processor|main_counter[6]         ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; al422_bam_oe_processor:oe_processor|prescaler_counter[1]    ; al422_bam_oe_processor:oe_processor|main_counter[6]         ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; al422_bam_oe_processor:oe_processor|predelay_counter[1]     ; al422_bam_oe_processor:oe_processor|phase_cntr[0]           ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; al422_bam_oe_processor:oe_processor|postdelay_counter[0]    ; al422_bam_oe_processor:oe_processor|phase_cntr[0]           ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; al422_bam_oe_processor:oe_processor|postdelay_counter[1]    ; al422_bam_oe_processor:oe_processor|phase_cntr[0]           ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; al422_bam_oe_processor:oe_processor|main_counter[7]         ; al422_bam_oe_processor:oe_processor|main_counter[7]         ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; al422_bam_oe_processor:oe_processor|main_counter[3]         ; al422_bam_oe_processor:oe_processor|main_counter[7]         ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; al422_bam_oe_processor:oe_processor|main_counter[2]         ; al422_bam_oe_processor:oe_processor|main_counter[7]         ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; al422_bam_oe_processor:oe_processor|main_counter[1]         ; al422_bam_oe_processor:oe_processor|main_counter[7]         ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; al422_bam_oe_processor:oe_processor|main_counter[0]         ; al422_bam_oe_processor:oe_processor|main_counter[7]         ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; al422_bam_oe_processor:oe_processor|main_counter[6]         ; al422_bam_oe_processor:oe_processor|main_counter[7]         ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; al422_bam_oe_processor:oe_processor|main_counter[5]         ; al422_bam_oe_processor:oe_processor|main_counter[7]         ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; al422_bam_oe_processor:oe_processor|main_counter[4]         ; al422_bam_oe_processor:oe_processor|main_counter[7]         ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; al422_bam_oe_processor:oe_processor|prescaler_counter[1]    ; al422_bam_oe_processor:oe_processor|main_counter[7]         ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; al422_bam_oe_processor:oe_processor|phase_cntr[1]           ; al422_bam_oe_processor:oe_processor|phase_cntr[1]           ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; al422_bam_oe_processor:oe_processor|main_counter[7]         ; al422_bam_oe_processor:oe_processor|phase_cntr[1]           ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; al422_bam_oe_processor:oe_processor|main_counter[3]         ; al422_bam_oe_processor:oe_processor|phase_cntr[1]           ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; al422_bam_oe_processor:oe_processor|main_counter[2]         ; al422_bam_oe_processor:oe_processor|phase_cntr[1]           ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; al422_bam_oe_processor:oe_processor|main_counter[1]         ; al422_bam_oe_processor:oe_processor|phase_cntr[1]           ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; al422_bam_oe_processor:oe_processor|main_counter[0]         ; al422_bam_oe_processor:oe_processor|phase_cntr[1]           ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; al422_bam_oe_processor:oe_processor|prescaler_counter[1]    ; al422_bam_oe_processor:oe_processor|phase_cntr[1]           ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; al422_bam_oe_processor:oe_processor|main_counter[6]         ; al422_bam_oe_processor:oe_processor|phase_cntr[1]           ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; al422_bam_oe_processor:oe_processor|main_counter[5]         ; al422_bam_oe_processor:oe_processor|phase_cntr[1]           ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; al422_bam_oe_processor:oe_processor|main_counter[4]         ; al422_bam_oe_processor:oe_processor|phase_cntr[1]           ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; al422_bam_oe_processor:oe_processor|predelay_counter[0]     ; al422_bam_oe_processor:oe_processor|predelay_counter[0]     ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; al422_bam_first_stage:first_stage|rgb_tmp[2]                ; al422_bam_first_stage:first_stage|rgb_tmp[2]                ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; al422_bam_first_stage:first_stage|in_data_buffer[1]         ; al422_bam_first_stage:first_stage|rgb_tmp[2]                ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; al422_bam_first_stage:first_stage|rgb_tmp[1]                ; al422_bam_first_stage:first_stage|rgb_tmp[1]                ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; al422_bam_first_stage:first_stage|in_data_buffer[1]         ; al422_bam_first_stage:first_stage|rgb_tmp[1]                ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; al422_bam_first_stage:first_stage|rgb_tmp[0]                ; al422_bam_first_stage:first_stage|rgb_tmp[0]                ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; al422_bam_first_stage:first_stage|in_data_buffer[1]         ; al422_bam_first_stage:first_stage|rgb_tmp[0]                ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; al422_bam_first_stage:first_stage|al422_re                  ; al422_bam_first_stage:first_stage|al422_re                  ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; al422_bam_first_stage:first_stage|rgb_out1[2]               ; al422_bam_first_stage:first_stage|rgb_out1[2]               ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; al422_bam_first_stage:first_stage|rgb_out1[1]               ; al422_bam_first_stage:first_stage|rgb_out1[1]               ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; al422_bam_first_stage:first_stage|rgb_out1[0]               ; al422_bam_first_stage:first_stage|rgb_out1[0]               ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 7.100      ;
+; 5.800 ; al422_bam_first_stage:first_stage|rgb_tmp[0]                ; al422_bam_first_stage:first_stage|rgb_out1[0]               ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 7.100      ;
+; 5.900 ; al422_bam_first_stage:first_stage|data_in_data_buffer_valid ; al422_bam_first_stage:first_stage|phase_cntr[0]             ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 7.200      ;
+; 5.900 ; al422_bam_first_stage:first_stage|data_in_data_buffer_valid ; al422_bam_first_stage:first_stage|phase_cntr[1]             ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 7.200      ;
+; 5.900 ; al422_bam_first_stage:first_stage|first_cycle_finished      ; al422_bam_first_stage:first_stage|out_data_valid            ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 7.200      ;
+; 5.900 ; al422_bam_first_stage:first_stage|data_in_data_buffer_valid ; al422_bam_first_stage:first_stage|out_data_valid            ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 7.200      ;
+; 5.900 ; al422_bam_first_stage:first_stage|data_in_data_buffer_valid ; al422_bam_first_stage:first_stage|pixel_counter[0]          ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 7.200      ;
+; 5.900 ; al422_bam_first_stage:first_stage|pixel_counter[0]          ; al422_bam_first_stage:first_stage|pixel_counter[1]          ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 7.200      ;
+; 5.900 ; al422_bam_first_stage:first_stage|data_in_data_buffer_valid ; al422_bam_first_stage:first_stage|pixel_counter[1]          ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 7.200      ;
+; 5.900 ; al422_bam_first_stage:first_stage|pixel_counter[1]          ; al422_bam_first_stage:first_stage|pixel_counter[2]          ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 7.200      ;
+; 5.900 ; al422_bam_first_stage:first_stage|pixel_counter[0]          ; al422_bam_first_stage:first_stage|pixel_counter[2]          ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 7.200      ;
+; 5.900 ; al422_bam_first_stage:first_stage|data_in_data_buffer_valid ; al422_bam_first_stage:first_stage|pixel_counter[2]          ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 7.200      ;
+; 5.900 ; al422_bam_first_stage:first_stage|pixel_counter[2]          ; al422_bam_first_stage:first_stage|module_is_busy            ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 7.200      ;
+; 5.900 ; al422_bam_first_stage:first_stage|pixel_counter[1]          ; al422_bam_first_stage:first_stage|module_is_busy            ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 7.200      ;
+; 5.900 ; al422_bam_first_stage:first_stage|pixel_counter[0]          ; al422_bam_first_stage:first_stage|module_is_busy            ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 7.200      ;
+; 5.900 ; al422_bam_first_stage:first_stage|data_in_data_buffer_valid ; al422_bam_first_stage:first_stage|module_is_busy            ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 7.200      ;
+; 5.900 ; al422_bam_oe_processor:oe_processor|module_is_busy          ; al422_bam_oe_processor:oe_processor|predelay_counter[1]     ; in_clk       ; in_clk      ; 0.000        ; 0.000      ; 7.200      ;
++-------+-------------------------------------------------------------+-------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------+
-; Minimum Pulse Width: 'in_clk'                                                                                   ;
-+--------+--------------+----------------+------------------+--------+------------+-------------------------------+
-; Slack  ; Actual Width ; Required Width ; Type             ; Clock  ; Clock Edge ; Target                        ;
-+--------+--------------+----------------+------------------+--------+------------+-------------------------------+
-; 6.000  ; 10.000       ; 4.000          ; High Pulse Width ; in_clk ; Rise       ; al422_re~reg0                 ;
-; 6.000  ; 10.000       ; 4.000          ; Low Pulse Width  ; in_clk ; Rise       ; al422_re~reg0                 ;
-; 6.000  ; 10.000       ; 4.000          ; High Pulse Width ; in_clk ; Rise       ; data_in_data_buffer_valid     ;
-; 6.000  ; 10.000       ; 4.000          ; Low Pulse Width  ; in_clk ; Rise       ; data_in_data_buffer_valid     ;
-; 6.000  ; 10.000       ; 4.000          ; High Pulse Width ; in_clk ; Rise       ; first_cycle_finished          ;
-; 6.000  ; 10.000       ; 4.000          ; Low Pulse Width  ; in_clk ; Rise       ; first_cycle_finished          ;
-; 6.000  ; 10.000       ; 4.000          ; High Pulse Width ; in_clk ; Rise       ; in_data_buffer[0]             ;
-; 6.000  ; 10.000       ; 4.000          ; Low Pulse Width  ; in_clk ; Rise       ; in_data_buffer[0]             ;
-; 6.000  ; 10.000       ; 4.000          ; High Pulse Width ; in_clk ; Rise       ; led_clk                       ;
-; 6.000  ; 10.000       ; 4.000          ; Low Pulse Width  ; in_clk ; Rise       ; led_clk                       ;
-; 6.000  ; 10.000       ; 4.000          ; High Pulse Width ; in_clk ; Rise       ; out_data_valid                ;
-; 6.000  ; 10.000       ; 4.000          ; Low Pulse Width  ; in_clk ; Rise       ; out_data_valid                ;
-; 6.000  ; 10.000       ; 4.000          ; High Pulse Width ; in_clk ; Rise       ; phase_cntr[0]                 ;
-; 6.000  ; 10.000       ; 4.000          ; Low Pulse Width  ; in_clk ; Rise       ; phase_cntr[0]                 ;
-; 6.000  ; 10.000       ; 4.000          ; High Pulse Width ; in_clk ; Rise       ; phase_cntr[1]                 ;
-; 6.000  ; 10.000       ; 4.000          ; Low Pulse Width  ; in_clk ; Rise       ; phase_cntr[1]                 ;
-; 6.000  ; 10.000       ; 4.000          ; High Pulse Width ; in_clk ; Rise       ; pixel_counter[0]              ;
-; 6.000  ; 10.000       ; 4.000          ; Low Pulse Width  ; in_clk ; Rise       ; pixel_counter[0]              ;
-; 6.000  ; 10.000       ; 4.000          ; High Pulse Width ; in_clk ; Rise       ; pixel_counter[1]              ;
-; 6.000  ; 10.000       ; 4.000          ; Low Pulse Width  ; in_clk ; Rise       ; pixel_counter[1]              ;
-; 6.000  ; 10.000       ; 4.000          ; High Pulse Width ; in_clk ; Rise       ; pixel_counter[2]              ;
-; 6.000  ; 10.000       ; 4.000          ; Low Pulse Width  ; in_clk ; Rise       ; pixel_counter[2]              ;
-; 6.000  ; 10.000       ; 4.000          ; High Pulse Width ; in_clk ; Rise       ; pixel_counter[3]              ;
-; 6.000  ; 10.000       ; 4.000          ; Low Pulse Width  ; in_clk ; Rise       ; pixel_counter[3]              ;
-; 6.000  ; 10.000       ; 4.000          ; High Pulse Width ; in_clk ; Rise       ; rgb1[0]~reg0                  ;
-; 6.000  ; 10.000       ; 4.000          ; Low Pulse Width  ; in_clk ; Rise       ; rgb1[0]~reg0                  ;
-; 6.000  ; 10.000       ; 4.000          ; High Pulse Width ; in_clk ; Rise       ; rgb1[1]~reg0                  ;
-; 6.000  ; 10.000       ; 4.000          ; Low Pulse Width  ; in_clk ; Rise       ; rgb1[1]~reg0                  ;
-; 6.000  ; 10.000       ; 4.000          ; High Pulse Width ; in_clk ; Rise       ; rgb1[2]~reg0                  ;
-; 6.000  ; 10.000       ; 4.000          ; Low Pulse Width  ; in_clk ; Rise       ; rgb1[2]~reg0                  ;
-; 6.000  ; 10.000       ; 4.000          ; High Pulse Width ; in_clk ; Rise       ; rgb_tmp[0]                    ;
-; 6.000  ; 10.000       ; 4.000          ; Low Pulse Width  ; in_clk ; Rise       ; rgb_tmp[0]                    ;
-; 6.000  ; 10.000       ; 4.000          ; High Pulse Width ; in_clk ; Rise       ; rgb_tmp[1]                    ;
-; 6.000  ; 10.000       ; 4.000          ; Low Pulse Width  ; in_clk ; Rise       ; rgb_tmp[1]                    ;
-; 6.000  ; 10.000       ; 4.000          ; High Pulse Width ; in_clk ; Rise       ; rgb_tmp[2]                    ;
-; 6.000  ; 10.000       ; 4.000          ; Low Pulse Width  ; in_clk ; Rise       ; rgb_tmp[2]                    ;
-; 10.000 ; 10.000       ; 0.000          ; High Pulse Width ; in_clk ; Rise       ; al422_re~reg0|clk             ;
-; 10.000 ; 10.000       ; 0.000          ; Low Pulse Width  ; in_clk ; Rise       ; al422_re~reg0|clk             ;
-; 10.000 ; 10.000       ; 0.000          ; High Pulse Width ; in_clk ; Rise       ; data_in_data_buffer_valid|clk ;
-; 10.000 ; 10.000       ; 0.000          ; Low Pulse Width  ; in_clk ; Rise       ; data_in_data_buffer_valid|clk ;
-; 10.000 ; 10.000       ; 0.000          ; High Pulse Width ; in_clk ; Rise       ; first_cycle_finished|clk      ;
-; 10.000 ; 10.000       ; 0.000          ; Low Pulse Width  ; in_clk ; Rise       ; first_cycle_finished|clk      ;
-; 10.000 ; 10.000       ; 0.000          ; High Pulse Width ; in_clk ; Rise       ; in_clk|dataout                ;
-; 10.000 ; 10.000       ; 0.000          ; Low Pulse Width  ; in_clk ; Rise       ; in_clk|dataout                ;
-; 10.000 ; 10.000       ; 0.000          ; High Pulse Width ; in_clk ; Rise       ; in_data_buffer[0]|clk         ;
-; 10.000 ; 10.000       ; 0.000          ; Low Pulse Width  ; in_clk ; Rise       ; in_data_buffer[0]|clk         ;
-; 10.000 ; 10.000       ; 0.000          ; High Pulse Width ; in_clk ; Rise       ; led_clk|clk                   ;
-; 10.000 ; 10.000       ; 0.000          ; Low Pulse Width  ; in_clk ; Rise       ; led_clk|clk                   ;
-; 10.000 ; 10.000       ; 0.000          ; High Pulse Width ; in_clk ; Rise       ; out_data_valid|clk            ;
-; 10.000 ; 10.000       ; 0.000          ; Low Pulse Width  ; in_clk ; Rise       ; out_data_valid|clk            ;
-; 10.000 ; 10.000       ; 0.000          ; High Pulse Width ; in_clk ; Rise       ; phase_cntr[0]|clk             ;
-; 10.000 ; 10.000       ; 0.000          ; Low Pulse Width  ; in_clk ; Rise       ; phase_cntr[0]|clk             ;
-; 10.000 ; 10.000       ; 0.000          ; High Pulse Width ; in_clk ; Rise       ; phase_cntr[1]|clk             ;
-; 10.000 ; 10.000       ; 0.000          ; Low Pulse Width  ; in_clk ; Rise       ; phase_cntr[1]|clk             ;
-; 10.000 ; 10.000       ; 0.000          ; High Pulse Width ; in_clk ; Rise       ; pixel_counter[0]|clk          ;
-; 10.000 ; 10.000       ; 0.000          ; Low Pulse Width  ; in_clk ; Rise       ; pixel_counter[0]|clk          ;
-; 10.000 ; 10.000       ; 0.000          ; High Pulse Width ; in_clk ; Rise       ; pixel_counter[1]|clk          ;
-; 10.000 ; 10.000       ; 0.000          ; Low Pulse Width  ; in_clk ; Rise       ; pixel_counter[1]|clk          ;
-; 10.000 ; 10.000       ; 0.000          ; High Pulse Width ; in_clk ; Rise       ; pixel_counter[2]|clk          ;
-; 10.000 ; 10.000       ; 0.000          ; Low Pulse Width  ; in_clk ; Rise       ; pixel_counter[2]|clk          ;
-; 10.000 ; 10.000       ; 0.000          ; High Pulse Width ; in_clk ; Rise       ; pixel_counter[3]|clk          ;
-; 10.000 ; 10.000       ; 0.000          ; Low Pulse Width  ; in_clk ; Rise       ; pixel_counter[3]|clk          ;
-; 10.000 ; 10.000       ; 0.000          ; High Pulse Width ; in_clk ; Rise       ; rgb1[0]~reg0|clk              ;
-; 10.000 ; 10.000       ; 0.000          ; Low Pulse Width  ; in_clk ; Rise       ; rgb1[0]~reg0|clk              ;
-; 10.000 ; 10.000       ; 0.000          ; High Pulse Width ; in_clk ; Rise       ; rgb1[1]~reg0|clk              ;
-; 10.000 ; 10.000       ; 0.000          ; Low Pulse Width  ; in_clk ; Rise       ; rgb1[1]~reg0|clk              ;
-; 10.000 ; 10.000       ; 0.000          ; High Pulse Width ; in_clk ; Rise       ; rgb1[2]~reg0|clk              ;
-; 10.000 ; 10.000       ; 0.000          ; Low Pulse Width  ; in_clk ; Rise       ; rgb1[2]~reg0|clk              ;
-; 10.000 ; 10.000       ; 0.000          ; High Pulse Width ; in_clk ; Rise       ; rgb_tmp[0]|clk                ;
-; 10.000 ; 10.000       ; 0.000          ; Low Pulse Width  ; in_clk ; Rise       ; rgb_tmp[0]|clk                ;
-; 10.000 ; 10.000       ; 0.000          ; High Pulse Width ; in_clk ; Rise       ; rgb_tmp[1]|clk                ;
-; 10.000 ; 10.000       ; 0.000          ; Low Pulse Width  ; in_clk ; Rise       ; rgb_tmp[1]|clk                ;
-; 10.000 ; 10.000       ; 0.000          ; High Pulse Width ; in_clk ; Rise       ; rgb_tmp[2]|clk                ;
-; 10.000 ; 10.000       ; 0.000          ; Low Pulse Width  ; in_clk ; Rise       ; rgb_tmp[2]|clk                ;
-+--------+--------------+----------------+------------------+--------+------------+-------------------------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------+
+; Minimum Pulse Width: 'in_clk'                                                                                                                 ;
++--------+--------------+----------------+------------------+--------+------------+-------------------------------------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock  ; Clock Edge ; Target                                                      ;
++--------+--------------+----------------+------------------+--------+------------+-------------------------------------------------------------+
+; 6.000  ; 10.000       ; 4.000          ; High Pulse Width ; in_clk ; Rise       ; al422_bam_first_stage:first_stage|al422_nrst                ;
+; 6.000  ; 10.000       ; 4.000          ; Low Pulse Width  ; in_clk ; Rise       ; al422_bam_first_stage:first_stage|al422_nrst                ;
+; 6.000  ; 10.000       ; 4.000          ; High Pulse Width ; in_clk ; Rise       ; al422_bam_first_stage:first_stage|al422_re                  ;
+; 6.000  ; 10.000       ; 4.000          ; Low Pulse Width  ; in_clk ; Rise       ; al422_bam_first_stage:first_stage|al422_re                  ;
+; 6.000  ; 10.000       ; 4.000          ; High Pulse Width ; in_clk ; Rise       ; al422_bam_first_stage:first_stage|data_in_data_buffer_valid ;
+; 6.000  ; 10.000       ; 4.000          ; Low Pulse Width  ; in_clk ; Rise       ; al422_bam_first_stage:first_stage|data_in_data_buffer_valid ;
+; 6.000  ; 10.000       ; 4.000          ; High Pulse Width ; in_clk ; Rise       ; al422_bam_first_stage:first_stage|first_cycle_finished      ;
+; 6.000  ; 10.000       ; 4.000          ; Low Pulse Width  ; in_clk ; Rise       ; al422_bam_first_stage:first_stage|first_cycle_finished      ;
+; 6.000  ; 10.000       ; 4.000          ; High Pulse Width ; in_clk ; Rise       ; al422_bam_first_stage:first_stage|in_data_buffer[1]         ;
+; 6.000  ; 10.000       ; 4.000          ; Low Pulse Width  ; in_clk ; Rise       ; al422_bam_first_stage:first_stage|in_data_buffer[1]         ;
+; 6.000  ; 10.000       ; 4.000          ; High Pulse Width ; in_clk ; Rise       ; al422_bam_first_stage:first_stage|led_clk                   ;
+; 6.000  ; 10.000       ; 4.000          ; Low Pulse Width  ; in_clk ; Rise       ; al422_bam_first_stage:first_stage|led_clk                   ;
+; 6.000  ; 10.000       ; 4.000          ; High Pulse Width ; in_clk ; Rise       ; al422_bam_first_stage:first_stage|module_is_busy            ;
+; 6.000  ; 10.000       ; 4.000          ; Low Pulse Width  ; in_clk ; Rise       ; al422_bam_first_stage:first_stage|module_is_busy            ;
+; 6.000  ; 10.000       ; 4.000          ; High Pulse Width ; in_clk ; Rise       ; al422_bam_first_stage:first_stage|out_data_valid            ;
+; 6.000  ; 10.000       ; 4.000          ; Low Pulse Width  ; in_clk ; Rise       ; al422_bam_first_stage:first_stage|out_data_valid            ;
+; 6.000  ; 10.000       ; 4.000          ; High Pulse Width ; in_clk ; Rise       ; al422_bam_first_stage:first_stage|phase_cntr[0]             ;
+; 6.000  ; 10.000       ; 4.000          ; Low Pulse Width  ; in_clk ; Rise       ; al422_bam_first_stage:first_stage|phase_cntr[0]             ;
+; 6.000  ; 10.000       ; 4.000          ; High Pulse Width ; in_clk ; Rise       ; al422_bam_first_stage:first_stage|phase_cntr[1]             ;
+; 6.000  ; 10.000       ; 4.000          ; Low Pulse Width  ; in_clk ; Rise       ; al422_bam_first_stage:first_stage|phase_cntr[1]             ;
+; 6.000  ; 10.000       ; 4.000          ; High Pulse Width ; in_clk ; Rise       ; al422_bam_first_stage:first_stage|pixel_counter[0]          ;
+; 6.000  ; 10.000       ; 4.000          ; Low Pulse Width  ; in_clk ; Rise       ; al422_bam_first_stage:first_stage|pixel_counter[0]          ;
+; 6.000  ; 10.000       ; 4.000          ; High Pulse Width ; in_clk ; Rise       ; al422_bam_first_stage:first_stage|pixel_counter[1]          ;
+; 6.000  ; 10.000       ; 4.000          ; Low Pulse Width  ; in_clk ; Rise       ; al422_bam_first_stage:first_stage|pixel_counter[1]          ;
+; 6.000  ; 10.000       ; 4.000          ; High Pulse Width ; in_clk ; Rise       ; al422_bam_first_stage:first_stage|pixel_counter[2]          ;
+; 6.000  ; 10.000       ; 4.000          ; Low Pulse Width  ; in_clk ; Rise       ; al422_bam_first_stage:first_stage|pixel_counter[2]          ;
+; 6.000  ; 10.000       ; 4.000          ; High Pulse Width ; in_clk ; Rise       ; al422_bam_first_stage:first_stage|rgb_out1[0]               ;
+; 6.000  ; 10.000       ; 4.000          ; Low Pulse Width  ; in_clk ; Rise       ; al422_bam_first_stage:first_stage|rgb_out1[0]               ;
+; 6.000  ; 10.000       ; 4.000          ; High Pulse Width ; in_clk ; Rise       ; al422_bam_first_stage:first_stage|rgb_out1[1]               ;
+; 6.000  ; 10.000       ; 4.000          ; Low Pulse Width  ; in_clk ; Rise       ; al422_bam_first_stage:first_stage|rgb_out1[1]               ;
+; 6.000  ; 10.000       ; 4.000          ; High Pulse Width ; in_clk ; Rise       ; al422_bam_first_stage:first_stage|rgb_out1[2]               ;
+; 6.000  ; 10.000       ; 4.000          ; Low Pulse Width  ; in_clk ; Rise       ; al422_bam_first_stage:first_stage|rgb_out1[2]               ;
+; 6.000  ; 10.000       ; 4.000          ; High Pulse Width ; in_clk ; Rise       ; al422_bam_first_stage:first_stage|rgb_tmp[0]                ;
+; 6.000  ; 10.000       ; 4.000          ; Low Pulse Width  ; in_clk ; Rise       ; al422_bam_first_stage:first_stage|rgb_tmp[0]                ;
+; 6.000  ; 10.000       ; 4.000          ; High Pulse Width ; in_clk ; Rise       ; al422_bam_first_stage:first_stage|rgb_tmp[1]                ;
+; 6.000  ; 10.000       ; 4.000          ; Low Pulse Width  ; in_clk ; Rise       ; al422_bam_first_stage:first_stage|rgb_tmp[1]                ;
+; 6.000  ; 10.000       ; 4.000          ; High Pulse Width ; in_clk ; Rise       ; al422_bam_first_stage:first_stage|rgb_tmp[2]                ;
+; 6.000  ; 10.000       ; 4.000          ; Low Pulse Width  ; in_clk ; Rise       ; al422_bam_first_stage:first_stage|rgb_tmp[2]                ;
+; 6.000  ; 10.000       ; 4.000          ; High Pulse Width ; in_clk ; Rise       ; al422_bam_oe_processor:oe_processor|main_counter[0]         ;
+; 6.000  ; 10.000       ; 4.000          ; Low Pulse Width  ; in_clk ; Rise       ; al422_bam_oe_processor:oe_processor|main_counter[0]         ;
+; 6.000  ; 10.000       ; 4.000          ; High Pulse Width ; in_clk ; Rise       ; al422_bam_oe_processor:oe_processor|main_counter[1]         ;
+; 6.000  ; 10.000       ; 4.000          ; Low Pulse Width  ; in_clk ; Rise       ; al422_bam_oe_processor:oe_processor|main_counter[1]         ;
+; 6.000  ; 10.000       ; 4.000          ; High Pulse Width ; in_clk ; Rise       ; al422_bam_oe_processor:oe_processor|main_counter[2]         ;
+; 6.000  ; 10.000       ; 4.000          ; Low Pulse Width  ; in_clk ; Rise       ; al422_bam_oe_processor:oe_processor|main_counter[2]         ;
+; 6.000  ; 10.000       ; 4.000          ; High Pulse Width ; in_clk ; Rise       ; al422_bam_oe_processor:oe_processor|main_counter[3]         ;
+; 6.000  ; 10.000       ; 4.000          ; Low Pulse Width  ; in_clk ; Rise       ; al422_bam_oe_processor:oe_processor|main_counter[3]         ;
+; 6.000  ; 10.000       ; 4.000          ; High Pulse Width ; in_clk ; Rise       ; al422_bam_oe_processor:oe_processor|main_counter[4]         ;
+; 6.000  ; 10.000       ; 4.000          ; Low Pulse Width  ; in_clk ; Rise       ; al422_bam_oe_processor:oe_processor|main_counter[4]         ;
+; 6.000  ; 10.000       ; 4.000          ; High Pulse Width ; in_clk ; Rise       ; al422_bam_oe_processor:oe_processor|main_counter[5]         ;
+; 6.000  ; 10.000       ; 4.000          ; Low Pulse Width  ; in_clk ; Rise       ; al422_bam_oe_processor:oe_processor|main_counter[5]         ;
+; 6.000  ; 10.000       ; 4.000          ; High Pulse Width ; in_clk ; Rise       ; al422_bam_oe_processor:oe_processor|main_counter[6]         ;
+; 6.000  ; 10.000       ; 4.000          ; Low Pulse Width  ; in_clk ; Rise       ; al422_bam_oe_processor:oe_processor|main_counter[6]         ;
+; 6.000  ; 10.000       ; 4.000          ; High Pulse Width ; in_clk ; Rise       ; al422_bam_oe_processor:oe_processor|main_counter[7]         ;
+; 6.000  ; 10.000       ; 4.000          ; Low Pulse Width  ; in_clk ; Rise       ; al422_bam_oe_processor:oe_processor|main_counter[7]         ;
+; 6.000  ; 10.000       ; 4.000          ; High Pulse Width ; in_clk ; Rise       ; al422_bam_oe_processor:oe_processor|module_is_busy          ;
+; 6.000  ; 10.000       ; 4.000          ; Low Pulse Width  ; in_clk ; Rise       ; al422_bam_oe_processor:oe_processor|module_is_busy          ;
+; 6.000  ; 10.000       ; 4.000          ; High Pulse Width ; in_clk ; Rise       ; al422_bam_oe_processor:oe_processor|phase_cntr[0]           ;
+; 6.000  ; 10.000       ; 4.000          ; Low Pulse Width  ; in_clk ; Rise       ; al422_bam_oe_processor:oe_processor|phase_cntr[0]           ;
+; 6.000  ; 10.000       ; 4.000          ; High Pulse Width ; in_clk ; Rise       ; al422_bam_oe_processor:oe_processor|phase_cntr[1]           ;
+; 6.000  ; 10.000       ; 4.000          ; Low Pulse Width  ; in_clk ; Rise       ; al422_bam_oe_processor:oe_processor|phase_cntr[1]           ;
+; 6.000  ; 10.000       ; 4.000          ; High Pulse Width ; in_clk ; Rise       ; al422_bam_oe_processor:oe_processor|postdelay_counter[0]    ;
+; 6.000  ; 10.000       ; 4.000          ; Low Pulse Width  ; in_clk ; Rise       ; al422_bam_oe_processor:oe_processor|postdelay_counter[0]    ;
+; 6.000  ; 10.000       ; 4.000          ; High Pulse Width ; in_clk ; Rise       ; al422_bam_oe_processor:oe_processor|postdelay_counter[1]    ;
+; 6.000  ; 10.000       ; 4.000          ; Low Pulse Width  ; in_clk ; Rise       ; al422_bam_oe_processor:oe_processor|postdelay_counter[1]    ;
+; 6.000  ; 10.000       ; 4.000          ; High Pulse Width ; in_clk ; Rise       ; al422_bam_oe_processor:oe_processor|predelay_counter[0]     ;
+; 6.000  ; 10.000       ; 4.000          ; Low Pulse Width  ; in_clk ; Rise       ; al422_bam_oe_processor:oe_processor|predelay_counter[0]     ;
+; 6.000  ; 10.000       ; 4.000          ; High Pulse Width ; in_clk ; Rise       ; al422_bam_oe_processor:oe_processor|predelay_counter[1]     ;
+; 6.000  ; 10.000       ; 4.000          ; Low Pulse Width  ; in_clk ; Rise       ; al422_bam_oe_processor:oe_processor|predelay_counter[1]     ;
+; 6.000  ; 10.000       ; 4.000          ; High Pulse Width ; in_clk ; Rise       ; al422_bam_oe_processor:oe_processor|prescaler_counter[0]    ;
+; 6.000  ; 10.000       ; 4.000          ; Low Pulse Width  ; in_clk ; Rise       ; al422_bam_oe_processor:oe_processor|prescaler_counter[0]    ;
+; 6.000  ; 10.000       ; 4.000          ; High Pulse Width ; in_clk ; Rise       ; al422_bam_oe_processor:oe_processor|prescaler_counter[1]    ;
+; 6.000  ; 10.000       ; 4.000          ; Low Pulse Width  ; in_clk ; Rise       ; al422_bam_oe_processor:oe_processor|prescaler_counter[1]    ;
+; 10.000 ; 10.000       ; 0.000          ; High Pulse Width ; in_clk ; Rise       ; first_stage|al422_nrst|clk                                  ;
+; 10.000 ; 10.000       ; 0.000          ; Low Pulse Width  ; in_clk ; Rise       ; first_stage|al422_nrst|clk                                  ;
+; 10.000 ; 10.000       ; 0.000          ; High Pulse Width ; in_clk ; Rise       ; first_stage|al422_re|clk                                    ;
+; 10.000 ; 10.000       ; 0.000          ; Low Pulse Width  ; in_clk ; Rise       ; first_stage|al422_re|clk                                    ;
+; 10.000 ; 10.000       ; 0.000          ; High Pulse Width ; in_clk ; Rise       ; first_stage|data_in_data_buffer_valid|clk                   ;
+; 10.000 ; 10.000       ; 0.000          ; Low Pulse Width  ; in_clk ; Rise       ; first_stage|data_in_data_buffer_valid|clk                   ;
+; 10.000 ; 10.000       ; 0.000          ; High Pulse Width ; in_clk ; Rise       ; first_stage|first_cycle_finished|clk                        ;
+; 10.000 ; 10.000       ; 0.000          ; Low Pulse Width  ; in_clk ; Rise       ; first_stage|first_cycle_finished|clk                        ;
+; 10.000 ; 10.000       ; 0.000          ; High Pulse Width ; in_clk ; Rise       ; first_stage|in_data_buffer[1]|clk                           ;
+; 10.000 ; 10.000       ; 0.000          ; Low Pulse Width  ; in_clk ; Rise       ; first_stage|in_data_buffer[1]|clk                           ;
+; 10.000 ; 10.000       ; 0.000          ; High Pulse Width ; in_clk ; Rise       ; first_stage|led_clk|clk                                     ;
+; 10.000 ; 10.000       ; 0.000          ; Low Pulse Width  ; in_clk ; Rise       ; first_stage|led_clk|clk                                     ;
+; 10.000 ; 10.000       ; 0.000          ; High Pulse Width ; in_clk ; Rise       ; first_stage|module_is_busy|clk                              ;
+; 10.000 ; 10.000       ; 0.000          ; Low Pulse Width  ; in_clk ; Rise       ; first_stage|module_is_busy|clk                              ;
+; 10.000 ; 10.000       ; 0.000          ; High Pulse Width ; in_clk ; Rise       ; first_stage|out_data_valid|clk                              ;
+; 10.000 ; 10.000       ; 0.000          ; Low Pulse Width  ; in_clk ; Rise       ; first_stage|out_data_valid|clk                              ;
+; 10.000 ; 10.000       ; 0.000          ; High Pulse Width ; in_clk ; Rise       ; first_stage|phase_cntr[0]|clk                               ;
+; 10.000 ; 10.000       ; 0.000          ; Low Pulse Width  ; in_clk ; Rise       ; first_stage|phase_cntr[0]|clk                               ;
+; 10.000 ; 10.000       ; 0.000          ; High Pulse Width ; in_clk ; Rise       ; first_stage|phase_cntr[1]|clk                               ;
+; 10.000 ; 10.000       ; 0.000          ; Low Pulse Width  ; in_clk ; Rise       ; first_stage|phase_cntr[1]|clk                               ;
+; 10.000 ; 10.000       ; 0.000          ; High Pulse Width ; in_clk ; Rise       ; first_stage|pixel_counter[0]|clk                            ;
+; 10.000 ; 10.000       ; 0.000          ; Low Pulse Width  ; in_clk ; Rise       ; first_stage|pixel_counter[0]|clk                            ;
+; 10.000 ; 10.000       ; 0.000          ; High Pulse Width ; in_clk ; Rise       ; first_stage|pixel_counter[1]|clk                            ;
+; 10.000 ; 10.000       ; 0.000          ; Low Pulse Width  ; in_clk ; Rise       ; first_stage|pixel_counter[1]|clk                            ;
+; 10.000 ; 10.000       ; 0.000          ; High Pulse Width ; in_clk ; Rise       ; first_stage|pixel_counter[2]|clk                            ;
+; 10.000 ; 10.000       ; 0.000          ; Low Pulse Width  ; in_clk ; Rise       ; first_stage|pixel_counter[2]|clk                            ;
+; 10.000 ; 10.000       ; 0.000          ; High Pulse Width ; in_clk ; Rise       ; first_stage|rgb_out1[0]|clk                                 ;
+; 10.000 ; 10.000       ; 0.000          ; Low Pulse Width  ; in_clk ; Rise       ; first_stage|rgb_out1[0]|clk                                 ;
++--------+--------------+----------------+------------------+--------+------------+-------------------------------------------------------------+
 
 
-+-------------------------------------------------------------------------+
-; Setup Times                                                             ;
-+-------------+------------+-------+-------+------------+-----------------+
-; Data Port   ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
-+-------------+------------+-------+-------+------------+-----------------+
-; in_data[*]  ; in_clk     ; 6.200 ; 6.200 ; Rise       ; in_clk          ;
-;  in_data[0] ; in_clk     ; 6.200 ; 6.200 ; Rise       ; in_clk          ;
-+-------------+------------+-------+-------+------------+-----------------+
++---------------------------------------------------------------------------------------+
+; Setup Times                                                                           ;
++---------------------------+------------+-------+-------+------------+-----------------+
+; Data Port                 ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++---------------------------+------------+-------+-------+------------+-----------------+
+; first_stage_address_reset ; in_clk     ; 6.200 ; 6.200 ; Rise       ; in_clk          ;
+; first_stage_module_start  ; in_clk     ; 6.500 ; 6.500 ; Rise       ; in_clk          ;
+; in_data[*]                ; in_clk     ; 6.200 ; 6.200 ; Rise       ; in_clk          ;
+;  in_data[1]               ; in_clk     ; 6.200 ; 6.200 ; Rise       ; in_clk          ;
+; oe_processor_start        ; in_clk     ; 6.300 ; 6.300 ; Rise       ; in_clk          ;
++---------------------------+------------+-------+-------+------------+-----------------+
 
 
-+---------------------------------------------------------------------------+
-; Hold Times                                                                ;
-+-------------+------------+--------+--------+------------+-----------------+
-; Data Port   ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
-+-------------+------------+--------+--------+------------+-----------------+
-; in_data[*]  ; in_clk     ; -2.000 ; -2.000 ; Rise       ; in_clk          ;
-;  in_data[0] ; in_clk     ; -2.000 ; -2.000 ; Rise       ; in_clk          ;
-+-------------+------------+--------+--------+------------+-----------------+
++-----------------------------------------------------------------------------------------+
+; Hold Times                                                                              ;
++---------------------------+------------+--------+--------+------------+-----------------+
+; Data Port                 ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++---------------------------+------------+--------+--------+------------+-----------------+
+; first_stage_address_reset ; in_clk     ; -2.000 ; -2.000 ; Rise       ; in_clk          ;
+; first_stage_module_start  ; in_clk     ; -2.300 ; -2.300 ; Rise       ; in_clk          ;
+; in_data[*]                ; in_clk     ; -2.000 ; -2.000 ; Rise       ; in_clk          ;
+;  in_data[1]               ; in_clk     ; -2.000 ; -2.000 ; Rise       ; in_clk          ;
+; oe_processor_start        ; in_clk     ; -2.100 ; -2.100 ; Rise       ; in_clk          ;
++---------------------------+------------+--------+--------+------------+-----------------+
 
 
-+-------------------------------------------------------------------------+
-; Clock to Output Times                                                   ;
-+-------------+------------+-------+-------+------------+-----------------+
-; Data Port   ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
-+-------------+------------+-------+-------+------------+-----------------+
-; al422_re    ; in_clk     ; 7.000 ; 7.000 ; Rise       ; in_clk          ;
-; led_clk_out ; in_clk     ; 7.000 ; 7.000 ; Rise       ; in_clk          ;
-; rgb1[*]     ; in_clk     ; 7.000 ; 7.000 ; Rise       ; in_clk          ;
-;  rgb1[0]    ; in_clk     ; 7.000 ; 7.000 ; Rise       ; in_clk          ;
-;  rgb1[1]    ; in_clk     ; 7.000 ; 7.000 ; Rise       ; in_clk          ;
-;  rgb1[2]    ; in_clk     ; 7.000 ; 7.000 ; Rise       ; in_clk          ;
-+-------------+------------+-------+-------+------------+-----------------+
++------------------------------------------------------------------------------+
+; Clock to Output Times                                                        ;
++----------------+------------+--------+--------+------------+-----------------+
+; Data Port      ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++----------------+------------+--------+--------+------------+-----------------+
+; al422_nrst_out ; in_clk     ; 7.000  ; 7.000  ; Rise       ; in_clk          ;
+; al422_re_out   ; in_clk     ; 7.000  ; 7.000  ; Rise       ; in_clk          ;
+; led_clk_out    ; in_clk     ; 7.000  ; 7.000  ; Rise       ; in_clk          ;
+; led_oe_out     ; in_clk     ; 13.900 ; 13.900 ; Rise       ; in_clk          ;
+; rgb1[*]        ; in_clk     ; 7.000  ; 7.000  ; Rise       ; in_clk          ;
+;  rgb1[0]       ; in_clk     ; 7.000  ; 7.000  ; Rise       ; in_clk          ;
+;  rgb1[1]       ; in_clk     ; 7.000  ; 7.000  ; Rise       ; in_clk          ;
+;  rgb1[2]       ; in_clk     ; 7.000  ; 7.000  ; Rise       ; in_clk          ;
++----------------+------------+--------+--------+------------+-----------------+
 
 
-+-------------------------------------------------------------------------+
-; Minimum Clock to Output Times                                           ;
-+-------------+------------+-------+-------+------------+-----------------+
-; Data Port   ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
-+-------------+------------+-------+-------+------------+-----------------+
-; al422_re    ; in_clk     ; 7.000 ; 7.000 ; Rise       ; in_clk          ;
-; led_clk_out ; in_clk     ; 7.000 ; 7.000 ; Rise       ; in_clk          ;
-; rgb1[*]     ; in_clk     ; 7.000 ; 7.000 ; Rise       ; in_clk          ;
-;  rgb1[0]    ; in_clk     ; 7.000 ; 7.000 ; Rise       ; in_clk          ;
-;  rgb1[1]    ; in_clk     ; 7.000 ; 7.000 ; Rise       ; in_clk          ;
-;  rgb1[2]    ; in_clk     ; 7.000 ; 7.000 ; Rise       ; in_clk          ;
-+-------------+------------+-------+-------+------------+-----------------+
++------------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                                ;
++----------------+------------+--------+--------+------------+-----------------+
+; Data Port      ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++----------------+------------+--------+--------+------------+-----------------+
+; al422_nrst_out ; in_clk     ; 7.000  ; 7.000  ; Rise       ; in_clk          ;
+; al422_re_out   ; in_clk     ; 7.000  ; 7.000  ; Rise       ; in_clk          ;
+; led_clk_out    ; in_clk     ; 7.000  ; 7.000  ; Rise       ; in_clk          ;
+; led_oe_out     ; in_clk     ; 13.900 ; 13.900 ; Rise       ; in_clk          ;
+; rgb1[*]        ; in_clk     ; 7.000  ; 7.000  ; Rise       ; in_clk          ;
+;  rgb1[0]       ; in_clk     ; 7.000  ; 7.000  ; Rise       ; in_clk          ;
+;  rgb1[1]       ; in_clk     ; 7.000  ; 7.000  ; Rise       ; in_clk          ;
+;  rgb1[2]       ; in_clk     ; 7.000  ; 7.000  ; Rise       ; in_clk          ;
++----------------+------------+--------+--------+------------+-----------------+
 
 
 +-------------------------------------------------------------------+
@@ -441,7 +531,7 @@ No paths to report.
 +------------+----------+----------+----------+----------+----------+
 ; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
 +------------+----------+----------+----------+----------+----------+
-; in_clk     ; in_clk   ; 79       ; 0        ; 0        ; 0        ;
+; in_clk     ; in_clk   ; 396      ; 0        ; 0        ; 0        ;
 +------------+----------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
@@ -451,7 +541,7 @@ Entries labeled "false path" only account for clock-to-clock false paths and not
 +------------+----------+----------+----------+----------+----------+
 ; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
 +------------+----------+----------+----------+----------+----------+
-; in_clk     ; in_clk   ; 79       ; 0        ; 0        ; 0        ;
+; in_clk     ; in_clk   ; 396      ; 0        ; 0        ; 0        ;
 +------------+----------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
@@ -475,10 +565,10 @@ No dedicated SERDES Receiver circuitry present in device or used in design
 +---------------------------------+-------+------+
 ; Illegal Clocks                  ; 0     ; 0    ;
 ; Unconstrained Clocks            ; 0     ; 0    ;
-; Unconstrained Input Ports       ; 2     ; 2    ;
-; Unconstrained Input Port Paths  ; 19    ; 19   ;
-; Unconstrained Output Ports      ; 5     ; 5    ;
-; Unconstrained Output Port Paths ; 5     ; 5    ;
+; Unconstrained Input Ports       ; 5     ; 5    ;
+; Unconstrained Input Port Paths  ; 72    ; 72   ;
+; Unconstrained Output Ports      ; 7     ; 7    ;
+; Unconstrained Output Port Paths ; 8     ; 8    ;
 +---------------------------------+-------+------+
 
 
@@ -488,7 +578,7 @@ No dedicated SERDES Receiver circuitry present in device or used in design
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Mon Jan 01 21:34:50 2018
+    Info: Processing started: Wed Jan 10 18:41:11 2018
 Info: Command: quartus_sta al422_bam -c al422_bam
 Info: qsta_default_script.tcl version: #1
 Info (306004): Started post-fitting delay annotation
@@ -500,19 +590,20 @@ Warning (332049): Ignored set_input_delay at al422_bam.sdc(38): Argument <target
     Info (332050): set_input_delay -clock "in_clk" -max 5ns [get_ports {in_data}] 
 Warning (332049): Ignored set_input_delay at al422_bam.sdc(39): Argument <targets> is an empty collection
     Info (332050): set_input_delay -clock "in_clk" -min 4.000ns [get_ports {in_data}] 
-Warning (332049): Ignored set_input_delay at al422_bam.sdc(40): Positional argument: object_list targets with value [get_ports {al422_nrst}] contains no input ports
+Warning (332174): Ignored filter at al422_bam.sdc(40): al422_nrst could not be matched with a port
+Warning (332049): Ignored set_input_delay at al422_bam.sdc(40): Argument <targets> is an empty collection
     Info (332050): set_input_delay -clock "in_clk" -max 5ns [get_ports {al422_nrst}] 
-Warning (332049): Ignored set_input_delay at al422_bam.sdc(41): Positional argument: object_list targets with value [get_ports {al422_nrst}] contains no input ports
+Warning (332049): Ignored set_input_delay at al422_bam.sdc(41): Argument <targets> is an empty collection
     Info (332050): set_input_delay -clock "in_clk" -min 5.000ns [get_ports {al422_nrst}] 
 Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
-Info (332146): Worst-case setup slack is 9.800
+Info (332146): Worst-case setup slack is 9.000
     Info (332119):     Slack End Point TNS Clock 
     Info (332119): ========= ============= =====================
-    Info (332119):     9.800         0.000 in_clk 
-Info (332146): Worst-case hold slack is 3.800
+    Info (332119):     9.000         0.000 in_clk 
+Info (332146): Worst-case hold slack is 5.800
     Info (332119):     Slack End Point TNS Clock 
     Info (332119): ========= ============= =====================
-    Info (332119):     3.800         0.000 in_clk 
+    Info (332119):     5.800         0.000 in_clk 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
 Info (332146): Worst-case minimum pulse width slack is 6.000
@@ -522,17 +613,17 @@ Info (332146): Worst-case minimum pulse width slack is 6.000
 Info (332001): The selected device family is not supported by the report_metastability command.
 Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
-Info (144001): Generated suppressed messages file P:/altera/al422-bam/output_files/al422_bam.sta.smsg
-Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 6 warnings
-    Info: Peak virtual memory: 369 megabytes
-    Info: Processing ended: Mon Jan 01 21:34:51 2018
+Info (144001): Generated suppressed messages file D:/altera/al422-bam/output_files/al422_bam.sta.smsg
+Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 7 warnings
+    Info: Peak virtual memory: 352 megabytes
+    Info: Processing ended: Wed Jan 10 18:41:12 2018
     Info: Elapsed time: 00:00:01
-    Info: Total CPU time (on all processors): 00:00:00
+    Info: Total CPU time (on all processors): 00:00:01
 
 
 +-----------------------------------------------+
 ; TimeQuest Timing Analyzer Suppressed Messages ;
 +-----------------------------------------------+
-The suppressed messages can be found in P:/altera/al422-bam/output_files/al422_bam.sta.smsg.
+The suppressed messages can be found in D:/altera/al422-bam/output_files/al422_bam.sta.smsg.
 
 
