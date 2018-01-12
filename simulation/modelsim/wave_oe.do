@@ -3,7 +3,7 @@ quietly WaveActivateNextPane {} 0
 delete wave *
 add wave -noupdate /al422_bam_vlg_tst/in_nrst
 add wave -noupdate /al422_bam_vlg_tst/in_clk
-add wave -noupdate /al422_bam_vlg_tst/oe_processor_start
+add wave -noupdate /al422_bam_vlg_tst/al422_bam/oe_processor_start
 add wave -noupdate /al422_bam_vlg_tst/al422_bam/oe_processor/local_reset
 add wave -noupdate /al422_bam_vlg_tst/al422_bam/oe_processor/module_is_busy
 add wave -noupdate -radix hexadecimal /al422_bam_vlg_tst/al422_bam/oe_processor/phase_cntr

@@ -5,9 +5,6 @@ reg in_clk;
 reg [15:0] address;
 reg [8:0] memory [0:8191];
 reg in_nrst;
-reg first_stage_module_start;
-reg first_stage_address_reset;
-reg oe_processor_start;
 // wires                                               
 wire al422_nrst;
 wire al422_re;
@@ -31,9 +28,6 @@ al422_bam al422_bam (
 	.in_clk(in_clk),
 	.in_data(memory_out),
 	.in_nrst(in_nrst),
-	.first_stage_module_start(first_stage_module_start),
-	.first_stage_address_reset(first_stage_address_reset),
-	.oe_processor_start(oe_processor_start),
 	.led_clk_out(led_clk_out),
 	.led_lat_out(led_lat_out),
 	.led_oe_out(led_oe_out),
@@ -49,27 +43,21 @@ begin
 	for (j=0; j < 8192; j=j+1)
 		memory[j] <= 8'h00; //reset array
 
-	memory[0] <= 8'hFF;
-	memory[1] <= 8'hFF;
-	memory[2] <= 8'hFF;
-	memory[21] <= 8'hFF;
-	memory[22] <= 8'hFF;
-	memory[23] <= 8'hFF;
+	memory[0] <= 8'h02;
+	memory[1] <= 8'h02;
+	memory[2] <= 8'h02;
+	memory[21] <= 8'h02;
+	memory[22] <= 8'h02;
+	memory[23] <= 8'h02;
 	
-	memory[27] <= 8'hFF;
-	memory[28] <= 8'hFF;
-	memory[29] <= 8'hFF;
+	memory[27] <= 8'h02;
+	memory[28] <= 8'h02;
+	memory[29] <= 8'h02;
 
 	in_nrst = 0;
 	in_clk = 0;                                                       
 	address = 0;
-	first_stage_module_start = 0;
-	first_stage_address_reset = 0;
-	oe_processor_start = 0;
 	#15 in_nrst = 1;
-	#20 first_stage_module_start = 1;
-	oe_processor_start = 1;
-//	#100 first_stage_module_start = 0;
 	#2000000 $stop;
 end                                                    
 

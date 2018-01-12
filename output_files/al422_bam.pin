@@ -65,7 +65,7 @@ TDI                          : 1         : input  : 3.3-V LVTTL       :         
 al422_nrst_out               : 2         : output : 3.3-V LVTTL       :         :           : Y              
 in_data[7]                   : 3         : input  : 3.3-V LVTTL       :         :           : Y              
 GND                          : 4         : gnd    :                   :         :           :                
-oe_processor_start           : 5         : input  : 3.3-V LVTTL       :         :           : N              
+RESERVED                     : 5         :        :                   :         :           :                
 rgb1[0]                      : 6         : output : 3.3-V LVTTL       :         :           : Y              
 TMS                          : 7         : input  : 3.3-V LVTTL       :         :           : N              
 rgb1[1]                      : 8         : output : 3.3-V LVTTL       :         :           : Y              
@@ -98,9 +98,9 @@ in_data[2]                   : 34        : input  : 3.3-V LVTTL       :         
 in_data[3]                   : 35        : input  : 3.3-V LVTTL       :         :           : Y              
 GND                          : 36        : gnd    :                   :         :           :                
 in_clk                       : 37        : input  : 3.3-V LVTTL       :         :           : Y              
-first_stage_address_reset    : 38        : input  : 3.3-V LVTTL       :         :           : N              
+GND+                         : 38        :        :                   :         :           :                
 in_nrst                      : 39        : input  : 3.3-V LVTTL       :         :           : Y              
-first_stage_module_start     : 40        : input  : 3.3-V LVTTL       :         :           : N              
+GND+                         : 40        :        :                   :         :           :                
 VCCINT                       : 41        : power  :                   : 3.3V    :           :                
 in_data[4]                   : 42        : input  : 3.3-V LVTTL       :         :           : Y              
 in_data[5]                   : 43        : input  : 3.3-V LVTTL       :         :           : Y              

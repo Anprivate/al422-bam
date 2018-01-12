@@ -2,14 +2,12 @@ library verilog;
 use verilog.vl_types.all;
 entity al422_bam is
     generic(
-        BIT_COUNTER_WIDTH: integer := 3
+        BIT_COUNTER_WIDTH: integer := 3;
+        led_row_preload : vl_logic_vector(0 to 2) := (Hi1, Hi1, Hi1)
     );
     port(
         in_clk          : in     vl_logic;
         in_nrst         : in     vl_logic;
-        first_stage_module_start: in     vl_logic;
-        first_stage_address_reset: in     vl_logic;
-        oe_processor_start: in     vl_logic;
         in_data         : in     vl_logic_vector(7 downto 0);
         al422_nrst_out  : out    vl_logic;
         al422_re_out    : out    vl_logic;
@@ -22,4 +20,5 @@ entity al422_bam is
     );
     attribute mti_svvh_generic_type : integer;
     attribute mti_svvh_generic_type of BIT_COUNTER_WIDTH : constant is 1;
+    attribute mti_svvh_generic_type of led_row_preload : constant is 1;
 end al422_bam;

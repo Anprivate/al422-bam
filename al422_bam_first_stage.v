@@ -71,7 +71,7 @@ module al422_bam_first_stage(
 					if (last_phase)
 						phase_cntr <= 0;
 					else
-						phase_cntr <= phase_cntr + 1;
+						phase_cntr <= phase_cntr + 1'b1;
 	
 	// first_cycle_finished
 	always @(posedge in_clk or negedge in_nrst)
@@ -107,7 +107,7 @@ module al422_bam_first_stage(
 					if (last_pixel)
 						pixel_counter <= 0;
 					else
-						pixel_counter <= pixel_counter + 1;
+						pixel_counter <= pixel_counter + 1'b1;
 
 	always @(posedge in_clk or negedge in_nrst)
 		if (~in_nrst)

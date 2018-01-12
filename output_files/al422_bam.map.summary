@@ -1,7 +1,7 @@
-Analysis & Synthesis Status : Successful - Wed Jan 10 18:41:07 2018
+Analysis & Synthesis Status : Successful - Thu Jan 11 16:30:55 2018
 Quartus II 64-Bit Version : 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition
 Revision Name : al422_bam
 Top-level Entity Name : al422_bam
 Family : MAX3000A
-Total macrocells : 47
-Total pins : 29
+Total macrocells : 66
+Total pins : 26

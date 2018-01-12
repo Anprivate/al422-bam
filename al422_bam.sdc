@@ -35,11 +35,8 @@ derive_pll_clocks -create_base_clocks
 
 # tsu/th constraints
 
-set_input_delay -clock "in_clk" -max 5ns [get_ports {in_data}] 
-set_input_delay -clock "in_clk" -min 4.000ns [get_ports {in_data}] 
-set_input_delay -clock "in_clk" -max 5ns [get_ports {al422_nrst}] 
-set_input_delay -clock "in_clk" -min 5.000ns [get_ports {al422_nrst}] 
-
+set_input_delay -clock "in_clk" -max 5ns [get_ports {in_data[*]}] 
+set_input_delay -clock "in_clk" -min 4.000ns [get_ports {in_data[*]}] 
 
 # tco constraints
 
