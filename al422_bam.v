@@ -8,9 +8,8 @@
 `define RGB888	1
 //`define RGB161616	1
 
-// LED panel RGB inputs quantity - only one line must be uncommented
-`define RGB_out1	1
-//`define RGB_out2	1
+// LED panel RGB inputs quantity (1 or 2)
+`define RGB_outs	2
 
 // LED panel scan type - only one line must be uncommented
 `define SCAN_x8 	1
@@ -25,12 +24,9 @@
 `define LED_OE_ACTIVE_LOW	1
 //`define LED_CLK_ON_FALL		1
 
-// bits in PWM counter. Maximum is 8 bits for TRUECOLOR and 5 bits for HIGHCOLOR
-`define PWM_COUNTER_WIDTH	2
-
-`define OE_PRESCALER	1
-`define OE_PREDELAY	7
-`define OE_POSTDELAY	7
+`define OE_PRESCALER	16
+`define OE_PREDELAY	31
+`define OE_POSTDELAY	31
 
 /***************************************************************************************************/
 // main modules body - DON'T MODIFY ANYTHING BELOW THIS LINE!!!
@@ -113,7 +109,7 @@ module al422_bam (
 		else
 			first_stage_address_reset <= (led_row_in == (led_row_preload - 1'b1));
 			
-	al422_bam_first_stage #(`PIXEL_COUNT) first_stage(
+	al422_bam_first_stage #(`PIXEL_COUNT, `RGB_outs) first_stage(
 		.in_nrst(in_nrst), .in_clk(in_clk),
 		.in_data(in_data),
 		.bit_counter(bit_counter), 

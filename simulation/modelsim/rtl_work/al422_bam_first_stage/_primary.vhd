@@ -3,6 +3,9 @@ use verilog.vl_types.all;
 entity al422_bam_first_stage is
     generic(
         PIXEL_COUNT     : vl_notype;
+        RGB_outputs     : vl_notype;
+        bits_in_phase_cntr: vl_notype;
+        bits_in_phase_reg: vl_notype;
         PIXEL_COUNTER_WIDTH: vl_notype
     );
     port(
@@ -22,5 +25,8 @@ entity al422_bam_first_stage is
     );
     attribute mti_svvh_generic_type : integer;
     attribute mti_svvh_generic_type of PIXEL_COUNT : constant is 5;
+    attribute mti_svvh_generic_type of RGB_outputs : constant is 5;
+    attribute mti_svvh_generic_type of bits_in_phase_cntr : constant is 3;
+    attribute mti_svvh_generic_type of bits_in_phase_reg : constant is 3;
     attribute mti_svvh_generic_type of PIXEL_COUNTER_WIDTH : constant is 3;
 end al422_bam_first_stage;

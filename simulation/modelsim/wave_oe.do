@@ -7,10 +7,8 @@ add wave -noupdate /al422_bam_vlg_tst/al422_bam/oe_processor_start
 add wave -noupdate /al422_bam_vlg_tst/al422_bam/oe_processor/local_reset
 add wave -noupdate /al422_bam_vlg_tst/al422_bam/oe_processor/module_is_busy
 add wave -noupdate -radix hexadecimal /al422_bam_vlg_tst/al422_bam/oe_processor/phase_cntr
-add wave -noupdate -radix hexadecimal /al422_bam_vlg_tst/al422_bam/oe_processor/predelay_counter
-add wave -noupdate -radix hexadecimal /al422_bam_vlg_tst/al422_bam/oe_processor/prescaler_counter
+add wave -noupdate -radix hexadecimal /al422_bam_vlg_tst/al422_bam/oe_processor/fs_counter
 add wave -noupdate -radix hexadecimal /al422_bam_vlg_tst/al422_bam/oe_processor/main_counter
-add wave -noupdate -radix hexadecimal /al422_bam_vlg_tst/al422_bam/oe_processor/postdelay_counter
 add wave -noupdate /al422_bam_vlg_tst/led_lat_out
 add wave -noupdate /al422_bam_vlg_tst/led_oe_out
 add wave -noupdate /al422_bam_vlg_tst/led_row

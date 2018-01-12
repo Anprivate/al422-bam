@@ -9,8 +9,12 @@ entity al422_bam_oe_processor is
         PRESCALER_COUNTER_WIDTH: vl_notype;
         PREDELAY_COUNTER_WIDTH: vl_notype;
         POSTDELAY_COUNTER_WIDTH: vl_notype;
+        tmpmax1         : vl_notype;
+        FS_COUNTER_WIDTH: vl_notype;
         MAIN_COUNTER_WIDTH: vl_notype;
-        prescaler_preload: vl_notype
+        predelay_preload: vl_notype;
+        prescaler_preload: vl_notype;
+        postdelay_preload: vl_notype
     );
     port(
         in_nrst         : in     vl_logic;
@@ -28,6 +32,10 @@ entity al422_bam_oe_processor is
     attribute mti_svvh_generic_type of PRESCALER_COUNTER_WIDTH : constant is 3;
     attribute mti_svvh_generic_type of PREDELAY_COUNTER_WIDTH : constant is 3;
     attribute mti_svvh_generic_type of POSTDELAY_COUNTER_WIDTH : constant is 3;
+    attribute mti_svvh_generic_type of tmpmax1 : constant is 3;
+    attribute mti_svvh_generic_type of FS_COUNTER_WIDTH : constant is 3;
     attribute mti_svvh_generic_type of MAIN_COUNTER_WIDTH : constant is 3;
+    attribute mti_svvh_generic_type of predelay_preload : constant is 3;
     attribute mti_svvh_generic_type of prescaler_preload : constant is 3;
+    attribute mti_svvh_generic_type of postdelay_preload : constant is 3;
 end al422_bam_oe_processor;

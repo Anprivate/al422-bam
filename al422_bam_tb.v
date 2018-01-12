@@ -43,12 +43,15 @@ begin
 	for (j=0; j < 8192; j=j+1)
 		memory[j] <= 8'h00; //reset array
 
-	memory[0] <= 8'h02;
-	memory[1] <= 8'h02;
-	memory[2] <= 8'h02;
-	memory[21] <= 8'h02;
-	memory[22] <= 8'h02;
-	memory[23] <= 8'h02;
+	memory[0] <= 8'hFF;
+	memory[1] <= 8'hFF;
+	memory[2] <= 8'hFF;
+	memory[6] <= 8'hFF;
+	memory[7] <= 8'hFF;
+	memory[8] <= 8'hFF;
+	memory[21] <= 8'hFF;
+	memory[22] <= 8'hFF;
+	memory[23] <= 8'hFF;
 	
 	memory[27] <= 8'h02;
 	memory[28] <= 8'h02;
